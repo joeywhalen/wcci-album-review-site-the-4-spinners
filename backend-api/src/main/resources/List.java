@@ -2,6 +2,8 @@
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Collection;
 
 @Entity
 public class List {
@@ -30,5 +32,11 @@ public class List {
         return name;
     }
 
+    public Iterable<Album> getAlbums() {
+        return albums;
+    }
 
+    public void addAlbum(Album album) {
+        albums.add(album);
+    }
 }
