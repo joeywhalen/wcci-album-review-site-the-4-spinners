@@ -13,6 +13,8 @@ public class Album{
     private String recordLabel;
     private int duration;
     private int rating;
+    private String videoUrl;
+    
 
     @ManyToOne (mappedBy = "albums")
     private Collection<Comment> commments;
@@ -21,7 +23,7 @@ public class Album{
 
     }
 
-    public Album (String title, String artist, String imageURL, String song, String recordLabel, int duration, int rating){
+    public Album (String title, String artist, String imageURL, String song, String recordLabel, int duration, int rating, String videoUrl){
     this.title = title;
     this.artist = artist;
     this.imageURL = imageURL;
@@ -29,6 +31,7 @@ public class Album{
     this.recordLabel = recordLabel;
     this.duration = duration;
     this.rating = rating;
+    this.videoUrl = videoUrl;
 
 }
 
@@ -63,6 +66,10 @@ public int getduration(){
 
 public int getRating(){
     return rating;
+}
+
+public String getVideoUrl(){
+    return videoUrl;
 }
 
 public Iterable<Comment> getComments(){
