@@ -21,18 +21,17 @@ public class Song {
     private Collection<Comment> comments;
 
     private int starRating;
-    private String videoUrl;
-
+  
     protected Song() {
     };
 
 
 
-    public Song(String songTitle, int length, int starRating, String videoUrl) {
+    public Song(String songTitle, int length, int starRating) {
         this.songTitle = songTitle;
         this.length = length;        
         this.starRating = starRating;
-        this.videoUrl = videoUrl;
+        
     }
 
     public String getSong() {
