@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Lob;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.CollectionTable;
 import java.util.Collection;
 
 @Entity 
@@ -12,6 +15,7 @@ public class Album {
 
     @Id
     @GeneratedValue
+    @Column(name="ALBUM_ID")
     private Long id; 
 
     private String title;
@@ -24,6 +28,8 @@ public class Album {
     private String videoUrl;
     
     @Lob
+    @ElementCollection
+    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
     @ManyToOne (mappedBy = "albums")
     private Collection<Comment> commments;
 
