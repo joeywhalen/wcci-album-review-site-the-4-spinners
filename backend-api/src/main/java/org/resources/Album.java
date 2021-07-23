@@ -2,14 +2,7 @@ package org.resources;
 
 import org.storage.SongStorage;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Lob;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.CollectionTable;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
 
@@ -31,6 +24,12 @@ public class Album {
     private String videoUrl;
 
     private SongStorage songStorage;
+
+    @ManyToOne
+    private Collection<List> lists;
+
+    @ManyToMany(mappedBy = "albums")
+    private Collection<Song> songs;
     
     @Lob
     @ElementCollection
