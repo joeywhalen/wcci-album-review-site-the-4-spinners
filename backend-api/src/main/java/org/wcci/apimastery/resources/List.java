@@ -1,5 +1,4 @@
-package org.resources;
-
+package org.wcci.apimastery.resources;
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -11,7 +10,7 @@ public class List {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "lists", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "list", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Album> albums;
 
     protected List() {

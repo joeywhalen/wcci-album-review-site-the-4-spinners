@@ -1,4 +1,4 @@
-package org.resources;
+package org.wcci.apimastery.resources;
 
 import javax.persistence.*;
 

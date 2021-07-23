@@ -1,6 +1,6 @@
-package org.resources;
+package org.wcci.apimastery.resources;
 
-import org.storage.SongStorage;
+
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -23,10 +23,10 @@ public class Album {
     private int rating;
     private String videoUrl;
 
-    private SongStorage songStorage;
+
 
     @ManyToOne
-    private Collection<List> lists;
+    private List list;
 
     @ManyToMany(mappedBy = "albums")
     private Collection<Song> songs;
@@ -94,7 +94,7 @@ public class Album {
     }
 
     public void addSong(Song song) {
-        songStorage.saveSong(song);
+        songs.add(song);
     }
 
 }

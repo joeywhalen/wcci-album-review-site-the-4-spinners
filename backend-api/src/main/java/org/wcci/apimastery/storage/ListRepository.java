@@ -1,7 +1,8 @@
-package org.storage;
+package org.wcci.apimastery.storage;
 
 import org.springframework.data.repository.CrudRepository;
-import org.resources.List;
+
+import org.wcci.apimastery.resources.List;
 
 public interface ListRepository extends CrudRepository<List, Long> {
 

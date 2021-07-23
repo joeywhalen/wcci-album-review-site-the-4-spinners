@@ -1,7 +1,8 @@
-package org.storage;
+package org.wcci.apimastery.storage;
 
 import org.springframework.stereotype.Service;
-import org.resources.Song;
+import org.wcci.apimastery.resources.Song;
+
 
 @Service
 public class SongStorage {

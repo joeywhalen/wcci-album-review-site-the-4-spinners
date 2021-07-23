@@ -1,6 +1,6 @@
-package org.storage;
+package org.wcci.apimastery.storage;
 
-import org.resources.Album;
+import org.wcci.apimastery.resources.Album;
 import org.springframework.stereotype.Service;
 
 @Service
