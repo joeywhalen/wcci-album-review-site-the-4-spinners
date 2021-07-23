@@ -1,14 +1,7 @@
 package org.resources;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Lob;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.CollectionTable;
+import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Collection;
@@ -23,6 +16,9 @@ public class Song {
     @GeneratedValue
     @Column(name="SONG_ID")
     private Long id;
+
+    @ManyToMany
+    private Collection<Album> albums;
 
     @Lob
     @ElementCollection
