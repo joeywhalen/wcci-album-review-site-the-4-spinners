@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Lob;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.CollectionTable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Collection;
@@ -17,8 +21,12 @@ public class Song {
 
     @Id
     @GeneratedValue
+    @Column(name="SONG_ID")
     private Long id;
 
+    @Lob
+    @ElementCollection
+    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
     @OneToMany(mappedBy = "songs")
     private Collection<Comment> comments;
 
