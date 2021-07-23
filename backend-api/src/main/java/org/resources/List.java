@@ -1,14 +1,11 @@
 package org.resources;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
 public class List {
-    private List name;
+    private String listName;
 
     @Id
     @GeneratedValue
@@ -21,16 +18,16 @@ public class List {
 
     }
 
-    public List(String name) {
-        this.name = name;
+    public List(String listName) {
+        this.listName = listName;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getListName() {
+        return listName;
     }
 
     public Iterable<Album> getAlbums() {
