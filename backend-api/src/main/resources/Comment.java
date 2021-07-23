@@ -1,9 +1,13 @@
 package org.resources;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Lob;
 
 @Entity
-public class Entity {
+public class Comment {
 
     @Id
     @GeneratedValue
@@ -27,6 +31,22 @@ public class Entity {
     protected Comment() {
 
     }
-    
+
+    public Long getId() {
+        return id;
+    }
+
+     public String getUserComment() {
+        return userComment;
+    }
+
+    public Album getAlbums() {
+        return albums;
+    }
+
+    public Song getSongs() {
+        return songs;
+    }
+
 
 }
