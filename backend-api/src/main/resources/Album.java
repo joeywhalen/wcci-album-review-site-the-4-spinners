@@ -1,11 +1,19 @@
+package org.resources;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Lob;
 import java.util.Collection;
 
 @Entity 
-public class Album{
+public class Album {
+
     @Id
     @GeneratedValue
-    
     private Long id; 
+
     private String title;
     private String artist;
     private String imageURL;
@@ -15,7 +23,7 @@ public class Album{
     private int rating;
     private String videoUrl;
     
-
+    @Lob
     @ManyToOne (mappedBy = "albums")
     private Collection<Comment> commments;
 
@@ -24,56 +32,54 @@ public class Album{
     }
 
     public Album (String title, String artist, String imageURL, String song, String recordLabel, int duration, int rating, String videoUrl){
-    this.title = title;
-    this.artist = artist;
-    this.imageURL = imageURL;
-    this.song = song;
-    this.recordLabel = recordLabel;
-    this.duration = duration;
-    this.rating = rating;
-    this.videoUrl = videoUrl;
+        this.title = title;
+        this.artist = artist;
+        this.imageURL = imageURL;
+        this.song = song;
+        this.recordLabel = recordLabel;
+        this.duration = duration;
+        this.rating = rating;
+        this.videoUrl = videoUrl;
+    }
 
-}
+    public Long getId(){
+        return id;
+    }
 
-public Long getId(){
-    return id;
-}
+    public String getTitle(){
+        return title;
+    }
 
-public String getTitle(){
-    return title;
-}
+    public String getArtist(){
+        return artist;
+    }
 
-public String getArtist(){
-    return artist;
+    public String getImageURL(){
+        return imageURL;
+    }
 
-}
+    public String getSong(){
+        return song;
+    }
 
-public String getImageURL(){
-    return imageURL;
-}
+    public String getRecordLabel(){
+        return recordLabel;
+    }
 
-public String getSong(){
-    return song;
-}
+    public int getduration(){
+        return duration;
+    }
 
-public String getRecordLabel(){
-    return recordLabel;
-}
+    public int getRating(){
+        return rating;
+    }
 
-public int getduration(){
-    return duration;
-}
+    public String getVideoUrl(){
+        return videoUrl;
+    }
 
-public int getRating(){
-    return rating;
-}
-
-public String getVideoUrl(){
-    return videoUrl;
-}
-
-public Iterable<Comment> getComments(){
-    return comments;
-}
+    public Iterable<Comment> getComments(){
+        return comments;
+    }
 
 }
