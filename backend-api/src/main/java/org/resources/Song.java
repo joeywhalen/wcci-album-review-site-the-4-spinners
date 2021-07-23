@@ -12,12 +12,12 @@ import javax.persistence.CollectionTable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Collection;
+import java.util.Set;
 
-@Enitity
+@Entity
 public class Song {
     private String songTitle;
     private int length;
-    
 
     @Id
     @GeneratedValue
@@ -26,22 +26,20 @@ public class Song {
 
     @Lob
     @ElementCollection
-    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
-    @OneToMany(mappedBy = "songs")
-    private Collection<Comment> comments;
+//    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
+//    @OneToMany(mappedBy = "songs")
+    private Collection<String> comments;
 
     private int starRating;
   
     protected Song() {
     };
 
-
-
-    public Song(String songTitle, int length, int starRating) {
+    public Song(String songTitle, int length, int starRating, String... comments) {
         this.songTitle = songTitle;
         this.length = length;        
         this.starRating = starRating;
-        
+        this.comments = Set.of(comments);
     }
 
     public String getSong() {
@@ -54,18 +52,10 @@ public class Song {
 
     public int getStarRating(){
         return starRating;
-
     }
 
     public Long getId() {
         return id;
     }
 
-    public Iterable<Song> getSongs() {
-        return songs;
-    }
-
-    public void addSong(Song songTitle) {
-        songs.add(songTitle);
-    }
 }

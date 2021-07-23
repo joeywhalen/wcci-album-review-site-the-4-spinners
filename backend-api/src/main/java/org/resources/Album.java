@@ -1,5 +1,7 @@
 package org.resources;
 
+import org.storage.SongStorage;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.CollectionTable;
 import java.util.Collection;
+import java.util.Set;
 
 @Entity 
 public class Album {
@@ -26,18 +29,20 @@ public class Album {
     private int duration;
     private int rating;
     private String videoUrl;
+
+    private SongStorage songStorage;
     
     @Lob
     @ElementCollection
-    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
-    @ManyToOne (mappedBy = "albums")
-    private Collection<Comment> commments;
+//    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
+//    @ManyToOne (mappedBy = "albums")
+    private Collection<String> comments;
 
     protected Album(){
 
     }
 
-    public Album (String title, String artist, String imageURL, String song, String recordLabel, int duration, int rating, String videoUrl){
+    public Album (String title, String artist, String imageURL, String song, String recordLabel, int duration, int rating, String videoUrl, String... comments){
         this.title = title;
         this.artist = artist;
         this.imageURL = imageURL;
@@ -46,6 +51,7 @@ public class Album {
         this.duration = duration;
         this.rating = rating;
         this.videoUrl = videoUrl;
+        this.comments = Set.of(comments);
     }
 
     public Long getId(){
@@ -84,8 +90,12 @@ public class Album {
         return videoUrl;
     }
 
-    public Iterable<Comment> getComments(){
+    public Iterable<String> getComments(){
         return comments;
+    }
+
+    public void addSong(Song song) {
+        songStorage.saveSong(song);
     }
 
 }
