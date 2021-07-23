@@ -11,7 +11,7 @@ public class List {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "list", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "lists", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Album> albums;
 
     protected List() {
