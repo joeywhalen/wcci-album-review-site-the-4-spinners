@@ -190,6 +190,19 @@ public class Populator implements CommandLineRunner {
          Song genghisKhan = new Song("Genghis Khan (instrumental)", "3m 2s", 5);
          songStorage.saveSong(genghisKhan);
 
+         Song innocentExile = new Song("Innocent Exile", "3m 50s", 5);
+         songStorage.saveSong(innocentExile);
+
+         Song killersSong = new Song("Killers", "4m 58s", 5);
+         songStorage.saveSong(killersSong);
+
+         Song prodigalSon = new Song("Prodigal Son", "6m 5s", 5,
+                 "Beautiful and haunting.  Such a shame that the band doesn’t appear to agree as I don’t believe they have ever played it on tour.  Favorite Lyric: Oh Lamia, please, try to help me\n" +
+                         "The devil's got a hold of my soul and he won't let me be\n" +
+                         "Lamia, I've got this curse, I'm turning to bad\n" +
+                         "The devil's got a hold of my soul, he's driving me mad.");
+         songStorage.saveSong(prodigalSon);
+
          
 
          Album undertow = new Album(jawList,"Undertow", "Tool",
