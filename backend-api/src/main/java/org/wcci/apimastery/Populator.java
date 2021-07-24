@@ -1,12 +1,9 @@
 package org.wcci.apimastery;
 
-
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wcci.apimastery.storage.*;
 import org.wcci.apimastery.resources.*;
-
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -19,8 +16,6 @@ public class Populator implements CommandLineRunner {
         this.albumStorage = albumStorage;
         this.songStorage = songStorage;
     }
-
-
 
     @Override
     public void run(String... args) throws Exception{
@@ -35,7 +30,7 @@ public class Populator implements CommandLineRunner {
 
          List jawList = new List("jaw List");
          listStorage.saveList(jawList);
-         Album 
+
     }
     
 }
