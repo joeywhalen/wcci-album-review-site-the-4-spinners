@@ -32,6 +32,13 @@ public class Populator implements CommandLineRunner {
          List jawList = new List("jaw List");
          listStorage.saveList(jawList);
 
+         Album laSex = new Album("La Sexorcisto: Devil Music Volume One", "White Zombie",
+                 "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg/220px-White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg",
+                 "Song", "Geffen", "57m 30s", 5,
+                 "https://www.youtube.com/embed/H8gHMU-pDbU",
+                 "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun.");
+         albumStorage.saveAlbum(laSex);
+         
 
     }
     
