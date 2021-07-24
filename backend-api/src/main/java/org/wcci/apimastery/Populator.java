@@ -63,7 +63,11 @@ public class Populator implements CommandLineRunner {
          Album undertow = new Album("Undertow", "Tool",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
                  "Song", "Zoo", "1h 9m 13s", 5,
-                 "");
+                 "https://www.youtube.com/embed/I8yoVlkLERs",
+                 "Just perfection from the lyrics to the vocals and the full, raw power of the instruments.  Could listen to this on an endless loop, stopping only to occasionally skip Sober as it was a bit overplayed.  This album sold me on all things Maynard.");
+         albumStorage.saveAlbum(undertow);
+
+         
 
 
     }
