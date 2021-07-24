@@ -10,7 +10,7 @@ import org.wcci.apimastery.resources.*;
 
 @Component
 public class Populator implements CommandLineRunner {
-     private ListStorage listStorage;
+    private ListStorage listStorage;
     private AlbumStorage albumStorage;
     private SongStorage songStorage;
 
@@ -32,6 +32,10 @@ public class Populator implements CommandLineRunner {
          songStorage.saveSong(song1);
          Song song2 = new Song("Blah blah", 45, 4);
          songStorage.saveSong(song2);
+
+         List jawList = new List("jaw List");
+         listStorage.saveList(jawList);
+         Album 
     }
     
 }
