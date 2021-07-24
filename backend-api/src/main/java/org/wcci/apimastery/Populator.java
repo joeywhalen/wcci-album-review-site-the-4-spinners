@@ -83,6 +83,7 @@ public class Populator implements CommandLineRunner {
         Song warpAsylum = new Song("Warp Asylum", "6m 44s", 5);
         songStorage.saveSong(warpAsylum);
 
+
          Album nail = new Album(jawList,"Nail", "Foetus",
                  "https://upload.wikimedia.org/wikipedia/en/b/b5/Foetus_Nail.jpg",
                  "Song", "Self Immolation/Some Bizzare", "40m 4s", 5,
@@ -102,7 +103,21 @@ public class Populator implements CommandLineRunner {
          Song descentInferno = new Song("Descent into the Inferno", "6m 17s", 5);
          songStorage.saveSong(descentInferno);
 
-         
+         Song enterExterminator = new Song("Enter the Exterminator", "4m 43s", 5);
+         songStorage.saveSong(enterExterminator);
+
+         Song di19026 = new Song("DI-1-9026", "4m 40s", 5);
+         songStorage.saveSong(di19026);
+
+         Song overturePigdom = new Song("The Overture from Pigdom Come", "3m 1s", 5);
+         songStorage.saveSong(overturePigdom);
+
+         Song privateWar = new Song("Private War", "1m 6s", 5);
+         songStorage.saveSong(privateWar);
+
+         Song anythingViva = new Song("Anything (Viva!)", "6m 50s", 5,
+                 "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.");
+
 
          Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg/220px-Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg",
@@ -110,6 +125,8 @@ public class Populator implements CommandLineRunner {
                  "https://www.youtube.com/embed/dCs0D6AJUuM",
                  "Quite the departure from their previous album “Outside the Gate” as Martin Atkins (PIL, Pigface) joins the band for a ‘one and done’ on drums.  This one turns it ‘up to 11’ with not only the power of the sound, but the lyrics as well.  So thankful to have seen them on tour at Bogarts in Cincy supporting this album.  Good times.");
          albumStorage.saveAlbum(extremities);
+
+         
 
          Album killers = new Album(jawList,"Killers", "Iron Maiden",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Iron_Maiden_Killers.jpg/220px-Iron_Maiden_Killers.jpg",
