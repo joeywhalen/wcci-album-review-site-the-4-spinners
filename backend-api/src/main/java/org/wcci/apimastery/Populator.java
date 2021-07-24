@@ -252,7 +252,7 @@ public class Populator implements CommandLineRunner {
          Song disgustipated = new Song("Disgustipated", "15m 47s", 5,
                  "Favorite Lyric: Let the rabbits wear glasses");
 
-         
+         songStorage.saveSong(disgustipated);
 
 
     }
