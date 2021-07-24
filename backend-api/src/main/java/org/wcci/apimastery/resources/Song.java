@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 public class Song {
     private String songTitle;
-    private int length;
+    private String length;
 
     @Id
     @GeneratedValue
@@ -31,9 +31,9 @@ public class Song {
     protected Song() {
     };
 
-    public Song(String songTitle, int length, int starRating, String... comments) {
+    public Song(String songTitle, String length, int starRating, String... comments) {
         this.songTitle = songTitle;
-        this.length = length;        
+        this.length = length;
         this.starRating = starRating;
         this.comments = Set.of(comments);
     }
@@ -42,7 +42,7 @@ public class Song {
         return songTitle;
     }
 
-    public int getLength() {
+    public String getLength() {
         return length;
     }
 
