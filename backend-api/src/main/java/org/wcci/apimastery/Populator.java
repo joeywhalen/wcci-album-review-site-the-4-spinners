@@ -203,7 +203,11 @@ public class Populator implements CommandLineRunner {
                          "The devil's got a hold of my soul, he's driving me mad.");
          songStorage.saveSong(prodigalSon);
 
-         
+         Song purgatory = new Song("Purgatory", "3m 18s", 5);
+         songStorage.saveSong(purgatory);
+
+         Song drifter = new Song("Drifter", "4m 47s", 5);
+         songStorage.saveSong(drifter);
 
          Album undertow = new Album(jawList,"Undertow", "Tool",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
