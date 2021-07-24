@@ -38,7 +38,16 @@ public class Populator implements CommandLineRunner {
                  "https://www.youtube.com/embed/H8gHMU-pDbU",
                  "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun.");
          albumStorage.saveAlbum(laSex);
+
+         Album nail = new Album("Nail", "Foetus",
+                 "https://upload.wikimedia.org/wikipedia/en/b/b5/Foetus_Nail.jpg",
+                 "Song", "Self Immolation/Some Bizzare", "40m 4s", 5,
+                 "https://www.youtube.com/embed/OnY63APl_6c",
+                 "J.G. Thirlwell is a lyrical genius and this is his masterpiece.  One of the pioneers of the ‘industrial’ sound, and some classical overtures thrown in for good measure.  References run the gamut from Hamlet to Timothy Leary, to the Manson murders, to Jack and the Beanstalk.");
+         albumStorage.saveAlbum(nail);
+
          
+
 
     }
     
