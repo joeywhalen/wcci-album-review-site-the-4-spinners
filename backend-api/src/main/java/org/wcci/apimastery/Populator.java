@@ -39,6 +39,12 @@ public class Populator implements CommandLineRunner {
                  "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun.");
          albumStorage.saveAlbum(laSex);
 
+         Song welcomeToPlanet = new Song("Welcome to Planet Motherfucker/Psychoholic Slag",
+                 "6m 21s", 5,
+                 "If this song doesn’t get you moving, you probably don’t have a pulse.");
+
+         
+
          Album nail = new Album(jawList,"Nail", "Foetus",
                  "https://upload.wikimedia.org/wikipedia/en/b/b5/Foetus_Nail.jpg",
                  "Song", "Self Immolation/Some Bizzare", "40m 4s", 5,
