@@ -158,6 +158,14 @@ public class Populator implements CommandLineRunner {
          Song northBorder = new Song("North of the Border", "5m 52s", 5);
          songStorage.saveSong(northBorder);
 
+         Song slipstream = new Song("Slipstream", "7m 7s", 5);
+         songStorage.saveSong(slipstream);
+
+         Song kaliyuga = new Song("Kaliyuga", "2m 8s", 5);
+         songStorage.saveSong(kaliyuga);
+
+         Song struggle = new Song("Struggle", "6m 13s", 5);
+         songStorage.saveSong(struggle);
          
 
          Album killers = new Album(jawList,"Killers", "Iron Maiden",
