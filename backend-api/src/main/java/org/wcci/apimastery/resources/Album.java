@@ -41,7 +41,8 @@ public class Album {
 
     }
 
-    public Album (String title, String artist, String imageURL, String song, String recordLabel, String duration, int rating, String videoUrl, String... comments){
+    public Album (List list, String title, String artist, String imageURL, String song, String recordLabel, String duration, int rating, String videoUrl, String... comments){
+        this.list = list;
         this.title = title;
         this.artist = artist;
         this.imageURL = imageURL;
@@ -51,6 +52,10 @@ public class Album {
         this.rating = rating;
         this.videoUrl = videoUrl;
         this.comments = Set.of(comments);
+    }
+
+    public List getList() {
+        return list;
     }
 
     public Long getId(){
