@@ -117,6 +117,7 @@ public class Populator implements CommandLineRunner {
 
          Song anythingViva = new Song("Anything (Viva!)", "6m 50s", 5,
                  "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.");
+         songStorage.saveSong(anythingViva);
 
 
          Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
@@ -126,7 +127,8 @@ public class Populator implements CommandLineRunner {
                  "Quite the departure from their previous album “Outside the Gate” as Martin Atkins (PIL, Pigface) joins the band for a ‘one and done’ on drums.  This one turns it ‘up to 11’ with not only the power of the sound, but the lyrics as well.  So thankful to have seen them on tour at Bogarts in Cincy supporting this album.  Good times.");
          albumStorage.saveAlbum(extremities);
 
-         
+         Song moneyGod = new Song("Money Is Not Our God", "5m 17s", 5);
+         songStorage.saveSong(moneyGod);
 
          Album killers = new Album(jawList,"Killers", "Iron Maiden",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Iron_Maiden_Killers.jpg/220px-Iron_Maiden_Killers.jpg",
