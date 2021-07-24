@@ -21,11 +21,12 @@ public class Populator implements CommandLineRunner {
     public void run(String... args) throws Exception{
          List list1 = new List("joe's list");
          listStorage.saveList(list1);
-         Album album1 = new Album("Album title","Artist", "WWW.com","Song title","Record label", 90, 5,"video.com");
+         Album album1 = new Album("Album title","Artist", "WWW.com",
+                 "Song title","Record label", "90", 5,"video.com");
          albumStorage.saveAlbum(album1);
-         Song song1 = new Song("sing song", 90, 5);
+         Song song1 = new Song("sing song", "90", 5);
          songStorage.saveSong(song1);
-         Song song2 = new Song("Blah blah", 45, 4);
+         Song song2 = new Song("Blah blah", "45", 4);
          songStorage.saveSong(song2);
 
          List jawList = new List("jaw List");

@@ -19,7 +19,7 @@ public class Album {
     private String imageURL;
     private String song;
     private String recordLabel;
-    private int duration;
+    private String duration;
     private int rating;
     private String videoUrl;
 
@@ -41,7 +41,7 @@ public class Album {
 
     }
 
-    public Album (String title, String artist, String imageURL, String song, String recordLabel, int duration, int rating, String videoUrl, String... comments){
+    public Album (String title, String artist, String imageURL, String song, String recordLabel, String duration, int rating, String videoUrl, String... comments){
         this.title = title;
         this.artist = artist;
         this.imageURL = imageURL;
@@ -77,7 +77,7 @@ public class Album {
         return recordLabel;
     }
 
-    public int getduration(){
+    public String getduration(){
         return duration;
     }
 
