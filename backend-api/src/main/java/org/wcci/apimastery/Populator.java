@@ -90,6 +90,11 @@ public class Populator implements CommandLineRunner {
                  "J.G. Thirlwell is a lyrical genius and this is his masterpiece.  One of the pioneers of the ‘industrial’ sound, and some classical overtures thrown in for good measure.  References run the gamut from Hamlet to Timothy Leary, to the Manson murders, to Jack and the Beanstalk.");
          albumStorage.saveAlbum(nail);
 
+         Song themePigdom = new Song("Theme from Pigdom Come", "1m 52s", 5);
+         songStorage.saveSong(themePigdom);
+
+         
+
          Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg/220px-Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg",
                  "Song", "Noise", "1h 5m 8s", 5,
