@@ -93,6 +93,15 @@ public class Populator implements CommandLineRunner {
          Song themePigdom = new Song("Theme from Pigdom Come", "1m 52s", 5);
          songStorage.saveSong(themePigdom);
 
+         Song throneAgony = new Song("The Throne of Agony", "5m 18s", 5);
+         songStorage.saveSong(throneAgony);
+
+         Song exclamation = new Song("!", "0m 4s", 4);
+         songStorage.saveSong(exclamation);
+
+         Song descentInferno = new Song("Descent into the Inferno", "6m 17s", 5);
+         songStorage.saveSong(descentInferno);
+
          
 
          Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
