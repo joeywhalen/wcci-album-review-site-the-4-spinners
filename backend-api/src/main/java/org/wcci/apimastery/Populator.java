@@ -42,8 +42,13 @@ public class Populator implements CommandLineRunner {
          Song welcomeToPlanet = new Song("Welcome to Planet Motherfucker/Psychoholic Slag",
                  "6m 21s", 5,
                  "If this song doesn’t get you moving, you probably don’t have a pulse.");
+        songStorage.saveSong(welcomeToPlanet);
 
-         
+        Song knuckleDuster = new Song("Knuckle Duster (Radio 1-A)", "0m 21s", 2);
+        songStorage.saveSong(knuckleDuster);
+
+        Song thunderKiss = new Song("Thunder Kiss '65", "3m 54s", 5);
+        songStorage.saveSong(thunderKiss);
 
          Album nail = new Album(jawList,"Nail", "Foetus",
                  "https://upload.wikimedia.org/wikipedia/en/b/b5/Foetus_Nail.jpg",
