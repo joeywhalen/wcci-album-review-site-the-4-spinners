@@ -46,7 +46,24 @@ public class Populator implements CommandLineRunner {
                  "J.G. Thirlwell is a lyrical genius and this is his masterpiece.  One of the pioneers of the ‘industrial’ sound, and some classical overtures thrown in for good measure.  References run the gamut from Hamlet to Timothy Leary, to the Manson murders, to Jack and the Beanstalk.");
          albumStorage.saveAlbum(nail);
 
-         
+         Album extremities = new Album("Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
+                 "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg/220px-Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg",
+                 "Song", "Noise", "1h 5m 8s", 5,
+                 "https://www.youtube.com/embed/dCs0D6AJUuM",
+                 "Quite the departure from their previous album “Outside the Gate” as Martin Atkins (PIL, Pigface) joins the band for a ‘one and done’ on drums.  This one turns it ‘up to 11’ with not only the power of the sound, but the lyrics as well.  So thankful to have seen them on tour at Bogarts in Cincy supporting this album.  Good times.");
+         albumStorage.saveAlbum(extremities);
+
+         Album killers = new Album("Killers", "Iron Maiden",
+                 "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Iron_Maiden_Killers.jpg/220px-Iron_Maiden_Killers.jpg",
+                 "Song", "EMI", "38m 18s", 5,
+                 "https://www.youtube.com/embed/QUsibOlkt-o",
+                 "When this album was released in 1981, I had no idea who Iron Maiden were, but Eddie on the cover and my friend telling me he thought that it might be ‘devil music’ sold me.  It was the hardest, fastest rock I had heard to that point, and an instant classic.  Bruce Dickinson famously joined the band on vocals after this album and they soared in popularity, but this is easily my favorite.  Another album where each song bleeds into the next.");
+         albumStorage.saveAlbum(killers);
+
+         Album undertow = new Album("Undertow", "Tool",
+                 "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
+                 "Song", "Zoo", "1h 9m 13s", 5,
+                 "");
 
 
     }
