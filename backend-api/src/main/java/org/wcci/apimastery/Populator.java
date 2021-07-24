@@ -178,7 +178,19 @@ public class Populator implements CommandLineRunner {
          Song idesOfMarch = new Song("The Ides of March (instrumental)", "1m 48s", 5);
          songStorage.saveSong(idesOfMarch);
 
+         Song wrathchild = new Song("Wrathchild", "2m 54s", 5);
+         songStorage.saveSong(wrathchild);
 
+         Song rueMorgue = new Song("Murders in the Rue Morgue", "4m 14s", 5);
+         songStorage.saveSong(rueMorgue);
+
+         Song anotherLife = new Song("Another Life", "3m 22s", 5);
+         songStorage.saveSong(anotherLife);
+
+         Song genghisKhan = new Song("Genghis Khan (instrumental)", "3m 2s", 5);
+         songStorage.saveSong(genghisKhan);
+
+         
 
          Album undertow = new Album(jawList,"Undertow", "Tool",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
