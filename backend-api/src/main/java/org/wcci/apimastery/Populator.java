@@ -41,7 +41,8 @@ public class Populator implements CommandLineRunner {
 
          Song welcomeToPlanet = new Song("Welcome to Planet Motherfucker/Psychoholic Slag",
                  "6m 21s", 5,
-                 "If this song doesn’t get you moving, you probably don’t have a pulse.");
+                 "If this song doesn’t get you moving, you probably don’t have a pulse.  Favorite Lyric: So let me see ya howl'n through the keyhole\"god damn,\n" +
+                         "Swept away\" she shouted, she love it, getin away yeah!");
         songStorage.saveSong(welcomeToPlanet);
 
         Song knuckleDuster = new Song("Knuckle Duster (Radio 1-A)", "0m 21s", 2);
@@ -116,7 +117,7 @@ public class Populator implements CommandLineRunner {
          songStorage.saveSong(privateWar);
 
          Song anythingViva = new Song("Anything (Viva!)", "6m 50s", 5,
-                 "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.");
+                 "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.  Favorite Lyric: C’mon, man.  The ENTIRE song!");
          songStorage.saveSong(anythingViva);
 
 
@@ -129,6 +130,23 @@ public class Populator implements CommandLineRunner {
 
          Song moneyGod = new Song("Money Is Not Our God", "5m 17s", 5);
          songStorage.saveSong(moneyGod);
+
+         Song ageGreed = new Song("Age of Greed", "7m 23s", 5,
+                 "Great lyrics with great energy behind them.  If this song does not make you angry, you may not have a pulse.  Favorite Lyric: Your money, my time\n" +
+                         "Your stinking industrial bathwater, my wine\n" +
+                         "Imbalance induces hate\n" +
+                         "How will you bridge the gap\n" +
+                         "Between the endless buffet\n" +
+                         "And the empty plate I have.");
+         songStorage.saveSong(ageGreed);
+
+         Song beautifulDead = new Song("The Beautiful Dead", "6m 2s", 5);
+         songStorage.saveSong(beautifulDead);
+
+         Song extremitites = new Song("Extremities", "5m 20s", 5);
+         songStorage.saveSong(extremitites);
+
+
 
          Album killers = new Album(jawList,"Killers", "Iron Maiden",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Iron_Maiden_Killers.jpg/220px-Iron_Maiden_Killers.jpg",
