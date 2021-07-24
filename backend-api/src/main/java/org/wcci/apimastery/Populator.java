@@ -219,7 +219,16 @@ public class Populator implements CommandLineRunner {
          Song intolerance = new Song("Intolerance", "4m 53s", 5);
          songStorage.saveSong(intolerance);
 
+         Song prisonSex = new Song("Prison Sex", "4m 56s", 5);
+         songStorage.saveSong(prisonSex);
 
+         Song sober = new Song("Sober", "5m 6s", 5);
+         songStorage.saveSong(sober);
+
+         Song bottom = new Song("Bottom", "7m 14s", 5);
+         songStorage.saveSong(bottom);
+
+         
 
 
     }
