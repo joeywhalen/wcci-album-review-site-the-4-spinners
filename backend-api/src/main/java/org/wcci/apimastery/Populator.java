@@ -146,7 +146,19 @@ public class Populator implements CommandLineRunner {
          Song extremitites = new Song("Extremities", "5m 20s", 5);
          songStorage.saveSong(extremitites);
 
+         Song intraveneous = new Song("Intravenous", "7m 2s", 5);
+         songStorage.saveSong(intraveneous);
 
+         Song insideTermite = new Song("Inside the Termite Mound", "7m 49s", 5);
+         songStorage.saveSong(insideTermite);
+
+         Song solitude = new Song("Solitude", "5m 2s", 5);
+         songStorage.saveSong(solitude);
+
+         Song northBorder = new Song("North of the Border", "5m 52s", 5);
+         songStorage.saveSong(northBorder);
+
+         
 
          Album killers = new Album(jawList,"Killers", "Iron Maiden",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Iron_Maiden_Killers.jpg/220px-Iron_Maiden_Killers.jpg",
