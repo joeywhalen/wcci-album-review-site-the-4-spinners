@@ -45,44 +45,44 @@ public class Populator implements CommandLineRunner {
                          "Swept away\" she shouted, she love it, getin away yeah!");
         songStorage.saveSong(welcomeToPlanet);
 //
-//        Song knuckleDuster = new Song("Knuckle Duster (Radio 1-A)", "0m 21s", 2);
-//        songStorage.saveSong(knuckleDuster);
+        Song knuckleDuster = new Song(laSex,"Knuckle Duster (Radio 1-A)", "0m 21s", 2);
+        songStorage.saveSong(knuckleDuster);
 //
-//        Song thunderKiss = new Song("Thunder Kiss '65", "3m 54s", 5);
-//        songStorage.saveSong(thunderKiss);
+        Song thunderKiss = new Song(laSex,"Thunder Kiss '65", "3m 54s", 5);
+        songStorage.saveSong(thunderKiss);
 //
-//        Song blackSun = new Song("Black Sunshine (featuring Iggy Pop)", "4m 49s", 5);
-//        songStorage.saveSong(blackSun);
+        Song blackSun = new Song(laSex,"Black Sunshine (featuring Iggy Pop)", "4m 49s", 5);
+        songStorage.saveSong(blackSun);
 //
-//        Song soulCrusher = new Song("Soul-Crusher (featuring Iggy Pop)", "5m 7s", 5);
-//        songStorage.saveSong(soulCrusher);
+        Song soulCrusher = new Song(laSex,"Soul-Crusher (featuring Iggy Pop)", "5m 7s", 5);
+        songStorage.saveSong(soulCrusher);
 //
-//        Song cosmicMon = new Song("Cosmic Monsters Inc.", "5m 13s", 4);
-//        songStorage.saveSong(cosmicMon);
+        Song cosmicMon = new Song(laSex,"Cosmic Monsters Inc.", "5m 13s", 4);
+        songStorage.saveSong(cosmicMon);
 //
-//        Song spiderbaby = new Song("Spiderbaby (Yeah-Yeah-Yeah)", "5m 1s", 4);
-//        songStorage.saveSong(spiderbaby);
+        Song spiderbaby = new Song(laSex,"Spiderbaby (Yeah-Yeah-Yeah)", "5m 1s", 4);
+        songStorage.saveSong(spiderbaby);
 //
-//        Song legend = new Song("I Am Legend", "5m 8s", 5);
-//        songStorage.saveSong(legend);
+        Song legend = new Song(laSex,"I Am Legend", "5m 8s", 5);
+        songStorage.saveSong(legend);
 //
-//        Song knuckleDuster2 = new Song("Knuckle Duster (Radio 2-B)", "0m 25s", 2);
-//        songStorage.saveSong(knuckleDuster2);
+        Song knuckleDuster2 = new Song(laSex,"Knuckle Duster (Radio 2-B)", "0m 25s", 2);
+        songStorage.saveSong(knuckleDuster2);
 //
-//        Song thrust = new Song("Thrust!", "5m 4s", 4);
-//        songStorage.saveSong(thrust);
+        Song thrust = new Song(laSex, "Thrust!", "5m 4s", 4);
+        songStorage.saveSong(thrust);
 //
-//        Song oneBig = new Song("One Big Crunch", "0m 21s", 2);
-//        songStorage.saveSong(oneBig);
+        Song oneBig = new Song(laSex, "One Big Crunch", "0m 21s", 2);
+        songStorage.saveSong(oneBig);
 //
-//        Song grindhouse = new Song("Grindhouse (A Go-Go)", "4m 5s", 4);
-//        songStorage.saveSong(grindhouse);
+        Song grindhouse = new Song(laSex, "Grindhouse (A Go-Go)", "4m 5s", 4);
+        songStorage.saveSong(grindhouse);
 //
-//        Song starface = new Song("Starface", "5m 2s", 4);
-//        songStorage.saveSong(starface);
+        Song starface = new Song(laSex, "Starface", "5m 2s", 4);
+        songStorage.saveSong(starface);
 //
-//        Song warpAsylum = new Song("Warp Asylum", "6m 44s", 5);
-//        songStorage.saveSong(warpAsylum);
+        Song warpAsylum = new Song(laSex, "Warp Asylum", "6m 44s", 5);
+        songStorage.saveSong(warpAsylum);
 //
 //
 //         Album nail = new Album(jawList,"Nail", "Foetus",
