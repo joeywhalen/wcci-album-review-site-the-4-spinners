@@ -32,18 +32,18 @@ public class Populator implements CommandLineRunner {
          List jawList = new List("jaw List");
          listStorage.saveList(jawList);
 
-//         Album laSex = new Album(jawList, "La Sexorcisto: Devil Music Volume One", "White Zombie",
-//                 "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg/220px-White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg",
-//                 "Song", "Geffen", "57m 30s", 5,
-//                 "https://www.youtube.com/embed/H8gHMU-pDbU",
-//                 "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun.");
-//         albumStorage.saveAlbum(laSex);
+         Album laSex = new Album(jawList, "La Sexorcisto: Devil Music Volume One", "White Zombie",
+                 "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg/220px-White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg",
+                  "Geffen", "57m 30s", 5,
+                 "https://www.youtube.com/embed/H8gHMU-pDbU",
+                 "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun.");
+         albumStorage.saveAlbum(laSex);
 //
-//         Song welcomeToPlanet = new Song("Welcome to Planet Motherfucker/Psychoholic Slag",
-//                 "6m 21s", 5,
-//                 "If this song doesn’t get you moving, you probably don’t have a pulse.  Favorite Lyric: So let me see ya howl'n through the keyhole\"god damn,\n" +
-//                         "Swept away\" she shouted, she love it, getin away yeah!");
-//        songStorage.saveSong(welcomeToPlanet);
+         Song welcomeToPlanet = new Song(laSex,"Welcome to Planet Motherfucker/Psychoholic Slag",
+                 "6m 21s", 5,
+                 "If this song doesn’t get you moving, you probably don’t have a pulse.  Favorite Lyric: So let me see ya howl'n through the keyhole\"god damn,\n" +
+                         "Swept away\" she shouted, she love it, getin away yeah!");
+        songStorage.saveSong(welcomeToPlanet);
 //
 //        Song knuckleDuster = new Song("Knuckle Duster (Radio 1-A)", "0m 21s", 2);
 //        songStorage.saveSong(knuckleDuster);
