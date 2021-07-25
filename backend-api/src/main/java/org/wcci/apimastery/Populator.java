@@ -209,19 +209,19 @@ public class Populator implements CommandLineRunner {
          Song drifter = new Song(killers, "Drifter", "4m 47s", 5);
          songStorage.saveSong(drifter);
 
-//         Album undertow = new Album(jawList,"Undertow", "Tool",
-//                 "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
-//                 "Song", "Zoo", "1h 9m 13s", 5,
-//                 "https://www.youtube.com/embed/I8yoVlkLERs",
-//                 "Just perfection from the lyrics to the vocals and the full, raw power of the instruments.  Could listen to this on an endless loop, stopping only to occasionally skip Sober as it was a bit overplayed.  This album sold me on all things Maynard.");
-//         albumStorage.saveAlbum(undertow);
-//
-//         Song intolerance = new Song("Intolerance", "4m 53s", 5);
-//         songStorage.saveSong(intolerance);
-//
-//         Song prisonSex = new Song("Prison Sex", "4m 56s", 5);
-//         songStorage.saveSong(prisonSex);
-//
+         Album undertow = new Album(jawList,"Undertow", "Tool",
+                 "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
+                  "Zoo", "1h 9m 13s", 5,
+                 "https://www.youtube.com/embed/I8yoVlkLERs",
+                 "Just perfection from the lyrics to the vocals and the full, raw power of the instruments.  Could listen to this on an endless loop, stopping only to occasionally skip Sober as it was a bit overplayed.  This album sold me on all things Maynard.");
+         albumStorage.saveAlbum(undertow);
+
+         Song intolerance = new Song(undertow, "Intolerance", "4m 53s", 5);
+         songStorage.saveSong(intolerance);
+
+         Song prisonSex = new Song(undertow, "Prison Sex", "4m 56s", 5);
+         songStorage.saveSong(prisonSex);
+
 //         Song sober = new Song("Sober", "5m 6s", 4);
 //         songStorage.saveSong(sober);
 //
