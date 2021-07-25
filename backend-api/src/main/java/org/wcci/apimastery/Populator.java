@@ -184,31 +184,31 @@ public class Populator implements CommandLineRunner {
          Song rueMorgue = new Song(killers, "Murders in the Rue Morgue", "4m 14s", 5);
          songStorage.saveSong(rueMorgue);
 
-//         Song anotherLife = new Song("Another Life", "3m 22s", 5);
-//         songStorage.saveSong(anotherLife);
-//
-//         Song genghisKhan = new Song("Genghis Khan (instrumental)", "3m 2s", 5);
-//         songStorage.saveSong(genghisKhan);
-//
-//         Song innocentExile = new Song("Innocent Exile", "3m 50s", 5);
-//         songStorage.saveSong(innocentExile);
-//
-//         Song killersSong = new Song("Killers", "4m 58s", 5);
-//         songStorage.saveSong(killersSong);
-//
-//         Song prodigalSon = new Song("Prodigal Son", "6m 5s", 5,
-//                 "Beautiful and haunting.  Such a shame that the band doesn’t appear to agree as I don’t believe they have ever played it on tour.  Favorite Lyric: Oh Lamia, please, try to help me\n" +
-//                         "The devil's got a hold of my soul and he won't let me be\n" +
-//                         "Lamia, I've got this curse, I'm turning to bad\n" +
-//                         "The devil's got a hold of my soul, he's driving me mad.");
-//         songStorage.saveSong(prodigalSon);
-//
-//         Song purgatory = new Song("Purgatory", "3m 18s", 5);
-//         songStorage.saveSong(purgatory);
-//
-//         Song drifter = new Song("Drifter", "4m 47s", 5);
-//         songStorage.saveSong(drifter);
-//
+         Song anotherLife = new Song(killers, "Another Life", "3m 22s", 5);
+         songStorage.saveSong(anotherLife);
+
+         Song genghisKhan = new Song(killers, "Genghis Khan (instrumental)", "3m 2s", 5);
+         songStorage.saveSong(genghisKhan);
+
+         Song innocentExile = new Song(killers, "Innocent Exile", "3m 50s", 5);
+         songStorage.saveSong(innocentExile);
+
+         Song killersSong = new Song(killers, "Killers", "4m 58s", 5);
+         songStorage.saveSong(killersSong);
+
+         Song prodigalSon = new Song(killers, "Prodigal Son", "6m 5s", 5,
+                 "Beautiful and haunting.  Such a shame that the band doesn’t appear to agree as I don’t believe they have ever played it on tour.  Favorite Lyric: Oh Lamia, please, try to help me\n" +
+                         "The devil's got a hold of my soul and he won't let me be\n" +
+                         "Lamia, I've got this curse, I'm turning to bad\n" +
+                         "The devil's got a hold of my soul, he's driving me mad.");
+         songStorage.saveSong(prodigalSon);
+
+         Song purgatory = new Song(killers, "Purgatory", "3m 18s", 5);
+         songStorage.saveSong(purgatory);
+
+         Song drifter = new Song(killers, "Drifter", "4m 47s", 5);
+         songStorage.saveSong(drifter);
+
 //         Album undertow = new Album(jawList,"Undertow", "Tool",
 //                 "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
 //                 "Song", "Zoo", "1h 9m 13s", 5,
