@@ -98,27 +98,27 @@ public class Populator implements CommandLineRunner {
          Song throneAgony = new Song(nail, "The Throne of Agony", "5m 18s", 5);
          songStorage.saveSong(throneAgony);
 //
-//         Song exclamation = new Song("!", "0m 4s", 4);
-//         songStorage.saveSong(exclamation);
+         Song exclamation = new Song(nail, "!", "0m 4s", 4);
+         songStorage.saveSong(exclamation);
 //
-//         Song descentInferno = new Song("Descent into the Inferno", "6m 17s", 5);
-//         songStorage.saveSong(descentInferno);
+         Song descentInferno = new Song(nail, "Descent into the Inferno", "6m 17s", 5);
+         songStorage.saveSong(descentInferno);
 //
-//         Song enterExterminator = new Song("Enter the Exterminator", "4m 43s", 5);
-//         songStorage.saveSong(enterExterminator);
+         Song enterExterminator = new Song(nail, "Enter the Exterminator", "4m 43s", 5);
+         songStorage.saveSong(enterExterminator);
 //
-//         Song di19026 = new Song("DI-1-9026", "4m 40s", 5);
-//         songStorage.saveSong(di19026);
+         Song di19026 = new Song(nail, "DI-1-9026", "4m 40s", 5);
+         songStorage.saveSong(di19026);
 //
-//         Song overturePigdom = new Song("The Overture from Pigdom Come", "3m 1s", 5);
-//         songStorage.saveSong(overturePigdom);
+         Song overturePigdom = new Song(nail, "The Overture from Pigdom Come", "3m 1s", 5);
+         songStorage.saveSong(overturePigdom);
 //
-//         Song privateWar = new Song("Private War", "1m 6s", 5);
-//         songStorage.saveSong(privateWar);
+         Song privateWar = new Song(nail, "Private War", "1m 6s", 5);
+         songStorage.saveSong(privateWar);
 //
-//         Song anythingViva = new Song("Anything (Viva!)", "6m 50s", 5,
-//                 "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.  Favorite Lyric: C’mon, man.  The ENTIRE song!");
-//         songStorage.saveSong(anythingViva);
+         Song anythingViva = new Song(nail, "Anything (Viva!)", "6m 50s", 5,
+                 "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.  Favorite Lyric: C’mon, man.  The ENTIRE song!");
+         songStorage.saveSong(anythingViva);
 //
 //
 //         Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
