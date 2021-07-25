@@ -53,4 +53,16 @@ public class JpaWiringTest {
         Song retrievedSong = songRepository.findById(testSong.getId()).get();
         assertThat(retrievedSong).isEqualTo(testSong);
     }
+
+    @Test
+    public void albumsShouldBeAttachedToAList() {
+        List testList = new List("listName");
+        listRepository.save(testList);
+        Album testAlbum1 = new Album(testList, "Album title","Artist", "WWW.com",
+                "Record label", "90", 5,"video.com");
+        albumRepository.save(testAlbum1);
+        Album retrievedAlbum = albumRepository.findById(testAlbum1.getId()).get();
+        assertThat(retrievedAlbum.getList()).isEqualTo(testList);
+        assertThat(retrievedAlbum).isEqualTo(testAlbum1);
+    }
 }
