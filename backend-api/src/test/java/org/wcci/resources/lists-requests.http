@@ -1,0 +1,4 @@
+### Get all lists
+GET http://localhost:8080/api/lists
+Accept: application/json
+

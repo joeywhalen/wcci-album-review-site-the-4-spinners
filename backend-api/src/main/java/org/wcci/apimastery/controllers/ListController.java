@@ -1,6 +1,7 @@
 package org.wcci.apimastery.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
+import org.wcci.apimastery.resources.List;
 import org.wcci.apimastery.storage.AlbumRepository;
 import org.wcci.apimastery.storage.ListStorage;
 import org.wcci.apimastery.storage.SongRepository;
@@ -19,4 +20,11 @@ public class ListController {
     }
 
 
+    public ListController(ListStorage listStorage) {
+
+    }
+    //
+    public Iterable<List> retrieveAllList() {
+        return listStorage.retrieveAllList();
+    }
 }
