@@ -8,6 +8,7 @@ import org.wcci.apimastery.storage.ListStorage;
 
 import java.util.Collections;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -25,6 +26,10 @@ public class ListControllerTest {
 
     @Test
     public void shouldRetrieveAllLists() {
+        //Arrangement
+        //Action
         Iterable<List> lists = underTest.retrieveAllList();
+        //Assertion
+        assertThat(lists).contains(new List("testList"));
     }
 }

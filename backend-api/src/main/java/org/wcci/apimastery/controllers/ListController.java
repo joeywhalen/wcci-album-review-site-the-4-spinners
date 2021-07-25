@@ -1,30 +1,41 @@
 package org.wcci.apimastery.controllers;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.resources.List;
-import org.wcci.apimastery.storage.AlbumRepository;
-import org.wcci.apimastery.storage.ListStorage;
-import org.wcci.apimastery.storage.SongRepository;
+import org.wcci.apimastery.storage.*;
 
 @RestController
 public class ListController {
 
     private ListStorage listStorage;
+//    private AlbumStorage albumStorage;
+//    private SongStorage songStorage;
     private AlbumRepository albumRepository;
-    private SongRepository songongRepository;
+    private SongRepository songRepository;
 
-    public ListController(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songongRepository) {
+    public ListController(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songRepository) {
         this.listStorage = listStorage;
         this.albumRepository = albumRepository;
-        this.songongRepository = songongRepository;
+        this.songRepository = songRepository;
     }
 
+//    public ListController(ListStorage listStorage, AlbumStorage albumStorage, SongStorage songStorage) {
+//        this.listStorage = listStorage;
+//        this.albumStorage = albumStorage;
+//        this.songStorage = songStorage;
+//    }
 
-    public ListController(ListStorage listStorage) {
 
-    }
-    //
+//    public ListController(ListStorage listStorage) {
+//
+//    }
+
+    //GET localhost:8080/api/lists
+    @GetMapping("/api/lists")
     public Iterable<List> retrieveAllList() {
         return listStorage.retrieveAllList();
     }
+
+
 }
