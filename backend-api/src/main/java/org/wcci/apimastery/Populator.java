@@ -222,36 +222,36 @@ public class Populator implements CommandLineRunner {
          Song prisonSex = new Song(undertow, "Prison Sex", "4m 56s", 5);
          songStorage.saveSong(prisonSex);
 
-//         Song sober = new Song("Sober", "5m 6s", 4);
-//         songStorage.saveSong(sober);
-//
-//         Song bottom = new Song("Bottom", "7m 14s", 5);
-//         songStorage.saveSong(bottom);
-//
-//         Song crawlAway = new Song("Crawl Away", "5m 30s", 5);
-//         songStorage.saveSong(crawlAway);
-//
-//         Song swampSong = new Song("Swamp Song", "5m 31s", 5,
-//                 "If your neck does not need a brace after listening to this song, you may not have a pulse.");
-//         songStorage.saveSong(swampSong);
-//
-//         Song undertowSong = new Song("Undertow", "5m 22s", 5);
-//         songStorage.saveSong(undertowSong);
-//
-//         Song fourDegrees = new Song("4°", "6m 3s", 5,
-//                 " Favorite Lyric: Locked up inside you\n" +
-//                         "Like the calm beneath castles\n" +
-//                         "Is a cavern of treasures that\n" +
-//                         "Noone has been to\n" +
-//                         "Let's go digging.");
-//         songStorage.saveSong(fourDegrees);
-//
-//         Song flood = new Song("Flood", "7m 46s", 5);
-//         songStorage.saveSong(flood);
-//
-//         Song disgustipated = new Song("Disgustipated", "15m 47s", 5,
-//                 "Favorite Lyric: Let the rabbits wear glasses");
-//         songStorage.saveSong(disgustipated);
+         Song sober = new Song(undertow, "Sober", "5m 6s", 4);
+         songStorage.saveSong(sober);
+
+         Song bottom = new Song(undertow, "Bottom", "7m 14s", 5);
+         songStorage.saveSong(bottom);
+
+         Song crawlAway = new Song(undertow, "Crawl Away", "5m 30s", 5);
+         songStorage.saveSong(crawlAway);
+
+         Song swampSong = new Song(undertow, "Swamp Song", "5m 31s", 5,
+                 "If your neck does not need a brace after listening to this song, you may not have a pulse.");
+         songStorage.saveSong(swampSong);
+
+         Song undertowSong = new Song(undertow, "Undertow", "5m 22s", 5);
+         songStorage.saveSong(undertowSong);
+
+         Song fourDegrees = new Song(undertow, "4°", "6m 3s", 5,
+                 " Favorite Lyric: Locked up inside you\n" +
+                         "Like the calm beneath castles\n" +
+                         "Is a cavern of treasures that\n" +
+                         "Noone has been to\n" +
+                         "Let's go digging.");
+         songStorage.saveSong(fourDegrees);
+
+         Song flood = new Song(undertow, "Flood", "7m 46s", 5);
+         songStorage.saveSong(flood);
+
+         Song disgustipated = new Song(undertow, "Disgustipated", "15m 47s", 5,
+                 "Favorite Lyric: Let the rabbits wear glasses");
+         songStorage.saveSong(disgustipated);
 
          
 
