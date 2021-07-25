@@ -38,134 +38,134 @@ public class Populator implements CommandLineRunner {
                  "https://www.youtube.com/embed/H8gHMU-pDbU",
                  "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun.");
          albumStorage.saveAlbum(laSex);
-//
+
          Song welcomeToPlanet = new Song(laSex,"Welcome to Planet Motherfucker/Psychoholic Slag",
                  "6m 21s", 5,
                  "If this song doesn’t get you moving, you probably don’t have a pulse.  Favorite Lyric: So let me see ya howl'n through the keyhole\"god damn,\n" +
                          "Swept away\" she shouted, she love it, getin away yeah!");
         songStorage.saveSong(welcomeToPlanet);
-//
+
         Song knuckleDuster = new Song(laSex,"Knuckle Duster (Radio 1-A)", "0m 21s", 2);
         songStorage.saveSong(knuckleDuster);
-//
+
         Song thunderKiss = new Song(laSex,"Thunder Kiss '65", "3m 54s", 5);
         songStorage.saveSong(thunderKiss);
-//
+
         Song blackSun = new Song(laSex,"Black Sunshine (featuring Iggy Pop)", "4m 49s", 5);
         songStorage.saveSong(blackSun);
-//
+
         Song soulCrusher = new Song(laSex,"Soul-Crusher (featuring Iggy Pop)", "5m 7s", 5);
         songStorage.saveSong(soulCrusher);
-//
+
         Song cosmicMon = new Song(laSex,"Cosmic Monsters Inc.", "5m 13s", 4);
         songStorage.saveSong(cosmicMon);
-//
+
         Song spiderbaby = new Song(laSex,"Spiderbaby (Yeah-Yeah-Yeah)", "5m 1s", 4);
         songStorage.saveSong(spiderbaby);
-//
+
         Song legend = new Song(laSex,"I Am Legend", "5m 8s", 5);
         songStorage.saveSong(legend);
-//
+
         Song knuckleDuster2 = new Song(laSex,"Knuckle Duster (Radio 2-B)", "0m 25s", 2);
         songStorage.saveSong(knuckleDuster2);
-//
+
         Song thrust = new Song(laSex, "Thrust!", "5m 4s", 4);
         songStorage.saveSong(thrust);
-//
+
         Song oneBig = new Song(laSex, "One Big Crunch", "0m 21s", 2);
         songStorage.saveSong(oneBig);
-//
+
         Song grindhouse = new Song(laSex, "Grindhouse (A Go-Go)", "4m 5s", 4);
         songStorage.saveSong(grindhouse);
-//
+
         Song starface = new Song(laSex, "Starface", "5m 2s", 4);
         songStorage.saveSong(starface);
-//
+
         Song warpAsylum = new Song(laSex, "Warp Asylum", "6m 44s", 5);
         songStorage.saveSong(warpAsylum);
-//
-//
+
+
          Album nail = new Album(jawList,"Nail", "Foetus",
                  "https://upload.wikimedia.org/wikipedia/en/b/b5/Foetus_Nail.jpg",
                   "Self Immolation/Some Bizzare", "40m 4s", 5,
                  "https://www.youtube.com/embed/OnY63APl_6c",
                  "J.G. Thirlwell is a lyrical genius and this is his masterpiece.  One of the pioneers of the ‘industrial’ sound, and some classical overtures thrown in for good measure.  References run the gamut from Hamlet to Timothy Leary, to the Manson murders, to Jack and the Beanstalk.");
          albumStorage.saveAlbum(nail);
-//
+
          Song themePigdom = new Song(nail, "Theme from Pigdom Come", "1m 52s", 5);
          songStorage.saveSong(themePigdom);
-//
+
          Song throneAgony = new Song(nail, "The Throne of Agony", "5m 18s", 5);
          songStorage.saveSong(throneAgony);
-//
+
          Song exclamation = new Song(nail, "!", "0m 4s", 4);
          songStorage.saveSong(exclamation);
-//
+
          Song descentInferno = new Song(nail, "Descent into the Inferno", "6m 17s", 5);
          songStorage.saveSong(descentInferno);
-//
+
          Song enterExterminator = new Song(nail, "Enter the Exterminator", "4m 43s", 5);
          songStorage.saveSong(enterExterminator);
-//
+
          Song di19026 = new Song(nail, "DI-1-9026", "4m 40s", 5);
          songStorage.saveSong(di19026);
-//
+
          Song overturePigdom = new Song(nail, "The Overture from Pigdom Come", "3m 1s", 5);
          songStorage.saveSong(overturePigdom);
-//
+
          Song privateWar = new Song(nail, "Private War", "1m 6s", 5);
          songStorage.saveSong(privateWar);
-//
+
          Song anythingViva = new Song(nail, "Anything (Viva!)", "6m 50s", 5,
                  "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.  Favorite Lyric: C’mon, man.  The ENTIRE song!");
          songStorage.saveSong(anythingViva);
-//
-//
+
+
          Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg/220px-Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg",
                   "Noise", "1h 5m 8s", 5,
                  "https://www.youtube.com/embed/dCs0D6AJUuM",
                  "Quite the departure from their previous album “Outside the Gate” as Martin Atkins (PIL, Pigface) joins the band for a ‘one and done’ on drums.  This one turns it ‘up to 11’ with not only the power of the sound, but the lyrics as well.  So thankful to have seen them on tour at Bogarts in Cincy supporting this album.  Good times.");
          albumStorage.saveAlbum(extremities);
-//
+
          Song moneyGod = new Song(extremities, "Money Is Not Our God", "5m 17s", 5);
          songStorage.saveSong(moneyGod);
-//
-//         Song ageGreed = new Song("Age of Greed", "7m 23s", 5,
-//                 "Great lyrics with great energy behind them.  If this song does not make you angry, you may not have a pulse.  Favorite Lyric: Your money, my time\n" +
-//                         "Your stinking industrial bathwater, my wine\n" +
-//                         "Imbalance induces hate\n" +
-//                         "How will you bridge the gap\n" +
-//                         "Between the endless buffet\n" +
-//                         "And the empty plate I have.");
-//         songStorage.saveSong(ageGreed);
-//
-//         Song beautifulDead = new Song("The Beautiful Dead", "6m 2s", 5);
-//         songStorage.saveSong(beautifulDead);
-//
-//         Song extremitites = new Song("Extremities", "5m 20s", 5);
-//         songStorage.saveSong(extremitites);
-//
-//         Song intraveneous = new Song("Intravenous", "7m 2s", 5);
-//         songStorage.saveSong(intraveneous);
-//
-//         Song insideTermite = new Song("Inside the Termite Mound", "7m 49s", 5);
-//         songStorage.saveSong(insideTermite);
-//
-//         Song solitude = new Song("Solitude", "5m 2s", 5);
-//         songStorage.saveSong(solitude);
-//
-//         Song northBorder = new Song("North of the Border", "5m 52s", 5);
-//         songStorage.saveSong(northBorder);
-//
-//         Song slipstream = new Song("Slipstream", "7m 7s", 5);
-//         songStorage.saveSong(slipstream);
-//
-//         Song kaliyuga = new Song("Kaliyuga", "2m 8s", 5);
-//         songStorage.saveSong(kaliyuga);
-//
-//         Song struggle = new Song("Struggle", "6m 13s", 5);
-//         songStorage.saveSong(struggle);
+
+         Song ageGreed = new Song(extremities, "Age of Greed", "7m 23s", 5,
+                 "Great lyrics with great energy behind them.  If this song does not make you angry, you may not have a pulse.  Favorite Lyric: Your money, my time\n" +
+                         "Your stinking industrial bathwater, my wine\n" +
+                         "Imbalance induces hate\n" +
+                         "How will you bridge the gap\n" +
+                         "Between the endless buffet\n" +
+                         "And the empty plate I have.");
+         songStorage.saveSong(ageGreed);
+
+         Song beautifulDead = new Song(extremities, "The Beautiful Dead", "6m 2s", 5);
+         songStorage.saveSong(beautifulDead);
+
+         Song extremitites = new Song(extremities, "Extremities", "5m 20s", 5);
+         songStorage.saveSong(extremitites);
+
+         Song intraveneous = new Song(extremities, "Intravenous", "7m 2s", 5);
+         songStorage.saveSong(intraveneous);
+
+         Song insideTermite = new Song(extremities, "Inside the Termite Mound", "7m 49s", 5);
+         songStorage.saveSong(insideTermite);
+
+         Song solitude = new Song(extremities, "Solitude", "5m 2s", 5);
+         songStorage.saveSong(solitude);
+
+         Song northBorder = new Song(extremities, "North of the Border", "5m 52s", 5);
+         songStorage.saveSong(northBorder);
+
+         Song slipstream = new Song(extremities, "Slipstream", "7m 7s", 5);
+         songStorage.saveSong(slipstream);
+
+         Song kaliyuga = new Song(extremities, "Kaliyuga", "2m 8s", 5);
+         songStorage.saveSong(kaliyuga);
+
+         Song struggle = new Song(extremities, "Struggle", "6m 13s", 5);
+         songStorage.saveSong(struggle);
 //
 //
 //         Album killers = new Album(jawList,"Killers", "Iron Maiden",
