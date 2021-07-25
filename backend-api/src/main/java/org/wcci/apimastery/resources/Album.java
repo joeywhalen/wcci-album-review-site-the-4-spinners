@@ -17,7 +17,7 @@ public class Album {
     private String title;
     private String artist;
     private String imageURL;
-    private String song;
+//    private String song;
     private String recordLabel;
     private String duration;
     private int rating;
@@ -28,7 +28,10 @@ public class Album {
     @ManyToOne
     private List list;
 
-    @ManyToMany(mappedBy = "albums")
+//    @ManyToMany(mappedBy = "albums")
+//    private Collection<Song> songs;
+
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
     
     @Lob
@@ -41,12 +44,12 @@ public class Album {
 
     }
 
-    public Album (List list, String title, String artist, String imageURL, String song, String recordLabel, String duration, int rating, String videoUrl, String... comments){
+    public Album (List list, String title, String artist, String imageURL, String recordLabel, String duration, int rating, String videoUrl, String... comments){
         this.list = list;
         this.title = title;
         this.artist = artist;
         this.imageURL = imageURL;
-        this.song = song;
+//        this.song = song;
         this.recordLabel = recordLabel;
         this.duration = duration;
         this.rating = rating;
@@ -74,9 +77,13 @@ public class Album {
         return imageURL;
     }
 
-    public String getSong(){
-        return song;
+    public Collection<Song> getSongs() {
+        return songs;
     }
+
+    //    public String getSong(){
+//        return song;
+//    }
 
     public String getRecordLabel(){
         return recordLabel;
