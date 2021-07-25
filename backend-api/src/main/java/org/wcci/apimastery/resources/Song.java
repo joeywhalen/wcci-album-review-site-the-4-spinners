@@ -17,8 +17,11 @@ public class Song {
     @Column(name="SONG_ID")
     private Long id;
 
-    @ManyToMany
-    private Collection<Album> albums;
+    @ManyToOne
+    private Album album;
+
+//    @ManyToMany
+//    private Collection<Album> albums;
 
     @Lob
     @ElementCollection
@@ -31,14 +34,19 @@ public class Song {
     protected Song() {
     };
 
-    public Song(String songTitle, String length, int starRating, String... comments) {
+    public Song(Album album, String songTitle, String length, int starRating, String... comments) {
+        this.album = album;
         this.songTitle = songTitle;
         this.length = length;
         this.starRating = starRating;
         this.comments = Set.of(comments);
     }
 
-    public String getSong() {
+    public Album getAlbum() {
+        return album;
+    }
+
+    public String getSongTitle() {
         return songTitle;
     }
 
@@ -54,4 +62,7 @@ public class Song {
         return id;
     }
 
+    public Iterable<String> getComments() {
+        return comments;
+    }
 }
