@@ -121,15 +121,15 @@ public class Populator implements CommandLineRunner {
          songStorage.saveSong(anythingViva);
 //
 //
-//         Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
-//                 "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg/220px-Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg",
-//                 "Song", "Noise", "1h 5m 8s", 5,
-//                 "https://www.youtube.com/embed/dCs0D6AJUuM",
-//                 "Quite the departure from their previous album “Outside the Gate” as Martin Atkins (PIL, Pigface) joins the band for a ‘one and done’ on drums.  This one turns it ‘up to 11’ with not only the power of the sound, but the lyrics as well.  So thankful to have seen them on tour at Bogarts in Cincy supporting this album.  Good times.");
-//         albumStorage.saveAlbum(extremities);
+         Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
+                 "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg/220px-Killing_scene_Extremeties_Dirt_%26_Various_Repressed_Emotions.jpg",
+                  "Noise", "1h 5m 8s", 5,
+                 "https://www.youtube.com/embed/dCs0D6AJUuM",
+                 "Quite the departure from their previous album “Outside the Gate” as Martin Atkins (PIL, Pigface) joins the band for a ‘one and done’ on drums.  This one turns it ‘up to 11’ with not only the power of the sound, but the lyrics as well.  So thankful to have seen them on tour at Bogarts in Cincy supporting this album.  Good times.");
+         albumStorage.saveAlbum(extremities);
 //
-//         Song moneyGod = new Song("Money Is Not Our God", "5m 17s", 5);
-//         songStorage.saveSong(moneyGod);
+         Song moneyGod = new Song(extremities, "Money Is Not Our God", "5m 17s", 5);
+         songStorage.saveSong(moneyGod);
 //
 //         Song ageGreed = new Song("Age of Greed", "7m 23s", 5,
 //                 "Great lyrics with great energy behind them.  If this song does not make you angry, you may not have a pulse.  Favorite Lyric: Your money, my time\n" +
