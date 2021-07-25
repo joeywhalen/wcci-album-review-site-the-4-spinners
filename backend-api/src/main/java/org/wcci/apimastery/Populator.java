@@ -85,18 +85,18 @@ public class Populator implements CommandLineRunner {
         songStorage.saveSong(warpAsylum);
 //
 //
-//         Album nail = new Album(jawList,"Nail", "Foetus",
-//                 "https://upload.wikimedia.org/wikipedia/en/b/b5/Foetus_Nail.jpg",
-//                 "Song", "Self Immolation/Some Bizzare", "40m 4s", 5,
-//                 "https://www.youtube.com/embed/OnY63APl_6c",
-//                 "J.G. Thirlwell is a lyrical genius and this is his masterpiece.  One of the pioneers of the ‘industrial’ sound, and some classical overtures thrown in for good measure.  References run the gamut from Hamlet to Timothy Leary, to the Manson murders, to Jack and the Beanstalk.");
-//         albumStorage.saveAlbum(nail);
+         Album nail = new Album(jawList,"Nail", "Foetus",
+                 "https://upload.wikimedia.org/wikipedia/en/b/b5/Foetus_Nail.jpg",
+                  "Self Immolation/Some Bizzare", "40m 4s", 5,
+                 "https://www.youtube.com/embed/OnY63APl_6c",
+                 "J.G. Thirlwell is a lyrical genius and this is his masterpiece.  One of the pioneers of the ‘industrial’ sound, and some classical overtures thrown in for good measure.  References run the gamut from Hamlet to Timothy Leary, to the Manson murders, to Jack and the Beanstalk.");
+         albumStorage.saveAlbum(nail);
 //
-//         Song themePigdom = new Song("Theme from Pigdom Come", "1m 52s", 5);
-//         songStorage.saveSong(themePigdom);
+         Song themePigdom = new Song(nail, "Theme from Pigdom Come", "1m 52s", 5);
+         songStorage.saveSong(themePigdom);
 //
-//         Song throneAgony = new Song("The Throne of Agony", "5m 18s", 5);
-//         songStorage.saveSong(throneAgony);
+         Song throneAgony = new Song(nail, "The Throne of Agony", "5m 18s", 5);
+         songStorage.saveSong(throneAgony);
 //
 //         Song exclamation = new Song("!", "0m 4s", 4);
 //         songStorage.saveSong(exclamation);
