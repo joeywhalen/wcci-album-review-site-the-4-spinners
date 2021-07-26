@@ -11,8 +11,6 @@ import org.wcci.apimastery.storage.*;
 public class ListController {
 
     private ListStorage listStorage;
-   private AlbumStorage albumStorage;
-   private SongStorage songStorage;
     private AlbumRepository albumRepository;
     private SongRepository songRepository;
 
@@ -21,24 +19,6 @@ public class ListController {
         this.albumRepository = albumRepository;
         this.songRepository = songRepository;
     }
-
-
-//    public ListController(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songRepository) {
-//        this.listStorage = listStorage;
-//        this.albumRepository = albumRepository;
-//        this.songRepository = songRepository;
-//    }
-
-//    public ListController(ListStorage listStorage, AlbumStorage albumStorage, SongStorage songStorage) {
-//        this.listStorage = listStorage;
-//        this.albumStorage = albumStorage;
-//        this.songStorage = songStorage;
-//    }
-
-
-//    public ListController(ListStorage listStorage) {
-//
-//    }
 
     //GET http://localhost:8080/api/lists
     @GetMapping("/api/lists")
@@ -116,7 +96,7 @@ public class ListController {
 
     //### Delete an album with id from a list.
     //DELETE http://localhost:8080/api/lists/1/albums/2
-    @DeleteMapping("/api/lists/{id}/albums/{albumId")
+    @DeleteMapping("/api/lists/{id}/albums/{albumId}")
     public List deleteAlbumFromList(@PathVariable Long id, @PathVariable Long albumId) {
         List listToChange = listStorage.retrieveListById(id);
         Album album = albumRepository.findById(albumId).get();
