@@ -130,9 +130,9 @@ public class ListController {
         return listStorage.retrieveAlbumById(albumId).getSongs();
     }
 
-//     ### Add new song to specific album
-// PATCH http://localhost:8080/api/lists/5/albums/6/songs
-// Content-Type: application/json
+    //     ### Add new song to specific album
+    // PATCH http://localhost:8080/api/lists/5/albums/6/songs
+    // Content-Type: application/json
     @PatchMapping("/api/lists/{id}/albums/{albumId}/songs")
     public Album addSongToAlbum(@PathVariable Long id, @PathVariable Long albumId, @RequestBody Song songToAdd) {
         Album albumToChange = listStorage.retrieveAlbumById(albumId);
@@ -143,13 +143,23 @@ public class ListController {
         return albumToChange;
     }
 
-//     ### Delete a Song off a specific album
-// DELETE http://localhost:8080/api/lists/5/albums/6/songs
+    //     ### Delete a Song off a specific album
+    // DELETE http://localhost:8080/api/lists/5/albums/6/songs
     @DeleteMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}")
     public Album deleteSongFromAlbum(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId) {
         Album albumToChange = listStorage.retrieveAlbumById(albumId);
         Song song = songRepository.findById(songId).get();
         albumToChange.removeSong(song);
         return albumToChange;
+    }
+
+    //     ### Change Song Title
+    // PATCH http://localhost:8080/api/lists/5/albums/6/songs/7/songTitle
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/songTitle")
+    public Song changeSongTitle(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId, @RequestBody String newSongTitle){
+        Song songToChange = songRepository.findById(songId).get();
+        songToChange.changeSongTitle(newSongTitle);
+        songRepository.save(songToChange);
+        return songToChange;
     }
 }

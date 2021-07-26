@@ -88,3 +88,8 @@ Content-Type: application/json
 
 ### Delete a Song off a specific album
 DELETE http://localhost:8080/api/lists/5/albums/6/songs/7
+
+### Change Song Title
+PATCH http://localhost:8080/api/lists/5/albums/6/songs/7/songTitle
+
+New Changed Song Title
