@@ -64,6 +64,15 @@ public class ListController {
         return listStorage.retrieveAllList();
     }
 
-
+    //PUT http://localhost:8080/api/lists
+    //Content-Type: application/json
+    //{"id":1, "listName": "MaynardList"}
+    @PutMapping("/api/lists")
+    public Iterable<List> modifyList(@RequestBody List listToModify) {
+        if (listToModify.getId()!=null) {
+            listStorage.saveList(listToModify);
+        }
+        return listStorage.retrieveAllList();
+    }
 
 }

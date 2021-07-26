@@ -14,4 +14,12 @@ Content-Type: application/json
 
 {"listName": "BobList"}
 
+### Update a List resource
+PUT http://localhost:8080/api/lists
+Content-Type: application/json
+
+{"id":1, "listName": "MaynardList"}
+
+
+
 
