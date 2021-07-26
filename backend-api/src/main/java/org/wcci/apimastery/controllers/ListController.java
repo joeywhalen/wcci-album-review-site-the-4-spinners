@@ -11,14 +11,19 @@ public class ListController {
     private ListStorage listStorage;
 //    private AlbumStorage albumStorage;
 //    private SongStorage songStorage;
-    private AlbumRepository albumRepository;
-    private SongRepository songRepository;
+//    private AlbumRepository albumRepository;
+//    private SongRepository songRepository;
 
-    public ListController(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songRepository) {
+    public ListController(ListStorage listStorage) {
         this.listStorage = listStorage;
-        this.albumRepository = albumRepository;
-        this.songRepository = songRepository;
     }
+
+
+//    public ListController(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songRepository) {
+//        this.listStorage = listStorage;
+//        this.albumRepository = albumRepository;
+//        this.songRepository = songRepository;
+//    }
 
 //    public ListController(ListStorage listStorage, AlbumStorage albumStorage, SongStorage songStorage) {
 //        this.listStorage = listStorage;
@@ -37,5 +42,7 @@ public class ListController {
         return listStorage.retrieveAllList();
     }
 
+    //GET localhost:8080/api/lists/1
+    
 
 }
