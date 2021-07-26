@@ -37,6 +37,10 @@ public class List {
         albums.add(album);
     }
 
+    public void removeAlbum(Album album) {
+        albums.remove(album);
+    }
+
     public void changeListName(String newListName) {
         listName = newListName;
     }

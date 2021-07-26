@@ -106,4 +106,16 @@ public class ListController {
         return listToChange;
     }
 
+    //### Delete an album with id from a list.
+    //DELETE http://localhost:8080/api/lists/1/albums/2
+    @DeleteMapping("/api/lists/{id}/albums/{albumId")
+    public List deleteAlbumFromList(@PathVariable Long id, @PathVariable Long albumId) {
+        List listToChange = listStorage.retrieveListById(id);
+        Album album = albumRepository.findById(albumId).get();
+        listToChange.removeAlbum(album);
+        albumRepository.deleteById(albumId);
+        listStorage.saveList(listToChange);
+        return listToChange;
+    }
+
 }

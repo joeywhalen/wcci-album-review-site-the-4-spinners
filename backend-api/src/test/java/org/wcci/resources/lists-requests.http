@@ -31,6 +31,8 @@ Content-Type: application/json
 
 {"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL","comments": "Sample commenrs"}
 
+### Delete an album with id from a list.
+DELETE http://localhost:8080/api/lists/1/albums/2
 
 
 
