@@ -1,6 +1,7 @@
 package org.wcci.apimastery.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.resources.List;
 import org.wcci.apimastery.storage.*;
@@ -43,6 +44,11 @@ public class ListController {
     }
 
     //GET localhost:8080/api/lists/1
-    
+    @GetMapping
+    public List retrieveListById(@PathVariable Long id) {
+        return listStorage.retrieveListById(id);
+    }
+
+
 
 }
