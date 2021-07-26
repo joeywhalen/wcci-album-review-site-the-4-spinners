@@ -8,7 +8,7 @@ import org.wcci.apimastery.resources.List;
 public class ListStorage {
     private ListRepository listRepository;
 
-    private ListStorage(ListRepository listRepository){
+    public ListStorage(ListRepository listRepository){
         this.listRepository = listRepository;
     }
 
