@@ -78,6 +78,16 @@ public class ListController {
         return listStorage.retrieveListById(id).getAlbums();
     }
 
+    //     ### Update Albums name property
+    // PATCH http://localhost:8080/api/lists/5/albums/6/albumName
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/albumName")
+    public Album changeAlbumName(@PathVariable Long id, @PathVariable Long albumId, @RequestBody String albumTitle){
+        Album albumToChange = albumRepository.findById(albumId).get();
+        albumToChange.changeAlbumTitle(albumTitle);
+        albumRepository.save(albumToChange);
+        return albumToChange;
+    }
+
     //### Add a new album resource to the list's albums.
     //PATCH http://localhost:8080/api/lists/1/albums
     //Content-Type: application/json

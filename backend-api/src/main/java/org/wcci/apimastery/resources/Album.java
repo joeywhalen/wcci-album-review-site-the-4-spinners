@@ -124,4 +124,8 @@ public class Album {
     public void removeSong(Song song){
         songs.remove(song);
     }
+
+    public void changeAlbumTitle(String newAlbumTitle){
+        this.title = newAlbumTitle;
+    }
 }

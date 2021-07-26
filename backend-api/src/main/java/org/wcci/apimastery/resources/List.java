@@ -45,6 +45,6 @@ public class List {
     }
 
     public void changeListName(String newListName) {
-        listName = newListName;
+        this.listName = newListName;
     }
 }
