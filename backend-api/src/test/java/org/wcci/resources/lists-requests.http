@@ -20,6 +20,13 @@ Content-Type: application/json
 
 {"id":1, "listName": "MaynardList"}
 
+### Update a list's name property.
+PATCH http://localhost:8080/api/lists/1/listName
+
+Maynard's List
+
+
+
 
 
 

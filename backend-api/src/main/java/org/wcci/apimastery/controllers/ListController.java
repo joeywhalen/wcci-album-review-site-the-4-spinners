@@ -75,4 +75,15 @@ public class ListController {
         return listStorage.retrieveAllList();
     }
 
+    //Update a list's name property.
+    //PATCH http://localhost:8080/api/lists/1/listName
+    //Maynard's List
+    @PatchMapping("/api/lists/{id}/listName")
+    public List changeListName(@PathVariable Long id, @RequestBody String listName) {
+        List listToChange = listStorage.retrieveListById(id);
+        listToChange.changeListName(listName);
+        listStorage.saveList(listToChange);
+        return listToChange;
+    }
+
 }

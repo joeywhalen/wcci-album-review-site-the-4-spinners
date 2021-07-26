@@ -36,4 +36,8 @@ public class List {
     public void addAlbum(Album album) {
         albums.add(album);
     }
+
+    public void changeListName(String newListName) {
+        listName = newListName;
+    }
 }
