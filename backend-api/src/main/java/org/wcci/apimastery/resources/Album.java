@@ -109,4 +109,8 @@ public class Album {
         songs.add(song);
     }
 
+    public void changeList(List list) {
+        this.list = list;
+    }
+
 }
