@@ -19,6 +19,12 @@ PATCH http://localhost:8080/api/lists/80/listName
 
 Maynard's List
 
+
+### List albums of a list
+GET http://localhost:8080/api/lists/5/albums
+Content-Type: application/json
+
+
 ### Add a new album resource to the list's albums. {"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL", "songs": [{"test comment": "this is a test comment"}]}
 PATCH http://localhost:8080/api/lists/1/albums
 Content-Type: application/json
@@ -56,7 +62,6 @@ Content-Type: application/json
 
 ### Delete an album with id from a list.
 DELETE http://localhost:8080/api/lists/1/albums/2
-
 
 
 

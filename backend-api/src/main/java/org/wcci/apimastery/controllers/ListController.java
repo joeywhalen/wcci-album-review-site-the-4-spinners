@@ -71,10 +71,17 @@ public class ListController {
         return listToChange;
     }
 
+    // ### List albums of a list
+    // GET http://localhost:8080/api/lists/1/albums
+    // Content-Type: application/json
+    @GetMapping("/api/lists/{id}/albums")
+    public Iterable<Album> retrieveAllAlbumsInList(@PathVariable Long id) {
+        return listStorage.retrieveListById(id).getAlbums();
+    }
+
     //### Add a new album resource to the list's albums.
     //PATCH http://localhost:8080/api/lists/1/albums
     //Content-Type: application/json
-
     //{"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL","comments": "Sample commenrs"}
     @PatchMapping("/api/lists/{id}/albums")
     public List addAlbumToList(@PathVariable Long id, @RequestBody Album albumToAdd) {
