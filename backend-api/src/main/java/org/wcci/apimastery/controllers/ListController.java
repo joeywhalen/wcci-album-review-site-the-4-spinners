@@ -132,4 +132,14 @@ public class ListController {
         albumRepository.save(albumToChange);
         return albumToChange;
     }
+
+//     ### Delete a Song off a specific album
+// DELETE http://localhost:8080/api/lists/5/albums/6/songs
+    @DeleteMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}")
+    public Album deleteSongFromAlbum(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId) {
+        Album albumToChange = listStorage.retrieveAlbumById(albumId);
+        Song song = songRepository.findById(songId).get();
+        albumToChange.removeSong(song);
+        return albumToChange;
+    }
 }

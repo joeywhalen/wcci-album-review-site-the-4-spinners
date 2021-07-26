@@ -121,4 +121,7 @@ public class Album {
         songs.clear();
     }
 
+    public void removeSong(Song song){
+        songs.remove(song);
+    }
 }

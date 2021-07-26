@@ -80,3 +80,6 @@ Content-Type: application/json
     ],
     "starRating": 1
 }
+
+### Delete a Song off a specific album
+DELETE http://localhost:8080/api/lists/5/albums/6/songs/7
