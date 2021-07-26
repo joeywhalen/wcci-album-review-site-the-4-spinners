@@ -117,4 +117,8 @@ public class Album {
         this.list = list;
     }
 
+    public void deleteSongs(){
+        songs.clear();
+    }
+
 }
