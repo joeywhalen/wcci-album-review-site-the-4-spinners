@@ -3,7 +3,7 @@ GET http://localhost:8080/api/lists
 Accept: application/json
 
 ### Get a list with the given id.
-GET http://localhost:8080/api/lists/1
+GET http://localhost:8080/api/lists/5
 
 ### Delete a list with the given id.
 DELETE http://localhost:8080/api/lists/1
@@ -14,14 +14,8 @@ Content-Type: application/json
 
 {"listName": "BobList"}
 
-### Update a List resource
-PUT http://localhost:8080/api/lists
-Content-Type: application/json
-
-{"id":1, "listName": "MaynardList"}
-
 ### Update a list's name property.
-PATCH http://localhost:8080/api/lists/1/listName
+PATCH http://localhost:8080/api/lists/80/listName
 
 Maynard's List
 
