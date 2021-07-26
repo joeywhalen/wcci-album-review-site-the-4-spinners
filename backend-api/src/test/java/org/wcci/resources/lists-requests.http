@@ -15,9 +15,20 @@ Content-Type: application/json
 {"listName": "BobList"}
 
 ### Update a list's name property.
-PATCH http://localhost:8080/api/lists/80/listName
+PATCH http://localhost:8080/api/lists/5/listName
 
 Maynard's List
+
+
+### List albums of a list
+GET http://localhost:8080/api/lists/5/albums
+Content-Type: application/json
+
+### Update Albums name property
+PATCH http://localhost:8080/api/lists/5/albums/6/albumName
+
+New Test Album Name Change
+
 
 ### Add a new album resource to the list's albums. {"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL", "songs": [{"test comment": "this is a test comment"}]}
 PATCH http://localhost:8080/api/lists/1/albums
@@ -57,7 +68,28 @@ Content-Type: application/json
 ### Delete an album with id from a list.
 DELETE http://localhost:8080/api/lists/1/albums/2
 
+### List songs of a specific album
+GET http://localhost:8080/api/lists/5/albums/6/songs
+Content-Type: application/json
 
+### Add new song to specific album
+PATCH http://localhost:8080/api/lists/5/albums/6/songs
+Content-Type: application/json
 
+{
+    "songTitle": "New Test Song",
+    "length": "5m 21s",
 
+    "comments": [
+        "Adding test song to existing album"
+    ],
+    "starRating": 1
+}
 
+### Delete a Song off a specific album
+DELETE http://localhost:8080/api/lists/5/albums/6/songs/7
+
+### Change Song Title
+PATCH http://localhost:8080/api/lists/5/albums/6/songs/7/songTitle
+
+New Changed Song Title

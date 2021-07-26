@@ -69,4 +69,8 @@ public class Song {
     public void addAlbum(Album album){
         this.album = album;
     }
+
+    public void changeSongTitle(String newSongTitle){
+        this.songTitle = newSongTitle;
+    }
 }

@@ -1,6 +1,5 @@
 package org.wcci.apimastery.controllers;
 
-import org.graalvm.compiler.lir.alloc.lsra.Interval;
 import org.springframework.web.bind.annotation.*;
 import org.wcci.apimastery.resources.Album;
 import org.wcci.apimastery.resources.List;
@@ -11,8 +10,6 @@ import org.wcci.apimastery.storage.*;
 public class ListController {
 
     private ListStorage listStorage;
-   private AlbumStorage albumStorage;
-   private SongStorage songStorage;
     private AlbumRepository albumRepository;
     private SongRepository songRepository;
 
@@ -21,24 +18,6 @@ public class ListController {
         this.albumRepository = albumRepository;
         this.songRepository = songRepository;
     }
-
-
-//    public ListController(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songRepository) {
-//        this.listStorage = listStorage;
-//        this.albumRepository = albumRepository;
-//        this.songRepository = songRepository;
-//    }
-
-//    public ListController(ListStorage listStorage, AlbumStorage albumStorage, SongStorage songStorage) {
-//        this.listStorage = listStorage;
-//        this.albumStorage = albumStorage;
-//        this.songStorage = songStorage;
-//    }
-
-
-//    public ListController(ListStorage listStorage) {
-//
-//    }
 
     //GET http://localhost:8080/api/lists
     @GetMapping("/api/lists")
@@ -91,10 +70,27 @@ public class ListController {
         return listToChange;
     }
 
+    // ### List albums of a list
+    // GET http://localhost:8080/api/lists/1/albums
+    // Content-Type: application/json
+    @GetMapping("/api/lists/{id}/albums")
+    public Iterable<Album> retrieveAllAlbumsInList(@PathVariable Long id) {
+        return listStorage.retrieveListById(id).getAlbums();
+    }
+
+    //     ### Update Albums name property
+    // PATCH http://localhost:8080/api/lists/5/albums/6/albumName
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/albumName")
+    public Album changeAlbumName(@PathVariable Long id, @PathVariable Long albumId, @RequestBody String albumTitle){
+        Album albumToChange = albumRepository.findById(albumId).get();
+        albumToChange.changeAlbumTitle(albumTitle);
+        albumRepository.save(albumToChange);
+        return albumToChange;
+    }
+
     //### Add a new album resource to the list's albums.
     //PATCH http://localhost:8080/api/lists/1/albums
     //Content-Type: application/json
-
     //{"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL","comments": "Sample commenrs"}
     @PatchMapping("/api/lists/{id}/albums")
     public List addAlbumToList(@PathVariable Long id, @RequestBody Album albumToAdd) {
@@ -116,7 +112,7 @@ public class ListController {
 
     //### Delete an album with id from a list.
     //DELETE http://localhost:8080/api/lists/1/albums/2
-    @DeleteMapping("/api/lists/{id}/albums/{albumId")
+    @DeleteMapping("/api/lists/{id}/albums/{albumId}")
     public List deleteAlbumFromList(@PathVariable Long id, @PathVariable Long albumId) {
         List listToChange = listStorage.retrieveListById(id);
         Album album = albumRepository.findById(albumId).get();
@@ -126,4 +122,44 @@ public class ListController {
         return listToChange;
     }
 
+    // ### List songs of a specific album
+    // GET http://localhost:8080/api/lists/5/albums/6/songs
+    // Content-Type: application/json
+    @GetMapping("/api/lists/{id}/albums/{albumId}/songs")
+    public Iterable<Song> retrieveAllSongsInAlbums(@PathVariable Long id, @PathVariable Long albumId) {
+        return listStorage.retrieveAlbumById(albumId).getSongs();
+    }
+
+    //     ### Add new song to specific album
+    // PATCH http://localhost:8080/api/lists/5/albums/6/songs
+    // Content-Type: application/json
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs")
+    public Album addSongToAlbum(@PathVariable Long id, @PathVariable Long albumId, @RequestBody Song songToAdd) {
+        Album albumToChange = listStorage.retrieveAlbumById(albumId);
+        songRepository.save(songToAdd);
+        songToAdd.addAlbum(albumToChange);
+        albumToChange.addSong(songToAdd);
+        albumRepository.save(albumToChange);
+        return albumToChange;
+    }
+
+    //     ### Delete a Song off a specific album
+    // DELETE http://localhost:8080/api/lists/5/albums/6/songs
+    @DeleteMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}")
+    public Album deleteSongFromAlbum(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId) {
+        Album albumToChange = listStorage.retrieveAlbumById(albumId);
+        Song song = songRepository.findById(songId).get();
+        albumToChange.removeSong(song);
+        return albumToChange;
+    }
+
+    //     ### Change Song Title
+    // PATCH http://localhost:8080/api/lists/5/albums/6/songs/7/songTitle
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/songTitle")
+    public Song changeSongTitle(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId, @RequestBody String newSongTitle){
+        Song songToChange = songRepository.findById(songId).get();
+        songToChange.changeSongTitle(newSongTitle);
+        songRepository.save(songToChange);
+        return songToChange;
+    }
 }

@@ -1,5 +1,8 @@
 package org.wcci.apimastery.resources;
 import javax.persistence.*;
+
+import org.wcci.apimastery.storage.AlbumRepository;
+
 import java.util.Collection;
 
 @Entity
@@ -42,6 +45,6 @@ public class List {
     }
 
     public void changeListName(String newListName) {
-        listName = newListName;
+        this.listName = newListName;
     }
 }
