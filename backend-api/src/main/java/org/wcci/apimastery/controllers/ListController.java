@@ -119,4 +119,17 @@ public class ListController {
     public Iterable<Song> retrieveAllSongsInAlbums(@PathVariable Long id, @PathVariable Long albumId) {
         return listStorage.retrieveAlbumById(albumId).getSongs();
     }
+
+//     ### Add new song to specific album
+// PATCH http://localhost:8080/api/lists/5/albums/6/songs
+// Content-Type: application/json
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs")
+    public Album addSongToAlbum(@PathVariable Long id, @PathVariable Long albumId, @RequestBody Song songToAdd) {
+        Album albumToChange = listStorage.retrieveAlbumById(albumId);
+        songRepository.save(songToAdd);
+        songToAdd.addAlbum(albumToChange);
+        albumToChange.addSong(songToAdd);
+        albumRepository.save(albumToChange);
+        return albumToChange;
+    }
 }

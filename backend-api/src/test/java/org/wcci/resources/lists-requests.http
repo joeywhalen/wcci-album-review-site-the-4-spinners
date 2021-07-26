@@ -67,4 +67,16 @@ DELETE http://localhost:8080/api/lists/1/albums/2
 GET http://localhost:8080/api/lists/5/albums/6/songs
 Content-Type: application/json
 
+### Add new song to specific album
+PATCH http://localhost:8080/api/lists/5/albums/6/songs
+Content-Type: application/json
 
+{
+    "songTitle": "New Test Song",
+    "length": "5m 21s",
+
+    "comments": [
+        "Adding test song to existing album"
+    ],
+    "starRating": 1
+}
