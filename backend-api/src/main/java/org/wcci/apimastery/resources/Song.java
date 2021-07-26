@@ -18,6 +18,7 @@ public class Song {
     private Long id;
 
     @ManyToOne
+    @JsonIgnore
     private Album album;
 
 //    @ManyToMany

@@ -10,8 +10,8 @@ import org.wcci.apimastery.storage.*;
 public class ListController {
 
     private ListStorage listStorage;
-//    private AlbumStorage albumStorage;
-//    private SongStorage songStorage;
+   private AlbumStorage albumStorage;
+   private SongStorage songStorage;
     private AlbumRepository albumRepository;
     private SongRepository songRepository;
 

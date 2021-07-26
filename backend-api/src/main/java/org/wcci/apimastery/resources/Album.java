@@ -3,6 +3,9 @@ package org.wcci.apimastery.resources;
 
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Collection;
 import java.util.Set;
 
@@ -26,6 +29,7 @@ public class Album {
 
 
     @ManyToOne
+    @JsonIgnore
     private List list;
 
 //    @ManyToMany(mappedBy = "albums")
