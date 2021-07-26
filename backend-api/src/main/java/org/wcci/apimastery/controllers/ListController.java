@@ -1,7 +1,9 @@
 package org.wcci.apimastery.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.resources.Album;
 import org.wcci.apimastery.resources.List;
+import org.wcci.apimastery.resources.Song;
 import org.wcci.apimastery.storage.*;
 
 @RestController
@@ -10,8 +12,8 @@ public class ListController {
     private ListStorage listStorage;
 //    private AlbumStorage albumStorage;
 //    private SongStorage songStorage;
-//    private AlbumRepository albumRepository;
-//    private SongRepository songRepository;
+    private AlbumRepository albumRepository;
+    private SongRepository songRepository;
 
     public ListController(ListStorage listStorage) {
         this.listStorage = listStorage;
@@ -82,6 +84,24 @@ public class ListController {
     public List changeListName(@PathVariable Long id, @RequestBody String listName) {
         List listToChange = listStorage.retrieveListById(id);
         listToChange.changeListName(listName);
+        listStorage.saveList(listToChange);
+        return listToChange;
+    }
+
+    //### Add a new album resource to the list's albums.
+    //PATCH http://localhost:8080/api/lists/1/albums
+    //Content-Type: application/json
+
+    //{"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL","comments": "Sample commenrs"}
+    @PatchMapping("/api/lists/{id}/albums")
+    public List addAlbumToList(@PathVariable Long id, @RequestBody Album albbumToAdd) {
+        List listToChange = listStorage.retrieveListById(id);
+        for(Song song: albbumToAdd.getSongs()) {
+            songRepository.save(song);
+        }
+        albbumToAdd.changeList(listToChange);
+        albumRepository.save(albbumToAdd);
+        listToChange.addAlbum(albbumToAdd);
         listStorage.saveList(listToChange);
         return listToChange;
     }
