@@ -19,11 +19,40 @@ PATCH http://localhost:8080/api/lists/80/listName
 
 Maynard's List
 
-### Add a new album resource to the list's albums.
+### Add a new album resource to the list's albums. {"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL", "songs": [{"test comment": "this is a test comment"}]}
 PATCH http://localhost:8080/api/lists/1/albums
 Content-Type: application/json
+ 
+{
+        "title": "test",
+        "artist": "Testing",
+        "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg/220px-White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg",
+        "recordLabel": "Geffen",
+        "duration": "57m 30s",
+        "rating": 5,
+        "videoUrl": "https://www.youtube.com/embed/H8gHMU-pDbU",
+        "songs": [
+          {
+            "songTitle": "Test song1",
+            "length": "6m 21s",
 
-{"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL","comments": "Sample commenrs"}
+            "comments": [
+              "If this song doesn’t get you moving, you probably don’t have a pulse.  Favorite Lyric: So let me see ya howl'n through the keyhole\"god damn,\nSwept away\" she shouted, she love it, getin away yeah!"
+            ],
+            "starRating": 5
+          },
+          {
+            "songTitle": "Test song 2",
+            "length": "0m 21s",
+ 
+            "comments": [],
+            "starRating": 2
+          }
+        ],
+        "comments": [
+          "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun."
+        ]
+      }
 
 ### Delete an album with id from a list.
 DELETE http://localhost:8080/api/lists/1/albums/2

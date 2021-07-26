@@ -66,4 +66,7 @@ public class Song {
     public Iterable<String> getComments() {
         return comments;
     }
+    public void addAlbum(Album album){
+        this.album = album;
+    }
 }

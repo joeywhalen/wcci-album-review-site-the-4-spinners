@@ -1,5 +1,6 @@
 package org.wcci.apimastery.controllers;
 
+import org.graalvm.compiler.lir.alloc.lsra.Interval;
 import org.springframework.web.bind.annotation.*;
 import org.wcci.apimastery.resources.Album;
 import org.wcci.apimastery.resources.List;
@@ -15,8 +16,10 @@ public class ListController {
     private AlbumRepository albumRepository;
     private SongRepository songRepository;
 
-    public ListController(ListStorage listStorage) {
+    public ListController(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songRepository) {
         this.listStorage = listStorage;
+        this.albumRepository = albumRepository;
+        this.songRepository = songRepository;
     }
 
 
@@ -96,13 +99,18 @@ public class ListController {
     @PatchMapping("/api/lists/{id}/albums")
     public List addAlbumToList(@PathVariable Long id, @RequestBody Album albumToAdd) {
         List listToChange = listStorage.retrieveListById(id);
-        for(Song song: albumToAdd.getSongs()) {
-            songRepository.save(song);
-        }
-        albumToAdd.changeList(listToChange);
-        albumRepository.save(albumToAdd);
+        
         listToChange.addAlbum(albumToAdd);
         listStorage.saveList(listToChange);
+        albumToAdd.changeList(listToChange);
+        albumRepository.save(albumToAdd);
+
+        for(Song song: albumToAdd.getSongs()) {
+            song.addAlbum(albumToAdd);
+            songRepository.save(song);
+        }
+        albumRepository.save(albumToAdd);
+
         return listToChange;
     }
 
