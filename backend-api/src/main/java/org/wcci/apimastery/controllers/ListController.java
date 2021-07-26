@@ -1,6 +1,5 @@
 package org.wcci.apimastery.controllers;
 
-import org.graalvm.compiler.lir.alloc.lsra.Interval;
 import org.springframework.web.bind.annotation.*;
 import org.wcci.apimastery.resources.Album;
 import org.wcci.apimastery.resources.List;
@@ -113,4 +112,11 @@ public class ListController {
         return listToChange;
     }
 
+    // ### List songs of a specific album
+    // GET http://localhost:8080/api/lists/5/albums/6/songs
+    // Content-Type: application/json
+    @GetMapping("/api/lists/{id}/albums/{albumId}/songs")
+    public Iterable<Song> retrieveAllSongsInAlbums(@PathVariable Long id, @PathVariable Long albumId) {
+        return listStorage.retrieveAlbumById(albumId).getSongs();
+    }
 }
