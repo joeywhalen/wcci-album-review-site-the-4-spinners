@@ -1,5 +1,6 @@
 package org.wcci.apimastery.controllers;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,16 +38,23 @@ public class ListController {
 //
 //    }
 
-    //GET localhost:8080/api/lists
+    //GET http://localhost:8080/api/lists
     @GetMapping("/api/lists")
     public Iterable<List> retrieveAllList() {
         return listStorage.retrieveAllList();
     }
 
-    //GET localhost:8080/api/lists/1
-    @GetMapping
+    //GET http://localhost:8080/api/lists/1
+    @GetMapping("/api/lists/{id}")
     public List retrieveListById(@PathVariable Long id) {
         return listStorage.retrieveListById(id);
+    }
+
+    //DELETE http://localhost:8080/api/lists/1
+    @DeleteMapping("/api/lists/{id}")
+    public Iterable<List> deleteListById(@PathVariable Long id) {
+        listStorage.deleteListById(id);
+        return listStorage.retrieveAllList();
     }
 
 
