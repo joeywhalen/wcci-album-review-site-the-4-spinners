@@ -253,7 +253,11 @@ public class Populator implements CommandLineRunner {
                  "Favorite Lyric: Let the rabbits wear glasses");
          songStorage.saveSong(disgustipated);
 
-         Album inASilentWay = new Album(jawList,"In A Silent Way ","Miles Davis","https://www.bluescentric.com/images/product/large/4310.jpg","Columbia Records","38m 09s", 5, "https://www.youtube.com/watch?v=YHesqaMhh34","Miles Davies gave us a mighty touch with his 'In A Silent Way' album, It is a musical rebirth, a sense of motherly warmth takes over, and then we hear, yet again, Davis’ cosmic trumpet playing which concludes the album with a calming fade.");
+
+         List naList = new List("nana List");
+         listStorage.saveList(naList);
+
+         Album inASilentWay = new Album(naList,"In A Silent Way ","Miles Davis","https://www.bluescentric.com/images/product/large/4310.jpg","Columbia Records","38m 09s", 5, "https://www.youtube.com/watch?v=YHesqaMhh34","Miles Davies gave us a mighty touch with his 'In A Silent Way' album, It is a musical rebirth, a sense of motherly warmth takes over, and then we hear, yet again, Davis’ cosmic trumpet playing which concludes the album with a calming fade.");
          albumStorage.saveAlbum(inASilentWay);
 
          Song shhPeaceful = new Song(inASilentWay,"Shhh / Peacefull","18m 30s",5,"This jam will have you tip-toeing around your house, very relaxing yet stimulating");
@@ -263,7 +267,7 @@ public class Populator implements CommandLineRunner {
          songStorage.saveSong(aboutThatTime);
 
 
-         Album zombie = new Album(jawList,"Zombie","Fela Kuti", "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/64/02/1c/64021cbe-25b4-a38b-4495-88578359ca19/720841206194.jpg/270x270bb.webp","COCONUT","25m 41s",4,"https://www.youtube.com/watch?v=-3j0nugz1Pw&list=OLAK5uy_n4UDREKrRXJxqya81gWWhXN_5ImgFWtNM","Fela Kuti, a Nigerian Afrobeat and political activist released 'Zombie' in 1976 which has been one of his most political musical statement.");
+         Album zombie = new Album(naList,"Zombie","Fela Kuti", "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/64/02/1c/64021cbe-25b4-a38b-4495-88578359ca19/720841206194.jpg/270x270bb.webp","COCONUT","25m 41s",4,"https://www.youtube.com/watch?v=-3j0nugz1Pw&list=OLAK5uy_n4UDREKrRXJxqya81gWWhXN_5ImgFWtNM","Fela Kuti, a Nigerian Afrobeat and political activist released 'Zombie' in 1976 which has been one of his most political musical statement.");
          albumStorage.saveAlbum(zombie);
 
          Song mrFollowFollow = new Song(zombie,"Mr. Follow Follow","12m 58s",5,"'Mr. Follow Follow' has a deeper commentary and a clearer theme about conformity as it relates to the military and the state. ");
@@ -279,7 +283,7 @@ public class Populator implements CommandLineRunner {
          songStorage.saveSong(zombieo);
 
 
-         Album conflict = new Album(jawList,"Conflict","Ebo Taylor & Uhuru Yenzu","https://f4.bcbits.com/img/a2585325512_16.jpg","Mr. Bongo","31m 19s",4,"https://www.youtube.com/watch?v=Q54D5EVtRsQ","The album is both, mesmerizing and beautiful, and stands up well to many of the other monumental releases by Ebo Taylor. This album shows Ebo Taylor’s trademark approach that saw him inject a heavy dose of funk into Ghanaian traditional highlife grooves in an attempt to move away from what he saw as the music’s more traditional qualities.");
+         Album conflict = new Album(naList,"Conflict","Ebo Taylor & Uhuru Yenzu","https://f4.bcbits.com/img/a2585325512_16.jpg","Mr. Bongo","31m 19s",4,"https://www.youtube.com/watch?v=Q54D5EVtRsQ","The album is both, mesmerizing and beautiful, and stands up well to many of the other monumental releases by Ebo Taylor. This album shows Ebo Taylor’s trademark approach that saw him inject a heavy dose of funk into Ghanaian traditional highlife grooves in an attempt to move away from what he saw as the music’s more traditional qualities.");
          albumStorage.saveAlbum(conflict);
 
          Song youNeedLove = new Song(conflict,"You Need Love", "07m 09s",5, "A classic");
