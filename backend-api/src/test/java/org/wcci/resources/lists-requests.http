@@ -8,4 +8,10 @@ GET http://localhost:8080/api/lists/1
 ### Delete a list with the given id.
 DELETE http://localhost:8080/api/lists/1
 
+### Post a new list resource.
+POST http://localhost:8080/api/lists
+Content-Type: application/json
+
+{"listName": "BobList"}
+
 

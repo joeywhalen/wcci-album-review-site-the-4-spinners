@@ -1,9 +1,6 @@
 package org.wcci.apimastery.controllers;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.wcci.apimastery.resources.List;
 import org.wcci.apimastery.storage.*;
 
@@ -54,6 +51,16 @@ public class ListController {
     @DeleteMapping("/api/lists/{id}")
     public Iterable<List> deleteListById(@PathVariable Long id) {
         listStorage.deleteListById(id);
+        return listStorage.retrieveAllList();
+    }
+
+    //POST http://localhost:8080/api/lists
+    //Content-Type: application/json
+
+    //{"listName": "BobList"}
+    @PostMapping("/api/lists")
+    public Iterable<List> addNewList(@RequestBody List listToAdd) {
+        listStorage.saveList(listToAdd);
         return listStorage.retrieveAllList();
     }
 
