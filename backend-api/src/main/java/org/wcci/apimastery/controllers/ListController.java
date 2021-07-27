@@ -78,6 +78,13 @@ public class ListController {
         return listStorage.retrieveListById(id).getAlbums();
     }
 
+    // ### Display single ablbum of a list
+    // GET http://localhost:8080/api/lists/5/albums/6
+    @GetMapping("/api/lists/{id}/albums/{albumId}")
+    public Album retrieveAlbumById(@PathVariable Long id, @PathVariable Long albumId) {
+        return albumRepository.findById(albumId).get();
+    }
+
     //     ### Update Albums name property
     // PATCH http://localhost:8080/api/lists/5/albums/6/albumName
     @PatchMapping("/api/lists/{id}/albums/{albumId}/albumName")
