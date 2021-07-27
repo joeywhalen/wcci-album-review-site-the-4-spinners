@@ -24,4 +24,5 @@ public class SpringWebApplicationTest {
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"));
     }
+    //needs run once we have index.html
 }
