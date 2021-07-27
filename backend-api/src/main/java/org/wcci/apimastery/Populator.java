@@ -301,7 +301,87 @@ public class Populator implements CommandLineRunner {
          Song victory = new Song(conflict,"Victory","04m 16s",4);
          songStorage.saveSong(victory);
 
-    }
-    
-}
 
+
+         List harrisonList = new List("harrison List");
+         listStorage.saveList(harrisonList);
+
+         Album foodAndLiquor = new Album(harrisonList,"Lupe Fiasco's Food & Liquor ","Lupe Fiasco","https://images-na.ssl-images-amazon.com/images/I/81B4l7WTz3L._SL1453_.jpg","Atlantic Records","72m 13s", 4, "https://www.youtube.com/watch?v=Gl83mI69nX4","blah blah blah");
+         albumStorage.saveAlbum(foodAndLiquor);
+
+         Song intro = new Song(foodAndLiquor,"Intro","3m 7s",5,"tbd");
+         songStorage.saveSong(intro);
+
+         Song real = new Song(foodAndLiquor,"Real (featuring Sarah Green)","4m 2s",4,"tbd");
+         songStorage.saveSong(real);
+
+         Song justMightBeOK = new Song(foodAndLiquor,"Just Might Be OK (featuring Gemini)","4m 24s",5,"tbd");
+         songStorage.saveSong(justMightBeOK);
+
+         Song kickPush = new Song(foodAndLiquor,"Kick, Push","4m 13s",5,"tbd");
+         songStorage.saveSong(kickPush);
+
+         Song iGotcha = new Song(foodAndLiquor,"I Gotcha","3m 59s",5,"tbd");
+         songStorage.saveSong(iGotcha);
+
+         Song heSaySheSay = new Song(foodAndLiquor,"He Say She Say","4m 12s",5,"tbd");
+         songStorage.saveSong(heSaySheSay);
+
+         Song sunshine = new Song(foodAndLiquor,"Sunshine","3m 55s",5,"tbd");
+         songStorage.saveSong(sunshine);
+
+         Song daydreamin = new Song(foodAndLiquor,"Daydreamin' (featuring Jill Scott)","3m 55s",5,"tbd");
+         songStorage.saveSong(daydreamin);         
+
+         Song theCool = new Song(foodAndLiquor,"The Cool","3m 46s",5,"tbd");
+         songStorage.saveSong(theCool);
+
+         Song hurtMeSoul = new Song(foodAndLiquor,"Hurt Me Soul","4m 22s",5,"tbd");
+         songStorage.saveSong(hurtMeSoul);
+
+         Song pressure = new Song(foodAndLiquor,"Pressure (featuring Jay-Z)","4m 47s",3,"tbd");
+         songStorage.saveSong(pressure);
+
+         Song americanTerrorist = new Song(foodAndLiquor,"American Terrorist (featuring Matthew Santos)","4m 40s",5,"tbd");
+         songStorage.saveSong(americanTerrorist);
+
+         Song theEmperorsSoundtrack = new Song(foodAndLiquor,"The Emperor's Soundtrack","2m 56s",3,"tbd");
+         songStorage.saveSong(theEmperorsSoundtrack);
+
+         Song kickPush2 = new Song(foodAndLiquor,"Kick, Push II","4m 11s",5,"tbd");
+         songStorage.saveSong(kickPush2);
+
+         Song outro = new Song(foodAndLiquor,"Outro","12m 13s",5,"tbd");
+         songStorage.saveSong(outro);
+
+
+         Album rapture = new Album(harrisonList,"Rapture","Anita Baker", "https://images-na.ssl-images-amazon.com/images/I/71bd2KuN3lL._SL1425_.jpg","Elektra","37m 9s",5,"https://www.youtube.com/watch?v=QlhZPNv7f8Q","tbd.");
+         albumStorage.saveAlbum(rapture);
+
+         Song sweetLove = new Song(rapture,"Sweet Love","4m 26s",5,"tbd");
+         songStorage.saveSong(sweetLove);
+
+         Song youBringMeJoy = new Song(rapture,"You Bring Me Joy","4m 24s",5,"tbd");
+         songStorage.saveSong(youBringMeJoy);
+
+         Song caughtUpInTheRapture = new Song(rapture,"Caught Up In The Rapture","5m 17s",5,"tbd");
+         songStorage.saveSong(caughtUpInTheRapture);
+
+         Song beenSoLong = new Song(rapture,"Been So Long","5m 7s",4,"tbd");
+         songStorage.saveSong(beenSoLong);
+
+         Song mystery = new Song(rapture,"Mystery","4m 56s",5,"tbd");
+         songStorage.saveSong(mystery);
+
+         Song noOneInTheWorld = new Song(rapture,"No One In The World","4m 10s",5,"tbd");
+         songStorage.saveSong(noOneInTheWorld);
+
+         Song sameOleLove = new Song(rapture,"Same Ole Love (365 Days a Year)","4m 5s",4,"tbd");
+         songStorage.saveSong(sameOleLove);
+
+         Song watchYourStep = new Song(rapture,"Watch Your Step","4m 54s",4,"tbd");
+         songStorage.saveSong(watchYourStep);
+
+
+    }
+}
