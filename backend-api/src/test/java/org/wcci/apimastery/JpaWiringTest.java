@@ -77,7 +77,6 @@ public class JpaWiringTest {
         songRepository.save(testSong);
         Album retrievedAlbum = albumRepository.findById(testAlbum.getId()).get();
         Song retrievedSong = songRepository.findById(testSong.getId()).get();
-//        assertThat(retrievedSong).getAlbum()).isEqualTo(testAlbum);
         assertThat(retrievedSong).isEqualTo(testSong);
     }
 }
