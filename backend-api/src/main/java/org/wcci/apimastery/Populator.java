@@ -309,79 +309,219 @@ public class Populator implements CommandLineRunner {
          Album foodAndLiquor = new Album(harrisonList,"Lupe Fiasco's Food & Liquor ","Lupe Fiasco","https://images-na.ssl-images-amazon.com/images/I/81B4l7WTz3L._SL1453_.jpg","Atlantic Records","72m 13s", 4, "https://www.youtube.com/watch?v=Gl83mI69nX4","blah blah blah");
          albumRepository.save(foodAndLiquor);
 
-         Song intro = new Song(foodAndLiquor,"Intro","3m 7s",5,"tbd");
+         Song intro = new Song(foodAndLiquor,"Intro","3m 7s",5);
          songRepository.save(intro);
 
-         Song real = new Song(foodAndLiquor,"Real (featuring Sarah Green)","4m 2s",4,"tbd");
+         Song real = new Song(foodAndLiquor,"Real (featuring Sarah Green)","4m 2s",4);
          songRepository.save(real);
 
-         Song justMightBeOK = new Song(foodAndLiquor,"Just Might Be OK (featuring Gemini)","4m 24s",5,"tbd");
+         Song justMightBeOK = new Song(foodAndLiquor,"Just Might Be OK (featuring Gemini)","4m 24s",5);
          songRepository.save(justMightBeOK);
 
-         Song kickPush = new Song(foodAndLiquor,"Kick, Push","4m 13s",5,"tbd");
+         Song kickPush = new Song(foodAndLiquor,"Kick, Push","4m 13s",5);
          songRepository.save(kickPush);
 
-         Song iGotcha = new Song(foodAndLiquor,"I Gotcha","3m 59s",5,"tbd");
+         Song iGotcha = new Song(foodAndLiquor,"I Gotcha","3m 59s",5);
          songRepository.save(iGotcha);
 
-         Song heSaySheSay = new Song(foodAndLiquor,"He Say She Say","4m 12s",5,"tbd");
+         Song heSaySheSay = new Song(foodAndLiquor,"He Say She Say","4m 12s",5);
          songRepository.save(heSaySheSay);
 
-         Song sunshine = new Song(foodAndLiquor,"Sunshine","3m 55s",5,"tbd");
+         Song sunshine = new Song(foodAndLiquor,"Sunshine","3m 55s",5);
          songRepository.save(sunshine);
 
-         Song daydreamin = new Song(foodAndLiquor,"Daydreamin' (featuring Jill Scott)","3m 55s",5,"tbd");
+         Song daydreamin = new Song(foodAndLiquor,"Daydreamin' (featuring Jill Scott)","3m 55s",5);
          songRepository.save(daydreamin);
 
-         Song theCool = new Song(foodAndLiquor,"The Cool","3m 46s",5,"tbd");
+         Song theCool = new Song(foodAndLiquor,"The Cool","3m 46s",5);
          songRepository.save(theCool);
 
-         Song hurtMeSoul = new Song(foodAndLiquor,"Hurt Me Soul","4m 22s",5,"tbd");
+         Song hurtMeSoul = new Song(foodAndLiquor,"Hurt Me Soul","4m 22s",5);
          songRepository.save(hurtMeSoul);
 
-         Song pressure = new Song(foodAndLiquor,"Pressure (featuring Jay-Z)","4m 47s",3,"tbd");
+         Song pressure = new Song(foodAndLiquor,"Pressure (featuring Jay-Z)","4m 47s",3);
          songRepository.save(pressure);
 
-         Song americanTerrorist = new Song(foodAndLiquor,"American Terrorist (featuring Matthew Santos)","4m 40s",5,"tbd");
+         Song americanTerrorist = new Song(foodAndLiquor,"American Terrorist (featuring Matthew Santos)","4m 40s",5);
          songRepository.save(americanTerrorist);
 
-         Song theEmperorsSoundtrack = new Song(foodAndLiquor,"The Emperor's Soundtrack","2m 56s",3,"tbd");
+         Song theEmperorsSoundtrack = new Song(foodAndLiquor,"The Emperor's Soundtrack","2m 56s",3);
          songRepository.save(theEmperorsSoundtrack);
 
-         Song kickPush2 = new Song(foodAndLiquor,"Kick, Push II","4m 11s",5,"tbd");
+         Song kickPush2 = new Song(foodAndLiquor,"Kick, Push II","4m 11s",5);
          songRepository.save(kickPush2);
 
-         Song outro = new Song(foodAndLiquor,"Outro","12m 13s",5,"tbd");
+         Song outro = new Song(foodAndLiquor,"Outro","12m 13s",5);
          songRepository.save(outro);
 
 
          Album rapture = new Album(harrisonList,"Rapture","Anita Baker", "https://images-na.ssl-images-amazon.com/images/I/71bd2KuN3lL._SL1425_.jpg","Elektra","37m 9s",5,"https://www.youtube.com/watch?v=QlhZPNv7f8Q","tbd.");
          albumRepository.save(rapture);
 
-         Song sweetLove = new Song(rapture,"Sweet Love","4m 26s",5,"tbd");
+         Song sweetLove = new Song(rapture,"Sweet Love","4m 26s",5);
          songRepository.save(sweetLove);
 
-         Song youBringMeJoy = new Song(rapture,"You Bring Me Joy","4m 24s",5,"tbd");
+         Song youBringMeJoy = new Song(rapture,"You Bring Me Joy","4m 24s",5);
          songRepository.save(youBringMeJoy);
 
-         Song caughtUpInTheRapture = new Song(rapture,"Caught Up In The Rapture","5m 17s",5,"tbd");
+         Song caughtUpInTheRapture = new Song(rapture,"Caught Up In The Rapture","5m 17s",5);
          songRepository.save(caughtUpInTheRapture);
 
-         Song beenSoLong = new Song(rapture,"Been So Long","5m 7s",4,"tbd");
+         Song beenSoLong = new Song(rapture,"Been So Long","5m 7s",4);
          songRepository.save(beenSoLong);
 
-         Song mystery = new Song(rapture,"Mystery","4m 56s",5,"tbd");
+         Song mystery = new Song(rapture,"Mystery","4m 56s",5);
          songRepository.save(mystery);
 
-         Song noOneInTheWorld = new Song(rapture,"No One In The World","4m 10s",5,"tbd");
+         Song noOneInTheWorld = new Song(rapture,"No One In The World","4m 10s",5);
          songRepository.save(noOneInTheWorld);
 
-         Song sameOleLove = new Song(rapture,"Same Ole Love (365 Days a Year)","4m 5s",4,"tbd");
+         Song sameOleLove = new Song(rapture,"Same Ole Love (365 Days a Year)","4m 5s",4);
          songRepository.save(sameOleLove);
 
-         Song watchYourStep = new Song(rapture,"Watch Your Step","4m 54s",4,"tbd");
+         Song watchYourStep = new Song(rapture,"Watch Your Step","4m 54s",4);
          songRepository.save(watchYourStep);
 
+         Album itIsWhatItIsAlbum = new Album(harrisonList,"It Is What It Is","Thundercat", "https://images-na.ssl-images-amazon.com/images/I/616DGD29eaL._SL1200_.jpg","Brainfeeder","37m 38s",5,"https://www.youtube.com/watch?v=ormQQG2UhtQ","tbd.");
+         albumRepository.save(itIsWhatItIsAlbum);
+
+         Song lostInSpace = new Song(itIsWhatItIsAlbum,"Lost In Space / Great Scott / 22-26","1m 22s",5);
+         songRepository.save(lostInSpace);
+
+         Song interstellerLove = new Song(itIsWhatItIsAlbum,"Intersteller Love","2m 41s",5);
+         songRepository.save(interstellerLove);
+
+         Song iLoveLouisCole = new Song(itIsWhatItIsAlbum,"I Love Louis Cole (featuring Louis Cole)","3m 24s",5);
+         songRepository.save(iLoveLouisCole);
+
+         Song blackQualls = new Song(itIsWhatItIsAlbum,"Black Qualls (featuring Steve Lacy, Steve Arlington & Childish Gambino)","3m 09s",5);
+         songRepository.save(blackQualls);
+
+         Song miguelsHappyDance = new Song(itIsWhatItIsAlbum,"Miguel's Happy Dance","2m 11s",5);
+         songRepository.save(miguelsHappyDance);
+
+         Song howSway = new Song(itIsWhatItIsAlbum,"How Sway","1m 14s",5);
+         songRepository.save(howSway);
+
+         Song overseas = new Song(itIsWhatItIsAlbum,"Overseas (featuring Zack Fox)","1m 28s",5);
+         songRepository.save(overseas);
+
+         Song dragonballDurag = new Song(itIsWhatItIsAlbum,"Dragonball Durag","3m 01s",5);
+         songRepository.save(dragonballDurag);
+
+         Song howIFeel = new Song(itIsWhatItIsAlbum,"How I Feel","1m 08s",5);
+         songRepository.save(howIFeel);
+
+         Song kingOfTheHill = new Song(itIsWhatItIsAlbum,"King of the Hill","2m 51s",5);
+         songRepository.save(kingOfTheHill);
+
+         Song unrequitedLove = new Song(itIsWhatItIsAlbum,"Unrequited Love","3m 14s",5);
+         songRepository.save(unrequitedLove);
+
+         Song fairChance = new Song(itIsWhatItIsAlbum,"Fair Chance (featuring Ty Dolla $ign & Lil B","3m 57s",5);
+         songRepository.save(fairChance);
+
+         Song existentialDread = new Song(itIsWhatItIsAlbum,"Existential Dread"," 51s",5);
+         songRepository.save(existentialDread);
+
+         Song itIsWhatItIsSong = new Song(itIsWhatItIsAlbum,"It Is What It Is","5m 02s",5);
+         songRepository.save(itIsWhatItIsSong); 
+
+         Album rapture = new Album(harrisonList,"Rapture","Anita Baker", "https://images-na.ssl-images-amazon.com/images/I/71bd2KuN3lL._SL1425_.jpg","Elektra","37m 9s",5,"https://www.youtube.com/watch?v=QlhZPNv7f8Q","tbd.");
+         albumRepository.save(rapture);
+
+         Song sweetLove = new Song(rapture,"Sweet Love","4m 26s",5);
+         songRepository.save(sweetLove);
+
+         Song youBringMeJoy = new Song(rapture,"You Bring Me Joy","4m 24s",5);
+         songRepository.save(youBringMeJoy);
+
+         Song caughtUpInTheRapture = new Song(rapture,"Caught Up In The Rapture","5m 17s",5);
+         songRepository.save(caughtUpInTheRapture);
+
+         Song beenSoLong = new Song(rapture,"Been So Long","5m 7s",4);
+         songRepository.save(beenSoLong);
+
+         Song mystery = new Song(rapture,"Mystery","4m 56s",5);
+         songRepository.save(mystery);
+
+         Song noOneInTheWorld = new Song(rapture,"No One In The World","4m 10s",5);
+         songRepository.save(noOneInTheWorld);
+
+         Song sameOleLove = new Song(rapture,"Same Ole Love (365 Days a Year)","4m 5s",4);
+         songRepository.save(sameOleLove);
+
+         Song watchYourStep = new Song(rapture,"Watch Your Step","4m 54s",4);
+         songRepository.save(watchYourStep);
+
+         Album driftAwayAlbum = new Album(harrisonList,"Drift Away","Dobbie Gray", "https://images-na.ssl-images-amazon.com/images/I/61V6GSSQS9L._SY355_.jpg","Decca","34m 37s",5,"https://www.youtube.com/watch?v=NIuyDWzctgY","tbd.");
+         albumRepository.save(driftAwayAlbum);
+
+         Song driftAwaySong = new Song(driftAwayAlbum,"Drift Away","3m 57s",5);
+         songRepository.save(driftAwaySong);
+
+         Song theTimeILoveYou = new Song(driftAwayAlbum,"The Time I Love You the Most","3m 13s",5);
+         songRepository.save(theTimeILoveYou);
+
+         Song laLady = new Song(driftAwayAlbum,"L.A. Lady","2m 53s",5);
+         songRepository.save(iLoveLouisCole);
+
+         Song weHadItAll = new Song(driftAwayAlbum,"We Had It All","2m 43s",5);
+         songRepository.save(blackQualls);
+
+         Song nowThatImWithoutYou = new Song(driftAwayAlbum,"Now That I'm Without You","3m 26s",5);
+         songRepository.save(nowThatImWithoutYou);
+
+         Song rockinChair = new Song(driftAwayAlbum,"Rockin' Chair","3m 34s",5);
+         songRepository.save(rockinChair);
+
+         Song layBack = new Song(driftAwayAlbum,"Lay Back","2m 22s",4);
+         songRepository.save(layBack);
+
+         Song cityStars = new Song(driftAwayAlbum,"City Stars","3m 32s",5);
+         songRepository.save(cityStars);
+
+         Song sweetLovinWoman = new Song(driftAwayAlbum,"Sweet Lovin' Woman","2m 42s",5);
+         songRepository.save(sweetLovinWoman);
+
+         Song caddoQueen = new Song(driftAwayAlbum,"Caddo Queen","3m 29s",4);
+         songRepository.save(caddoQueen);
+
+         Song eddiesSong = new Song(driftAwayAlbum,"Eddie's Song","2m 46s",5);
+         songRepository.save(eddiesSong);
+
+         Album liveInEurope = new Album(harrisonList,"Live In Eurpoe","Otis Redding", "https://images-na.ssl-images-amazon.com/images/I/71wTXzY08CL._SL1425_.jpg","Volt/Atco","32m 56s",5,"https://www.youtube.com/watch?v=xDqL0XCs3V4","tbd.");
+         albumRepository.save(liveInEurope);
+
+         Song respect = new Song(liveInEurope,"Respect","3m",5);
+         songRepository.save(respect);
+
+         Song cantTurnYouLoose = new Song(liveInEurope,"Can't Turn You Loose","3m 20s",4);
+         songRepository.save(cantTurnYouLoose);
+
+         Song iveBeenLovingYou = new Song(liveInEurope,"I've Been Loving You Too Long","3m 40s",5);
+         songRepository.save(iveBeenLovingYou);
+
+         Song myGirl = new Song(liveInEurope,"My Girl","2m 43s",5);
+         songRepository.save(myGirl);
+
+         Song shake = new Song(liveInEurope,"Shake","2m 51s",5);
+         songRepository.save(shake);
+
+         Song satisfaction = new Song(liveInEurope,"(I Can't Get No) Satisfaction","2m 53s",3);
+         songRepository.save(satisfaction);
+
+         Song faFaFaFa = new Song(liveInEurope,"Fa-Fa-Fa-Fa-Fa (Sad Song)","3m 37s",5);
+         songRepository.save(faFaFaFa);
+
+         Song theseFarmsOfMine = new Song(liveInEurope,"These Arms of Mine","2m 57s",5);
+         songRepository.save(theseFarmsOfMine);
+
+         Song dayTripper = new Song(liveInEurope,"Day Tripper","2m 54s",5);
+         songRepository.save(dayTripper);
+
+         Song tryALittle = new Song(liveInEurope,"Try A Little Tenderness","5m",5);
+         songRepository.save(tryALittle);
 
     }
 }
