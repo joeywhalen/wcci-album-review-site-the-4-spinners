@@ -6,7 +6,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.wcci.apimastery.controllers.ListController;
 import org.wcci.apimastery.resources.List;
+import org.wcci.apimastery.storage.AlbumRepository;
 import org.wcci.apimastery.storage.ListStorage;
+import org.wcci.apimastery.storage.SongRepository;
 
 import java.util.Collections;
 
@@ -19,12 +21,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ListControllerTest {
 
     private ListStorage listStorage;
+    private AlbumRepository albumRepository;
+    private SongRepository songRepository;
     private ListController underTest;
 
     @BeforeEach
     void setUp() {
         listStorage = mock(ListStorage.class);
-        underTest = new ListController(listStorage);
+        underTest = new ListController(listStorage, albumRepository, songRepository);
         when(listStorage.retrieveAllList()).thenReturn(Collections.singletonList(new List("testList")));
     }
 

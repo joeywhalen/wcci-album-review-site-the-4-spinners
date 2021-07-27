@@ -8,13 +8,13 @@ import org.wcci.apimastery.resources.*;
 @Component
 public class Populator implements CommandLineRunner {
     private ListStorage listStorage;
-    private AlbumStorage albumStorage;
-    private SongStorage songStorage;
+    private AlbumRepository albumRepository;
+    private SongRepository songRepository;
 
-    public Populator(ListStorage listStorage, AlbumStorage albumStorage, SongStorage songStorage){
+    public Populator(ListStorage listStorage, AlbumRepository albumRepository, SongRepository songRepository){
         this.listStorage = listStorage;
-        this.albumStorage = albumStorage;
-        this.songStorage = songStorage;
+        this.albumRepository = albumRepository;
+        this.songRepository = songRepository;
     }
 
     @Override
@@ -23,11 +23,11 @@ public class Populator implements CommandLineRunner {
          listStorage.saveList(list1);
          Album album1 = new Album(list1,"Album title","Artist", "WWW.com",
                  "Record label", "90", 5,"video.com");
-         albumStorage.saveAlbum(album1);
+         albumRepository.save(album1);
          Song song1 = new Song(album1,"sing song", "90", 5);
-         songStorage.saveSong(song1);
+         songRepository.save(song1);
          Song song2 = new Song(album1,"Blah blah", "45", 4);
-         songStorage.saveSong(song2);
+         songRepository.save(song2);
 
          List jawList = new List("jaw List");
          listStorage.saveList(jawList);
@@ -37,52 +37,52 @@ public class Populator implements CommandLineRunner {
                   "Geffen", "57m 30s", 5,
                  "https://www.youtube.com/embed/H8gHMU-pDbU",
                  "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun.");
-         albumStorage.saveAlbum(laSex);
+         albumRepository.save(laSex);
 
          Song welcomeToPlanet = new Song(laSex,"Welcome to Planet Motherfucker/Psychoholic Slag",
                  "6m 21s", 5,
                  "If this song doesn’t get you moving, you probably don’t have a pulse.  Favorite Lyric: So let me see ya howl'n through the keyhole\"god damn,\n" +
                          "Swept away\" she shouted, she love it, getin away yeah!");
-        songStorage.saveSong(welcomeToPlanet);
+        songRepository.save(welcomeToPlanet);
 
         Song knuckleDuster = new Song(laSex,"Knuckle Duster (Radio 1-A)", "0m 21s", 2);
-        songStorage.saveSong(knuckleDuster);
+        songRepository.save(knuckleDuster);
 
         Song thunderKiss = new Song(laSex,"Thunder Kiss '65", "3m 54s", 5);
-        songStorage.saveSong(thunderKiss);
+        songRepository.save(thunderKiss);
 
         Song blackSun = new Song(laSex,"Black Sunshine (featuring Iggy Pop)", "4m 49s", 5);
-        songStorage.saveSong(blackSun);
+        songRepository.save(blackSun);
 
         Song soulCrusher = new Song(laSex,"Soul-Crusher (featuring Iggy Pop)", "5m 7s", 5);
-        songStorage.saveSong(soulCrusher);
+        songRepository.save(soulCrusher);
 
         Song cosmicMon = new Song(laSex,"Cosmic Monsters Inc.", "5m 13s", 4);
-        songStorage.saveSong(cosmicMon);
+        songRepository.save(cosmicMon);
 
         Song spiderbaby = new Song(laSex,"Spiderbaby (Yeah-Yeah-Yeah)", "5m 1s", 4);
-        songStorage.saveSong(spiderbaby);
+        songRepository.save(spiderbaby);
 
         Song legend = new Song(laSex,"I Am Legend", "5m 8s", 5);
-        songStorage.saveSong(legend);
+        songRepository.save(legend);
 
         Song knuckleDuster2 = new Song(laSex,"Knuckle Duster (Radio 2-B)", "0m 25s", 2);
-        songStorage.saveSong(knuckleDuster2);
+        songRepository.save(knuckleDuster2);
 
         Song thrust = new Song(laSex, "Thrust!", "5m 4s", 4);
-        songStorage.saveSong(thrust);
+        songRepository.save(thrust);
 
         Song oneBig = new Song(laSex, "One Big Crunch", "0m 21s", 2);
-        songStorage.saveSong(oneBig);
+        songRepository.save(oneBig);
 
         Song grindhouse = new Song(laSex, "Grindhouse (A Go-Go)", "4m 5s", 4);
-        songStorage.saveSong(grindhouse);
+        songRepository.save(grindhouse);
 
         Song starface = new Song(laSex, "Starface", "5m 2s", 4);
-        songStorage.saveSong(starface);
+        songRepository.save(starface);
 
         Song warpAsylum = new Song(laSex, "Warp Asylum", "6m 44s", 5);
-        songStorage.saveSong(warpAsylum);
+        songRepository.save(warpAsylum);
 
 
          Album nail = new Album(jawList,"Nail", "Foetus",
@@ -90,35 +90,35 @@ public class Populator implements CommandLineRunner {
                   "Self Immolation/Some Bizzare", "40m 4s", 5,
                  "https://www.youtube.com/embed/OnY63APl_6c",
                  "J.G. Thirlwell is a lyrical genius and this is his masterpiece.  One of the pioneers of the ‘industrial’ sound, and some classical overtures thrown in for good measure.  References run the gamut from Hamlet to Timothy Leary, to the Manson murders, to Jack and the Beanstalk.");
-         albumStorage.saveAlbum(nail);
+         albumRepository.save(nail);
 
          Song themePigdom = new Song(nail, "Theme from Pigdom Come", "1m 52s", 5);
-         songStorage.saveSong(themePigdom);
+         songRepository.save(themePigdom);
 
          Song throneAgony = new Song(nail, "The Throne of Agony", "5m 18s", 5);
-         songStorage.saveSong(throneAgony);
+         songRepository.save(throneAgony);
 
          Song exclamation = new Song(nail, "!", "0m 4s", 4);
-         songStorage.saveSong(exclamation);
+         songRepository.save(exclamation);
 
          Song descentInferno = new Song(nail, "Descent into the Inferno", "6m 17s", 5);
-         songStorage.saveSong(descentInferno);
+         songRepository.save(descentInferno);
 
          Song enterExterminator = new Song(nail, "Enter the Exterminator", "4m 43s", 5);
-         songStorage.saveSong(enterExterminator);
+         songRepository.save(enterExterminator);
 
          Song di19026 = new Song(nail, "DI-1-9026", "4m 40s", 5);
-         songStorage.saveSong(di19026);
+         songRepository.save(di19026);
 
          Song overturePigdom = new Song(nail, "The Overture from Pigdom Come", "3m 1s", 5);
-         songStorage.saveSong(overturePigdom);
+         songRepository.save(overturePigdom);
 
          Song privateWar = new Song(nail, "Private War", "1m 6s", 5);
-         songStorage.saveSong(privateWar);
+         songRepository.save(privateWar);
 
          Song anythingViva = new Song(nail, "Anything (Viva!)", "6m 50s", 5,
                  "The last three songs really combine to form one killer ‘get my ass fired up!’ anthem that should be required in every half time locker room speech.  Favorite Lyric: C’mon, man.  The ENTIRE song!");
-         songStorage.saveSong(anythingViva);
+         songRepository.save(anythingViva);
 
 
          Album extremities = new Album(jawList,"Extremities, Dirt and Various Repressed Emotions", "Killing Joke",
@@ -126,10 +126,10 @@ public class Populator implements CommandLineRunner {
                   "Noise", "1h 5m 8s", 5,
                  "https://www.youtube.com/embed/dCs0D6AJUuM",
                  "Quite the departure from their previous album “Outside the Gate” as Martin Atkins (PIL, Pigface) joins the band for a ‘one and done’ on drums.  This one turns it ‘up to 11’ with not only the power of the sound, but the lyrics as well.  So thankful to have seen them on tour at Bogarts in Cincy supporting this album.  Good times.");
-         albumStorage.saveAlbum(extremities);
+         albumRepository.save(extremities);
 
          Song moneyGod = new Song(extremities, "Money Is Not Our God", "5m 17s", 5);
-         songStorage.saveSong(moneyGod);
+         songRepository.save(moneyGod);
 
          Song ageGreed = new Song(extremities, "Age of Greed", "7m 23s", 5,
                  "Great lyrics with great energy behind them.  If this song does not make you angry, you may not have a pulse.  Favorite Lyric: Your money, my time\n" +
@@ -138,34 +138,34 @@ public class Populator implements CommandLineRunner {
                          "How will you bridge the gap\n" +
                          "Between the endless buffet\n" +
                          "And the empty plate I have.");
-         songStorage.saveSong(ageGreed);
+         songRepository.save(ageGreed);
 
          Song beautifulDead = new Song(extremities, "The Beautiful Dead", "6m 2s", 5);
-         songStorage.saveSong(beautifulDead);
+         songRepository.save(beautifulDead);
 
          Song extremitites = new Song(extremities, "Extremities", "5m 20s", 5);
-         songStorage.saveSong(extremitites);
+         songRepository.save(extremitites);
 
          Song intraveneous = new Song(extremities, "Intravenous", "7m 2s", 5);
-         songStorage.saveSong(intraveneous);
+         songRepository.save(intraveneous);
 
          Song insideTermite = new Song(extremities, "Inside the Termite Mound", "7m 49s", 5);
-         songStorage.saveSong(insideTermite);
+         songRepository.save(insideTermite);
 
          Song solitude = new Song(extremities, "Solitude", "5m 2s", 5);
-         songStorage.saveSong(solitude);
+         songRepository.save(solitude);
 
          Song northBorder = new Song(extremities, "North of the Border", "5m 52s", 5);
-         songStorage.saveSong(northBorder);
+         songRepository.save(northBorder);
 
          Song slipstream = new Song(extremities, "Slipstream", "7m 7s", 5);
-         songStorage.saveSong(slipstream);
+         songRepository.save(slipstream);
 
          Song kaliyuga = new Song(extremities, "Kaliyuga", "2m 8s", 5);
-         songStorage.saveSong(kaliyuga);
+         songRepository.save(kaliyuga);
 
          Song struggle = new Song(extremities, "Struggle", "6m 13s", 5);
-         songStorage.saveSong(struggle);
+         songRepository.save(struggle);
 
 
          Album killers = new Album(jawList,"Killers", "Iron Maiden",
@@ -173,70 +173,70 @@ public class Populator implements CommandLineRunner {
                   "EMI", "38m 18s", 5,
                  "https://www.youtube.com/embed/QUsibOlkt-o",
                  "When this album was released in 1981, I had no idea who Iron Maiden were, but Eddie on the cover and my friend telling me he thought that it might be ‘devil music’ sold me.  It was the hardest, fastest rock I had heard to that point, and an instant classic.  Bruce Dickinson famously joined the band on vocals after this album and they soared in popularity, but this is easily my favorite.  Another album where each song bleeds into the next.");
-         albumStorage.saveAlbum(killers);
+         albumRepository.save(killers);
 
          Song idesOfMarch = new Song(killers, "The Ides of March (instrumental)", "1m 48s", 5);
-         songStorage.saveSong(idesOfMarch);
+         songRepository.save(idesOfMarch);
 
          Song wrathchild = new Song(killers, "Wrathchild", "2m 54s", 5);
-         songStorage.saveSong(wrathchild);
+         songRepository.save(wrathchild);
 
          Song rueMorgue = new Song(killers, "Murders in the Rue Morgue", "4m 14s", 5);
-         songStorage.saveSong(rueMorgue);
+         songRepository.save(rueMorgue);
 
          Song anotherLife = new Song(killers, "Another Life", "3m 22s", 5);
-         songStorage.saveSong(anotherLife);
+         songRepository.save(anotherLife);
 
          Song genghisKhan = new Song(killers, "Genghis Khan (instrumental)", "3m 2s", 5);
-         songStorage.saveSong(genghisKhan);
+         songRepository.save(genghisKhan);
 
          Song innocentExile = new Song(killers, "Innocent Exile", "3m 50s", 5);
-         songStorage.saveSong(innocentExile);
+         songRepository.save(innocentExile);
 
          Song killersSong = new Song(killers, "Killers", "4m 58s", 5);
-         songStorage.saveSong(killersSong);
+         songRepository.save(killersSong);
 
          Song prodigalSon = new Song(killers, "Prodigal Son", "6m 5s", 5,
                  "Beautiful and haunting.  Such a shame that the band doesn’t appear to agree as I don’t believe they have ever played it on tour.  Favorite Lyric: Oh Lamia, please, try to help me\n" +
                          "The devil's got a hold of my soul and he won't let me be\n" +
                          "Lamia, I've got this curse, I'm turning to bad\n" +
                          "The devil's got a hold of my soul, he's driving me mad.");
-         songStorage.saveSong(prodigalSon);
+         songRepository.save(prodigalSon);
 
          Song purgatory = new Song(killers, "Purgatory", "3m 18s", 5);
-         songStorage.saveSong(purgatory);
+         songRepository.save(purgatory);
 
          Song drifter = new Song(killers, "Drifter", "4m 47s", 5);
-         songStorage.saveSong(drifter);
+         songRepository.save(drifter);
 
          Album undertow = new Album(jawList,"Undertow", "Tool",
                  "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Tool-Undertow.jpg/220px-Tool-Undertow.jpg",
                   "Zoo", "1h 9m 13s", 5,
                  "https://www.youtube.com/embed/I8yoVlkLERs",
                  "Just perfection from the lyrics to the vocals and the full, raw power of the instruments.  Could listen to this on an endless loop, stopping only to occasionally skip Sober as it was a bit overplayed.  This album sold me on all things Maynard.");
-         albumStorage.saveAlbum(undertow);
+         albumRepository.save(undertow);
 
          Song intolerance = new Song(undertow, "Intolerance", "4m 53s", 5);
-         songStorage.saveSong(intolerance);
+         songRepository.save(intolerance);
 
          Song prisonSex = new Song(undertow, "Prison Sex", "4m 56s", 5);
-         songStorage.saveSong(prisonSex);
+         songRepository.save(prisonSex);
 
          Song sober = new Song(undertow, "Sober", "5m 6s", 4);
-         songStorage.saveSong(sober);
+         songRepository.save(sober);
 
          Song bottom = new Song(undertow, "Bottom", "7m 14s", 5);
-         songStorage.saveSong(bottom);
+         songRepository.save(bottom);
 
          Song crawlAway = new Song(undertow, "Crawl Away", "5m 30s", 5);
-         songStorage.saveSong(crawlAway);
+         songRepository.save(crawlAway);
 
          Song swampSong = new Song(undertow, "Swamp Song", "5m 31s", 5,
                  "If your neck does not need a brace after listening to this song, you may not have a pulse.");
-         songStorage.saveSong(swampSong);
+         songRepository.save(swampSong);
 
          Song undertowSong = new Song(undertow, "Undertow", "5m 22s", 5);
-         songStorage.saveSong(undertowSong);
+         songRepository.save(undertowSong);
 
          Song fourDegrees = new Song(undertow, "4°", "6m 3s", 5,
                  " Favorite Lyric: Locked up inside you\n" +
@@ -244,143 +244,143 @@ public class Populator implements CommandLineRunner {
                          "Is a cavern of treasures that\n" +
                          "Noone has been to\n" +
                          "Let's go digging.");
-         songStorage.saveSong(fourDegrees);
+         songRepository.save(fourDegrees);
 
          Song flood = new Song(undertow, "Flood", "7m 46s", 5);
-         songStorage.saveSong(flood);
+         songRepository.save(flood);
 
          Song disgustipated = new Song(undertow, "Disgustipated", "15m 47s", 5,
                  "Favorite Lyric: Let the rabbits wear glasses");
-         songStorage.saveSong(disgustipated);
+         songRepository.save(disgustipated);
 
 
          List naList = new List("nana List");
          listStorage.saveList(naList);
 
          Album inASilentWay = new Album(naList,"In A Silent Way ","Miles Davis","https://www.bluescentric.com/images/product/large/4310.jpg","Columbia Records","38m 09s", 5, "https://www.youtube.com/watch?v=YHesqaMhh34","Miles Davies gave us a mighty touch with his 'In A Silent Way' album, It is a musical rebirth, a sense of motherly warmth takes over, and then we hear, yet again, Davis’ cosmic trumpet playing which concludes the album with a calming fade.");
-         albumStorage.saveAlbum(inASilentWay);
+         albumRepository.save(inASilentWay);
 
          Song shhPeaceful = new Song(inASilentWay,"Shhh / Peacefull","18m 30s",5,"This jam will have you tip-toeing around your house, very relaxing yet stimulating");
-         songStorage.saveSong(shhPeaceful);
+         songRepository.save(shhPeaceful);
 
          Song aboutThatTime = new Song(inASilentWay,"In A Silent /It's About That Time","20m 0s",5,"One of the smoothest jams on earth, This is a must listen for any jazz fans out there who wish to transcend into a groove");
-         songStorage.saveSong(aboutThatTime);
+         songRepository.save(aboutThatTime);
 
 
          Album zombie = new Album(naList,"Zombie","Fela Kuti", "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/64/02/1c/64021cbe-25b4-a38b-4495-88578359ca19/720841206194.jpg/270x270bb.webp","COCONUT","25m 41s",4,"https://www.youtube.com/watch?v=-3j0nugz1Pw&list=OLAK5uy_n4UDREKrRXJxqya81gWWhXN_5ImgFWtNM","Fela Kuti, a Nigerian Afrobeat and political activist released 'Zombie' in 1976 which has been one of his most political musical statement.");
-         albumStorage.saveAlbum(zombie);
+         albumRepository.save(zombie);
 
          Song mrFollowFollow = new Song(zombie,"Mr. Follow Follow","12m 58s",5,"'Mr. Follow Follow' has a deeper commentary and a clearer theme about conformity as it relates to the military and the state. ");
-         songStorage.saveSong(mrFollowFollow);
+         songRepository.save(mrFollowFollow);
 
          Song observationIsNoCrime = new Song(zombie,"Observation Is No Crime","13m 26s",5);
-         songStorage.saveSong(observationIsNoCrime);
+         songRepository.save(observationIsNoCrime);
 
          Song mistake = new Song(zombie,"Mistake (Live at the Berlin Jazz Festival, 1978)","14m 47s",5);
-         songStorage.saveSong(mistake);
+         songRepository.save(mistake);
 
          Song zombieo = new Song(zombie,"zombie", "12m 26s",5);
-         songStorage.saveSong(zombieo);
+         songRepository.save(zombieo);
 
 
          Album conflict = new Album(naList,"Conflict","Ebo Taylor & Uhuru Yenzu","https://f4.bcbits.com/img/a2585325512_16.jpg","Mr. Bongo","31m 19s",4,"https://www.youtube.com/watch?v=Q54D5EVtRsQ","The album is both, mesmerizing and beautiful, and stands up well to many of the other monumental releases by Ebo Taylor. This album shows Ebo Taylor’s trademark approach that saw him inject a heavy dose of funk into Ghanaian traditional highlife grooves in an attempt to move away from what he saw as the music’s more traditional qualities.");
-         albumStorage.saveAlbum(conflict);
+         albumRepository.save(conflict);
 
          Song youNeedLove = new Song(conflict,"You Need Love", "07m 09s",5, "A classic");
-         songStorage.saveSong(youNeedLove);
+         songRepository.save(youNeedLove);
 
          Song loveAndDeath = new Song(conflict,"Love And Death","08m 19s",4);
-         songStorage.saveSong(loveAndDeath);
+         songRepository.save(loveAndDeath);
 
          Song whatIsLife = new Song(conflict,"What Is Life","04m 37s",4);
-         songStorage.saveSong(whatIsLife);
+         songRepository.save(whatIsLife);
 
          Song christWillCome = new Song(conflict,"Christ Will Come","06m 58s",4);
-         songStorage.saveSong(christWillCome);
+         songRepository.save(christWillCome);
 
          Song victory = new Song(conflict,"Victory","04m 16s",4);
-         songStorage.saveSong(victory);
+         songRepository.save(victory);
 
-        
+
 
          List harrisonList = new List("harrison List");
          listStorage.saveList(harrisonList);
 
          Album foodAndLiquor = new Album(harrisonList,"Lupe Fiasco's Food & Liquor ","Lupe Fiasco","https://images-na.ssl-images-amazon.com/images/I/81B4l7WTz3L._SL1453_.jpg","Atlantic Records","72m 13s", 4, "https://www.youtube.com/watch?v=Gl83mI69nX4","blah blah blah");
-         albumStorage.saveAlbum(foodAndLiquor);
+         albumRepository.save(foodAndLiquor);
 
          Song intro = new Song(foodAndLiquor,"Intro","3m 7s",5,"tbd");
-         songStorage.saveSong(intro);
+         songRepository.save(intro);
 
          Song real = new Song(foodAndLiquor,"Real (featuring Sarah Green)","4m 2s",4,"tbd");
-         songStorage.saveSong(real);
+         songRepository.save(real);
 
          Song justMightBeOK = new Song(foodAndLiquor,"Just Might Be OK (featuring Gemini)","4m 24s",5,"tbd");
-         songStorage.saveSong(justMightBeOK);
+         songRepository.save(justMightBeOK);
 
          Song kickPush = new Song(foodAndLiquor,"Kick, Push","4m 13s",5,"tbd");
-         songStorage.saveSong(kickPush);
+         songRepository.save(kickPush);
 
          Song iGotcha = new Song(foodAndLiquor,"I Gotcha","3m 59s",5,"tbd");
-         songStorage.saveSong(iGotcha);
+         songRepository.save(iGotcha);
 
          Song heSaySheSay = new Song(foodAndLiquor,"He Say She Say","4m 12s",5,"tbd");
-         songStorage.saveSong(heSaySheSay);
+         songRepository.save(heSaySheSay);
 
          Song sunshine = new Song(foodAndLiquor,"Sunshine","3m 55s",5,"tbd");
-         songStorage.saveSong(sunshine);
+         songRepository.save(sunshine);
 
          Song daydreamin = new Song(foodAndLiquor,"Daydreamin' (featuring Jill Scott)","3m 55s",5,"tbd");
-         songStorage.saveSong(daydreamin);         
+         songRepository.save(daydreamin);
 
          Song theCool = new Song(foodAndLiquor,"The Cool","3m 46s",5,"tbd");
-         songStorage.saveSong(theCool);
+         songRepository.save(theCool);
 
          Song hurtMeSoul = new Song(foodAndLiquor,"Hurt Me Soul","4m 22s",5,"tbd");
-         songStorage.saveSong(hurtMeSoul);
+         songRepository.save(hurtMeSoul);
 
          Song pressure = new Song(foodAndLiquor,"Pressure (featuring Jay-Z)","4m 47s",3,"tbd");
-         songStorage.saveSong(pressure);
+         songRepository.save(pressure);
 
          Song americanTerrorist = new Song(foodAndLiquor,"American Terrorist (featuring Matthew Santos)","4m 40s",5,"tbd");
-         songStorage.saveSong(americanTerrorist);
+         songRepository.save(americanTerrorist);
 
          Song theEmperorsSoundtrack = new Song(foodAndLiquor,"The Emperor's Soundtrack","2m 56s",3,"tbd");
-         songStorage.saveSong(theEmperorsSoundtrack);
+         songRepository.save(theEmperorsSoundtrack);
 
          Song kickPush2 = new Song(foodAndLiquor,"Kick, Push II","4m 11s",5,"tbd");
-         songStorage.saveSong(kickPush2);
+         songRepository.save(kickPush2);
 
          Song outro = new Song(foodAndLiquor,"Outro","12m 13s",5,"tbd");
-         songStorage.saveSong(outro);
+         songRepository.save(outro);
 
 
          Album rapture = new Album(harrisonList,"Rapture","Anita Baker", "https://images-na.ssl-images-amazon.com/images/I/71bd2KuN3lL._SL1425_.jpg","Elektra","37m 9s",5,"https://www.youtube.com/watch?v=QlhZPNv7f8Q","tbd.");
-         albumStorage.saveAlbum(rapture);
+         albumRepository.save(rapture);
 
          Song sweetLove = new Song(rapture,"Sweet Love","4m 26s",5,"tbd");
-         songStorage.saveSong(sweetLove);
+         songRepository.save(sweetLove);
 
          Song youBringMeJoy = new Song(rapture,"You Bring Me Joy","4m 24s",5,"tbd");
-         songStorage.saveSong(youBringMeJoy);
+         songRepository.save(youBringMeJoy);
 
          Song caughtUpInTheRapture = new Song(rapture,"Caught Up In The Rapture","5m 17s",5,"tbd");
-         songStorage.saveSong(caughtUpInTheRapture);
+         songRepository.save(caughtUpInTheRapture);
 
          Song beenSoLong = new Song(rapture,"Been So Long","5m 7s",4,"tbd");
-         songStorage.saveSong(beenSoLong);
+         songRepository.save(beenSoLong);
 
          Song mystery = new Song(rapture,"Mystery","4m 56s",5,"tbd");
-         songStorage.saveSong(mystery);
+         songRepository.save(mystery);
 
          Song noOneInTheWorld = new Song(rapture,"No One In The World","4m 10s",5,"tbd");
-         songStorage.saveSong(noOneInTheWorld);
+         songRepository.save(noOneInTheWorld);
 
          Song sameOleLove = new Song(rapture,"Same Ole Love (365 Days a Year)","4m 5s",4,"tbd");
-         songStorage.saveSong(sameOleLove);
+         songRepository.save(sameOleLove);
 
          Song watchYourStep = new Song(rapture,"Watch Your Step","4m 54s",4,"tbd");
-         songStorage.saveSong(watchYourStep);
+         songRepository.save(watchYourStep);
 
 
     }
