@@ -24,6 +24,10 @@ Maynard's List
 GET http://localhost:8080/api/lists/5/albums
 Content-Type: application/json
 
+### Display single ablbum of a list
+GET http://localhost:8080/api/lists/5/albums/6
+
+
 ### Update Albums name property
 PATCH http://localhost:8080/api/lists/5/albums/6/albumName
 
@@ -70,6 +74,10 @@ DELETE http://localhost:8080/api/lists/1/albums/2
 
 ### List songs of a specific album
 GET http://localhost:8080/api/lists/5/albums/6/songs
+Content-Type: application/json
+
+### Display single song of a specific album
+GET http://localhost:8080/api/lists/5/albums/6/songs/7
 Content-Type: application/json
 
 ### Add new song to specific album
