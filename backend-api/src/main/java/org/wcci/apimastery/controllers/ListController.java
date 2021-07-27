@@ -137,6 +137,14 @@ public class ListController {
         return listStorage.retrieveAlbumById(albumId).getSongs();
     }
 
+    // ### Display single song of a specific album 
+    // GET http:// localhost:8080/api/lists/5/albums/6/songs/7
+    // Content-Type:application/json
+    @GetMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}")
+    public Song retrieveSongById(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId) {
+        return songRepository.findById(songId).get();
+    }
+
     //     ### Add new song to specific album
     // PATCH http://localhost:8080/api/lists/5/albums/6/songs
     // Content-Type: application/json

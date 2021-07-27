@@ -77,7 +77,8 @@ GET http://localhost:8080/api/lists/5/albums/6/songs
 Content-Type: application/json
 
 ### Display single song of a specific album
-
+GET http://localhost:8080/api/lists/5/albums/6/songs/7
+Content-Type: application/json
 
 ### Add new song to specific album
 PATCH http://localhost:8080/api/lists/5/albums/6/songs
