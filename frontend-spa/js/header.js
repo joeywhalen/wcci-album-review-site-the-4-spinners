@@ -3,19 +3,20 @@ const createHeader = function(){
     const navigation = document.createElement("nav");
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
-    navButtons.setAttribute("nav-btns");
-    const homeBtn = document.createElement("button");
-    homeBtn.innerText = "Home";
-    const aboutBtn = document.createElement("button");
-    aboutBtn.innerText = "About Us";
-    const backBtn = document.createElement("button");
-    backBtn.innerText = "Back";
+    navButtons.classList.add("nav-btns");
+    navButtons.innerHTML = `<button>Home</button>
+                 <button>About Us</button> 
+                 <button>Back Page</button>`
 
     const title = document.createElement("div");
     title.classList.add("title");
     //  <!-- <img src="/frontend-spa/images/Logo.png" alt=""> -->
-    title.innerHTML = '<h1>Welcome to Desert Island Jukebox</h1>'
+    title.innerHTML = `<h1>Welcome to Desert Island Jukebox</h1>`
     
+    
+    navigation.appendChild(navButtons);
+    header.appendChild(navigation);
+    header.appendChild(title);
     return header;
 }
 export {createHeader}
