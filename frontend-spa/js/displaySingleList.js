@@ -1,5 +1,6 @@
-import { clearChildren } from "./displayHome";
-import { displayHome } from "./displayHome";
+import { clearChildren } from "./displayHome.js";
+import { displayHome } from "./displayHome.js";
+import { createListBar } from "./listBar.js";
 
 
 const displaySingleList = function (mainElement){
