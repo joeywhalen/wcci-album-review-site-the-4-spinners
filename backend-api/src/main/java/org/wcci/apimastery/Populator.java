@@ -427,33 +427,6 @@ public class Populator implements CommandLineRunner {
          Song itIsWhatItIsSong = new Song(itIsWhatItIsAlbum,"It Is What It Is","5m 02s",5);
          songRepository.save(itIsWhatItIsSong); 
 
-         Album rapture = new Album(harrisonList,"Rapture","Anita Baker", "https://images-na.ssl-images-amazon.com/images/I/71bd2KuN3lL._SL1425_.jpg","Elektra","37m 9s",5,"https://www.youtube.com/watch?v=QlhZPNv7f8Q","tbd.");
-         albumRepository.save(rapture);
-
-         Song sweetLove = new Song(rapture,"Sweet Love","4m 26s",5);
-         songRepository.save(sweetLove);
-
-         Song youBringMeJoy = new Song(rapture,"You Bring Me Joy","4m 24s",5);
-         songRepository.save(youBringMeJoy);
-
-         Song caughtUpInTheRapture = new Song(rapture,"Caught Up In The Rapture","5m 17s",5);
-         songRepository.save(caughtUpInTheRapture);
-
-         Song beenSoLong = new Song(rapture,"Been So Long","5m 7s",4);
-         songRepository.save(beenSoLong);
-
-         Song mystery = new Song(rapture,"Mystery","4m 56s",5);
-         songRepository.save(mystery);
-
-         Song noOneInTheWorld = new Song(rapture,"No One In The World","4m 10s",5);
-         songRepository.save(noOneInTheWorld);
-
-         Song sameOleLove = new Song(rapture,"Same Ole Love (365 Days a Year)","4m 5s",4);
-         songRepository.save(sameOleLove);
-
-         Song watchYourStep = new Song(rapture,"Watch Your Step","4m 54s",4);
-         songRepository.save(watchYourStep);
-
          Album driftAwayAlbum = new Album(harrisonList,"Drift Away","Dobbie Gray", "https://images-na.ssl-images-amazon.com/images/I/61V6GSSQS9L._SY355_.jpg","Decca","34m 37s",5,"https://www.youtube.com/watch?v=NIuyDWzctgY","tbd.");
          albumRepository.save(driftAwayAlbum);
 
@@ -464,10 +437,10 @@ public class Populator implements CommandLineRunner {
          songRepository.save(theTimeILoveYou);
 
          Song laLady = new Song(driftAwayAlbum,"L.A. Lady","2m 53s",5);
-         songRepository.save(iLoveLouisCole);
+         songRepository.save(laLady);
 
          Song weHadItAll = new Song(driftAwayAlbum,"We Had It All","2m 43s",5);
-         songRepository.save(blackQualls);
+         songRepository.save(weHadItAll);
 
          Song nowThatImWithoutYou = new Song(driftAwayAlbum,"Now That I'm Without You","3m 26s",5);
          songRepository.save(nowThatImWithoutYou);
@@ -602,7 +575,7 @@ public class Populator implements CommandLineRunner {
 
         Song smallBentUgly = new Song(penn,"Small, Bent and Ugly","3m 21s",5,
                 "Best song on the album. Leaves you very satisfied. About the reasons for being in the scene.");
-        songRepository.save(mtChill);
+        songRepository.save(smallBentUgly);
 
         Album tigersJaw = new Album(georgeList,"Tigers Jaw","Tigers Jaw",
         "https://upload.wikimedia.org/wikipedia/en/8/8b/Tigers_Jaw_Self_Titled.jpg", "Prison Jazz","30m 3s", 4,
