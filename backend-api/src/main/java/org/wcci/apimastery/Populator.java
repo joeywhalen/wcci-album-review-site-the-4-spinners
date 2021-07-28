@@ -603,5 +603,43 @@ public class Populator implements CommandLineRunner {
         Song smallBentUgly = new Song(penn,"Small, Bent and Ugly","3m 21s",5,
                 "Best song on the album. Leaves you very satisfied. About the reasons for being in the scene.");
         songRepository.save(mtChill);
+
+        Album tigersJaw = new Album(georgeList,"Tigers Jaw","Tigers Jaw",
+        "https://upload.wikimedia.org/wikipedia/en/8/8b/Tigers_Jaw_Self_Titled.jpg", "Prison Jazz","30m 3s", 4,
+        "https://youtu.be/U6TiR84uVHs",
+        "Very sad album. You can hear the guitars weep. Emo for sure.");
+        albumRepository.save(tigersJaw);
+
+        Song theSun = new Song(tigersJaw,"The Sun","3m 46s",4);
+        songRepository.save(theSun);
+
+        Song planeVsTank = new Song(tigersJaw,"Plane vs Tank vs Submarine","2m 2s",5, "Life changing sadness.");
+        songRepository.save(planeVsTank);
+
+        Song iSawWater = new Song(tigersJaw,"I Saw Water","4m 15s",4);
+        songRepository.save(iSawWater);
+
+        Song chemicals = new Song(tigersJaw,"Chemicals","2m 58s",5, "Another gem.  Deep, powerful meaning.");
+        songRepository.save(chemicals);
+
+        Song betweenBands = new Song(tigersJaw,"Between Your Band and the Other Band","4m 40s",4);
+        songRepository.save(betweenBands);
+
+        Song heat = new Song(tigersJaw,"Heat","1m 25s",3);
+        songRepository.save(heat);
+
+        Song iWasNever = new Song(tigersJaw,"I Was Never Your Boyfriend","2m 47s",4);
+        songRepository.save(iWasNever);
+
+        Song meals = new Song(tigersJaw,"Meals on Wheels","2m 29s",3);
+        songRepository.save(meals);
+
+        Song armsAcross = new Song(tigersJaw,"Arms Across America","2m 55s",4);
+        songRepository.save(armsAcross);
+
+        Song neverSaw = new Song(tigersJaw,"Never Saw It Coming","2m 37s",5, "Personal Favorite. Very Deep meaning.");
+        songRepository.save(neverSaw);
+
+        
     }
 }
