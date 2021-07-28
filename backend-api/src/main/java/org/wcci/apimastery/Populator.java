@@ -523,5 +523,48 @@ public class Populator implements CommandLineRunner {
          Song tryALittle = new Song(liveInEurope,"Try A Little Tenderness","5m",5);
          songRepository.save(tryALittle);
 
+
+         //George's List
+         List georgeList = new List("George's List");
+         listStorage.saveList(georgeList);
+
+         Album underSoilAndDirt = new Album(georgeList,"Under Soil and Dirt","The Story So Far",
+				"https://upload.wikimedia.org/wikipedia/en/c/c3/Under_Soil_And_Dirt_by_The_Story_So_Far_front_album_cover.jpg",
+				"Pure Noise","32m 12s", 5, "https://www.youtube.com/watch?v=Ndx1uhYA6DE&list=PL08971D6ED3A4EFD3",
+				"This album brought pop-punk back to its roots. A little heavy for the genre, but a classic.");
+         albumRepository.save(underSoilAndDirt);
+
+         Song statesAndMinds = new Song(underSoilAndDirt,"States and Minds","51s",3);
+         songRepository.save(statesAndMinds);
+
+         Song roam = new Song(underSoilAndDirt,"Roam","2m 54s",4);
+         songRepository.save(roam);
+
+         Song quicksand = new Song(underSoilAndDirt,"Quicksand","2m 38s",5,"This is the song that launched the band!");
+         songRepository.save(quicksand);
+
+         Song swordsAndPens = new Song(underSoilAndDirt,"Swords and Pens","3m 9s",5);
+         songRepository.save(swordsAndPens);
+
+         Song highRegard = new Song(underSoilAndDirt,"High Regard","3m 51s",4);
+         songRepository.save(highRegard);
+
+         Song daughters = new Song(underSoilAndDirt,"Daughters","3m 6s",5,"Song about bad girls in college.");
+         songRepository.save(daughters);
+
+         Song mtDiablo = new Song(underSoilAndDirt,"Mt. Diablo","4m 9s",5,"This song has one of the best lines in all of music!");
+         songRepository.save(mtDiablo);
+
+         Song fourYears = new Song(underSoilAndDirt,"Four Years","2m 44s",4);
+         songRepository.save(fourYears);
+
+         Song rallyCap = new Song(underSoilAndDirt,"Rally Cap","2m 18s",5);
+         songRepository.save(rallyCap);
+
+         Song placeholder = new Song(underSoilAndDirt,"Placeholder","3m 5s",4);
+         songRepository.save(placeholder);
+
+         Song closure = new Song(underSoilAndDirt,"Closure","3m 19s",4,"Strong outro.");
+         songRepository.save(closure);
     }
 }
