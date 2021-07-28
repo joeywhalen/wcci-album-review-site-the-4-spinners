@@ -640,6 +640,59 @@ public class Populator implements CommandLineRunner {
         Song neverSaw = new Song(tigersJaw,"Never Saw It Coming","2m 37s",5, "Personal Favorite. Very Deep meaning.");
         songRepository.save(neverSaw);
 
-        
+        Album bangerz = new Album(georgeList,"Bangerz (Deluxe Version)","Miley Cyrus",
+                "https://upload.wikimedia.org/wikipedia/en/5/52/Bangerz.png", "RCA","61m 2s", 4,
+                "https://youtu.be/W1tzURKYFNs",
+                "More bangerz than bad songs, but there are some bad ones.");
+        albumRepository.save(bangerz);
+
+        Song adoreYou = new Song(bangerz,"Adore You","4m 38s",5, "Definitely an amazing song.");
+        songRepository.save(adoreYou);
+
+        Song weCantStop = new Song(bangerz,"We Can't Stop","3m 51s",5, "Certified Banger!");
+        songRepository.save(weCantStop);
+
+        Song sms = new Song(bangerz,"SMS (Bangerz)(featuring Britney Spears","2m 49s",3, 
+                "Decent. Though should be better with this duo.");
+        songRepository.save(sms);
+
+        Song fourByFour = new Song(bangerz,"4x4 (featuring Nelly)","3m 11s",3, "ok, but with nelly it should be better.");
+        songRepository.save(fourByFour);
+
+        Song myDarlin = new Song(bangerz,"My Darlin (featuring Future)","4m 03s",4, "Cover of Stand by Me Kind of.");
+        songRepository.save(myDarlin);
+
+        Song wreckingBall = new Song(bangerz,"Wrecking Ball","3m 41s",5, "Certified Banger! If you don't cry during the video something is wrong.");
+        songRepository.save(wreckingBall);
+
+        Song loveMoney = new Song(bangerz,"Love Money Party (featuring Big Sean)","3m 39s",2, "Not too good");
+        songRepository.save(loveMoney);
+
+        Song getItRight = new Song(bangerz,"#GETITRIGHT","4m 24s",5, "Song about burning desire.");
+        songRepository.save(getItRight);
+
+        Song drive = new Song(bangerz,"Drive","4m 15s",5, "Painful banger. Super tough and sad.");
+        songRepository.save(drive);
+
+        Song fu = new Song(bangerz,"FU (featuring French Montana)","3m 51s",5, "Vengeful banger.");
+        songRepository.save(fu);
+
+        Song doMyThang = new Song(bangerz,"Do My Thang","3m 45s",3, "She has much better rap songs (23).");
+        songRepository.save(doMyThang);
+
+        Song maybeYourRight = new Song(bangerz,"Maybe Your Right","3m 33s",4, "Another sad love song.");
+        songRepository.save(maybeYourRight);
+
+        Song someoneElse = new Song(bangerz,"Someone Else","4m 48s",5, "Another sad banger among many.");
+        songRepository.save(someoneElse);
+
+        Song rooting = new Song(bangerz,"Rooting for My Baby","3m 20s",4, "Stevie Nicks vibes.");
+        songRepository.save(rooting);
+
+        Song onMyOwn = new Song(bangerz,"On My Own","3m 52s",3, "Destiny's Child much?");
+        songRepository.save(onMyOwn);
+
+        Song handsInAir = new Song(bangerz,"Hands in the Air (Featuring Ludacris)","3m 22s",4, "Nice hip hop song.");
+        songRepository.save(handsInAir);
     }
 }
