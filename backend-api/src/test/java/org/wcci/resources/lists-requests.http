@@ -1,0 +1,103 @@
+### Get all lists.
+GET http://localhost:8080/api/lists
+Accept: application/json
+
+### Get a list with the given id.
+GET http://localhost:8080/api/lists/5
+
+### Delete a list with the given id.
+DELETE http://localhost:8080/api/lists/1
+
+### Post a new list resource.
+POST http://localhost:8080/api/lists
+Content-Type: application/json
+
+{"listName": "BobList"}
+
+### Update a list's name property.
+PATCH http://localhost:8080/api/lists/5/listName
+
+Maynard's List
+
+
+### List albums of a list
+GET http://localhost:8080/api/lists/5/albums
+Content-Type: application/json
+
+### Display single ablbum of a list
+GET http://localhost:8080/api/lists/5/albums/6
+
+
+### Update Albums name property
+PATCH http://localhost:8080/api/lists/5/albums/6/albumName
+
+New Test Album Name Change
+
+
+### Add a new album resource to the list's albums. {"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL", "songs": [{"test comment": "this is a test comment"}]}
+PATCH http://localhost:8080/api/lists/1/albums
+Content-Type: application/json
+ 
+{
+        "title": "test",
+        "artist": "Testing",
+        "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg/220px-White_Zombie_La_Sexorcisto_Devil_Music%2C_Vol._1.jpg",
+        "recordLabel": "Geffen",
+        "duration": "57m 30s",
+        "rating": 5,
+        "videoUrl": "https://www.youtube.com/embed/H8gHMU-pDbU",
+        "songs": [
+          {
+            "songTitle": "Test song1",
+            "length": "6m 21s",
+
+            "comments": [
+              "If this song doesn’t get you moving, you probably don’t have a pulse.  Favorite Lyric: So let me see ya howl'n through the keyhole\"god damn,\nSwept away\" she shouted, she love it, getin away yeah!"
+            ],
+            "starRating": 5
+          },
+          {
+            "songTitle": "Test song 2",
+            "length": "0m 21s",
+ 
+            "comments": [],
+            "starRating": 2
+          }
+        ],
+        "comments": [
+          "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun."
+        ]
+      }
+
+### Delete an album with id from a list.
+DELETE http://localhost:8080/api/lists/1/albums/2
+
+### List songs of a specific album
+GET http://localhost:8080/api/lists/5/albums/6/songs
+Content-Type: application/json
+
+### Display single song of a specific album
+GET http://localhost:8080/api/lists/5/albums/6/songs/7
+Content-Type: application/json
+
+### Add new song to specific album
+PATCH http://localhost:8080/api/lists/5/albums/6/songs
+Content-Type: application/json
+
+{
+    "songTitle": "New Test Song",
+    "length": "5m 21s",
+
+    "comments": [
+        "Adding test song to existing album"
+    ],
+    "starRating": 1
+}
+
+### Delete a Song off a specific album
+DELETE http://localhost:8080/api/lists/5/albums/6/songs/7
+
+### Change Song Title
+PATCH http://localhost:8080/api/lists/5/albums/6/songs/7/songTitle
+
+New Changed Song Title
