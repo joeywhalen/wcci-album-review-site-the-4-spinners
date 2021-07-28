@@ -566,5 +566,42 @@ public class Populator implements CommandLineRunner {
 
          Song closure = new Song(underSoilAndDirt,"Closure","3m 19s",4,"Strong outro.");
          songRepository.save(closure);
+
+        Album penn = new Album(georgeList,"61 Penn","Crucial Dudes",
+                "https://f4.bcbits.com/img/a2819605783_10.jpg", "Jump Start Records","20m 25s", 5,
+                "https://youtu.be/t4CzVMLhIxw",
+                "Very heavy for this genre. Amazing album. Hidden Gem!");
+        albumRepository.save(penn);
+
+        Song mtChill = new Song(penn,"Mt. Chill You're Climbin'","52s",3,"Typical intro.");
+        songRepository.save(mtChill);
+        
+        Song doubt = new Song(penn,"Doubt","1m 13s",4);
+        songRepository.save(doubt);
+
+        Song boomRoasted = new Song(penn,"Boom, Roasted","1m 26s",4);
+        songRepository.save(boomRoasted);
+
+        Song throughBeingCrucial = new Song(penn,"Through Being Crucial","2m 3s",4);
+        songRepository.save(throughBeingCrucial);
+
+        Song madNice = new Song(penn,"Mad Nice","55s",3);
+        songRepository.save(madNice);
+
+        Song sixOnePenn = new Song(penn,"61 Penn","2m 26s",4);
+        songRepository.save(sixOnePenn);
+
+        Song contour = new Song(penn,"Contour","2m 17s",5,"This one is from the heart for sure.");
+        songRepository.save(contour);
+
+        Song giveEmHoward = new Song(penn,"Give 'Em the Howard","2m 36s",5,"Great guitar rifts and makes you sad.");
+        songRepository.save(giveEmHoward);
+
+        Song onLeaving = new Song(penn,"On Leaving","3m 18s",5,"Song about life and growing up.");
+        songRepository.save(onLeaving);
+
+        Song smallBentUgly = new Song(penn,"Small, Bent and Ugly","3m 21s",5,
+                "Best song on the album. Leaves you very satisfied. About the reasons for being in the scene.");
+        songRepository.save(mtChill);
     }
 }
