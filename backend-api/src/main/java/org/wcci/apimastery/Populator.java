@@ -427,33 +427,6 @@ public class Populator implements CommandLineRunner {
          Song itIsWhatItIsSong = new Song(itIsWhatItIsAlbum,"It Is What It Is","5m 02s",5);
          songRepository.save(itIsWhatItIsSong); 
 
-         Album rapture = new Album(harrisonList,"Rapture","Anita Baker", "https://images-na.ssl-images-amazon.com/images/I/71bd2KuN3lL._SL1425_.jpg","Elektra","37m 9s",5,"https://www.youtube.com/watch?v=QlhZPNv7f8Q","tbd.");
-         albumRepository.save(rapture);
-
-         Song sweetLove = new Song(rapture,"Sweet Love","4m 26s",5);
-         songRepository.save(sweetLove);
-
-         Song youBringMeJoy = new Song(rapture,"You Bring Me Joy","4m 24s",5);
-         songRepository.save(youBringMeJoy);
-
-         Song caughtUpInTheRapture = new Song(rapture,"Caught Up In The Rapture","5m 17s",5);
-         songRepository.save(caughtUpInTheRapture);
-
-         Song beenSoLong = new Song(rapture,"Been So Long","5m 7s",4);
-         songRepository.save(beenSoLong);
-
-         Song mystery = new Song(rapture,"Mystery","4m 56s",5);
-         songRepository.save(mystery);
-
-         Song noOneInTheWorld = new Song(rapture,"No One In The World","4m 10s",5);
-         songRepository.save(noOneInTheWorld);
-
-         Song sameOleLove = new Song(rapture,"Same Ole Love (365 Days a Year)","4m 5s",4);
-         songRepository.save(sameOleLove);
-
-         Song watchYourStep = new Song(rapture,"Watch Your Step","4m 54s",4);
-         songRepository.save(watchYourStep);
-
          Album driftAwayAlbum = new Album(harrisonList,"Drift Away","Dobbie Gray", "https://images-na.ssl-images-amazon.com/images/I/61V6GSSQS9L._SY355_.jpg","Decca","34m 37s",5,"https://www.youtube.com/watch?v=NIuyDWzctgY","tbd.");
          albumRepository.save(driftAwayAlbum);
 
@@ -464,10 +437,10 @@ public class Populator implements CommandLineRunner {
          songRepository.save(theTimeILoveYou);
 
          Song laLady = new Song(driftAwayAlbum,"L.A. Lady","2m 53s",5);
-         songRepository.save(iLoveLouisCole);
+         songRepository.save(laLady);
 
          Song weHadItAll = new Song(driftAwayAlbum,"We Had It All","2m 43s",5);
-         songRepository.save(blackQualls);
+         songRepository.save(weHadItAll);
 
          Song nowThatImWithoutYou = new Song(driftAwayAlbum,"Now That I'm Without You","3m 26s",5);
          songRepository.save(nowThatImWithoutYou);
@@ -523,5 +496,176 @@ public class Populator implements CommandLineRunner {
          Song tryALittle = new Song(liveInEurope,"Try A Little Tenderness","5m",5);
          songRepository.save(tryALittle);
 
+
+         //George's List
+         List georgeList = new List("George's List");
+         listStorage.saveList(georgeList);
+
+         Album underSoilAndDirt = new Album(georgeList,"Under Soil and Dirt","The Story So Far",
+				"https://upload.wikimedia.org/wikipedia/en/c/c3/Under_Soil_And_Dirt_by_The_Story_So_Far_front_album_cover.jpg",
+				"Pure Noise","32m 12s", 5, "https://www.youtube.com/watch?v=Ndx1uhYA6DE&list=PL08971D6ED3A4EFD3",
+				"This album brought pop-punk back to its roots. A little heavy for the genre, but a classic.");
+         albumRepository.save(underSoilAndDirt);
+
+         Song statesAndMinds = new Song(underSoilAndDirt,"States and Minds","51s",3);
+         songRepository.save(statesAndMinds);
+
+         Song roam = new Song(underSoilAndDirt,"Roam","2m 54s",4);
+         songRepository.save(roam);
+
+         Song quicksand = new Song(underSoilAndDirt,"Quicksand","2m 38s",5,"This is the song that launched the band!");
+         songRepository.save(quicksand);
+
+         Song swordsAndPens = new Song(underSoilAndDirt,"Swords and Pens","3m 9s",5);
+         songRepository.save(swordsAndPens);
+
+         Song highRegard = new Song(underSoilAndDirt,"High Regard","3m 51s",4);
+         songRepository.save(highRegard);
+
+         Song daughters = new Song(underSoilAndDirt,"Daughters","3m 6s",5,"Song about bad girls in college.");
+         songRepository.save(daughters);
+
+         Song mtDiablo = new Song(underSoilAndDirt,"Mt. Diablo","4m 9s",5,"This song has one of the best lines in all of music!");
+         songRepository.save(mtDiablo);
+
+         Song fourYears = new Song(underSoilAndDirt,"Four Years","2m 44s",4);
+         songRepository.save(fourYears);
+
+         Song rallyCap = new Song(underSoilAndDirt,"Rally Cap","2m 18s",5);
+         songRepository.save(rallyCap);
+
+         Song placeholder = new Song(underSoilAndDirt,"Placeholder","3m 5s",4);
+         songRepository.save(placeholder);
+
+         Song closure = new Song(underSoilAndDirt,"Closure","3m 19s",4,"Strong outro.");
+         songRepository.save(closure);
+
+        Album penn = new Album(georgeList,"61 Penn","Crucial Dudes",
+                "https://f4.bcbits.com/img/a2819605783_10.jpg", "Jump Start Records","20m 25s", 5,
+                "https://youtu.be/t4CzVMLhIxw",
+                "Very heavy for this genre. Amazing album. Hidden Gem!");
+        albumRepository.save(penn);
+
+        Song mtChill = new Song(penn,"Mt. Chill You're Climbin'","52s",3,"Typical intro.");
+        songRepository.save(mtChill);
+        
+        Song doubt = new Song(penn,"Doubt","1m 13s",4);
+        songRepository.save(doubt);
+
+        Song boomRoasted = new Song(penn,"Boom, Roasted","1m 26s",4);
+        songRepository.save(boomRoasted);
+
+        Song throughBeingCrucial = new Song(penn,"Through Being Crucial","2m 3s",4);
+        songRepository.save(throughBeingCrucial);
+
+        Song madNice = new Song(penn,"Mad Nice","55s",3);
+        songRepository.save(madNice);
+
+        Song sixOnePenn = new Song(penn,"61 Penn","2m 26s",4);
+        songRepository.save(sixOnePenn);
+
+        Song contour = new Song(penn,"Contour","2m 17s",5,"This one is from the heart for sure.");
+        songRepository.save(contour);
+
+        Song giveEmHoward = new Song(penn,"Give 'Em the Howard","2m 36s",5,"Great guitar rifts and makes you sad.");
+        songRepository.save(giveEmHoward);
+
+        Song onLeaving = new Song(penn,"On Leaving","3m 18s",5,"Song about life and growing up.");
+        songRepository.save(onLeaving);
+
+        Song smallBentUgly = new Song(penn,"Small, Bent and Ugly","3m 21s",5,
+                "Best song on the album. Leaves you very satisfied. About the reasons for being in the scene.");
+        songRepository.save(smallBentUgly);
+
+        Album tigersJaw = new Album(georgeList,"Tigers Jaw","Tigers Jaw",
+        "https://upload.wikimedia.org/wikipedia/en/8/8b/Tigers_Jaw_Self_Titled.jpg", "Prison Jazz","30m 3s", 4,
+        "https://youtu.be/U6TiR84uVHs",
+        "Very sad album. You can hear the guitars weep. Emo for sure.");
+        albumRepository.save(tigersJaw);
+
+        Song theSun = new Song(tigersJaw,"The Sun","3m 46s",4);
+        songRepository.save(theSun);
+
+        Song planeVsTank = new Song(tigersJaw,"Plane vs Tank vs Submarine","2m 2s",5, "Life changing sadness.");
+        songRepository.save(planeVsTank);
+
+        Song iSawWater = new Song(tigersJaw,"I Saw Water","4m 15s",4);
+        songRepository.save(iSawWater);
+
+        Song chemicals = new Song(tigersJaw,"Chemicals","2m 58s",5, "Another gem.  Deep, powerful meaning.");
+        songRepository.save(chemicals);
+
+        Song betweenBands = new Song(tigersJaw,"Between Your Band and the Other Band","4m 40s",4);
+        songRepository.save(betweenBands);
+
+        Song heat = new Song(tigersJaw,"Heat","1m 25s",3);
+        songRepository.save(heat);
+
+        Song iWasNever = new Song(tigersJaw,"I Was Never Your Boyfriend","2m 47s",4);
+        songRepository.save(iWasNever);
+
+        Song meals = new Song(tigersJaw,"Meals on Wheels","2m 29s",3);
+        songRepository.save(meals);
+
+        Song armsAcross = new Song(tigersJaw,"Arms Across America","2m 55s",4);
+        songRepository.save(armsAcross);
+
+        Song neverSaw = new Song(tigersJaw,"Never Saw It Coming","2m 37s",5, "Personal Favorite. Very Deep meaning.");
+        songRepository.save(neverSaw);
+
+        Album bangerz = new Album(georgeList,"Bangerz (Deluxe Version)","Miley Cyrus",
+                "https://upload.wikimedia.org/wikipedia/en/5/52/Bangerz.png", "RCA","61m 2s", 4,
+                "https://youtu.be/W1tzURKYFNs",
+                "More bangerz than bad songs, but there are some bad ones.");
+        albumRepository.save(bangerz);
+
+        Song adoreYou = new Song(bangerz,"Adore You","4m 38s",5, "Definitely an amazing song.");
+        songRepository.save(adoreYou);
+
+        Song weCantStop = new Song(bangerz,"We Can't Stop","3m 51s",5, "Certified Banger!");
+        songRepository.save(weCantStop);
+
+        Song sms = new Song(bangerz,"SMS (Bangerz)(featuring Britney Spears","2m 49s",3, 
+                "Decent. Though should be better with this duo.");
+        songRepository.save(sms);
+
+        Song fourByFour = new Song(bangerz,"4x4 (featuring Nelly)","3m 11s",3, "ok, but with nelly it should be better.");
+        songRepository.save(fourByFour);
+
+        Song myDarlin = new Song(bangerz,"My Darlin (featuring Future)","4m 03s",4, "Cover of Stand by Me Kind of.");
+        songRepository.save(myDarlin);
+
+        Song wreckingBall = new Song(bangerz,"Wrecking Ball","3m 41s",5, "Certified Banger! If you don't cry during the video something is wrong.");
+        songRepository.save(wreckingBall);
+
+        Song loveMoney = new Song(bangerz,"Love Money Party (featuring Big Sean)","3m 39s",2, "Not too good");
+        songRepository.save(loveMoney);
+
+        Song getItRight = new Song(bangerz,"#GETITRIGHT","4m 24s",5, "Song about burning desire.");
+        songRepository.save(getItRight);
+
+        Song drive = new Song(bangerz,"Drive","4m 15s",5, "Painful banger. Super tough and sad.");
+        songRepository.save(drive);
+
+        Song fu = new Song(bangerz,"FU (featuring French Montana)","3m 51s",5, "Vengeful banger.");
+        songRepository.save(fu);
+
+        Song doMyThang = new Song(bangerz,"Do My Thang","3m 45s",3, "She has much better rap songs (23).");
+        songRepository.save(doMyThang);
+
+        Song maybeYourRight = new Song(bangerz,"Maybe Your Right","3m 33s",4, "Another sad love song.");
+        songRepository.save(maybeYourRight);
+
+        Song someoneElse = new Song(bangerz,"Someone Else","4m 48s",5, "Another sad banger among many.");
+        songRepository.save(someoneElse);
+
+        Song rooting = new Song(bangerz,"Rooting for My Baby","3m 20s",4, "Stevie Nicks vibes.");
+        songRepository.save(rooting);
+
+        Song onMyOwn = new Song(bangerz,"On My Own","3m 52s",3, "Destiny's Child much?");
+        songRepository.save(onMyOwn);
+
+        Song handsInAir = new Song(bangerz,"Hands in the Air (Featuring Ludacris)","3m 22s",4, "Nice hip hop song.");
+        songRepository.save(handsInAir);
     }
 }
