@@ -8,33 +8,23 @@ const createListBar = function(lists){
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
-    navButtons.innerHTML = `<button>Home</button>
-                 <button>About Us</button> 
+    navButtons.innerHTML = `<button>About Us</button> 
                  <button>Back Page</button>`
     
     const homeButton = document.createElement("button");
     homeButton.classList.add("home-navigation");
     homeButton.innerText = "Home";
 
-    const mainElement = document.createElement("main");
-    mainElement.classList.add("main-content");
-
     homeButton.addEventListener("click", () => {
+        const mainElement = document.querySelector("main");
         clearChildren(mainElement);
-        mainElement.appendChild(displayHome(lists));
+        container.appendChild(displayHome(mainElement));
         console.log("Clicked Home button");
     });
 
     const title = document.createElement("div");
     title.classList.add("title");
-    //  <!-- <img src="/frontend-spa/images/Logo.png" alt=""> -->
     title.innerHTML = `<h1>Welcome to Desert Island Jukebox</h1>`
-    
-    
-    // navigation.appendChild(navButtons);
-    // navButtons.appendChild(homeButton);
-    // header.appendChild(navigation);
-    // header.appendChild(title);
     
     const listBar = document.createElement("div");
     listBar.classList.add("list-bar");
@@ -94,7 +84,6 @@ const createListBar = function(lists){
     form.appendChild(formattingElement);
 
     listBar.prepend(form);
-    // // listBar.appendChild(form);
     navigation.appendChild(navButtons);
     navButtons.appendChild(homeButton);
     header.appendChild(navigation);
