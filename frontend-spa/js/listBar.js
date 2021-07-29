@@ -40,9 +40,19 @@ const createListBar = function(lists){
             headers: {
                 'Content-Type': 'application/json'
             },
+            body: JSON.stringify(listJson)
         })
+        .then(response => response.json())
+        .then(lists => container.appendChild(createListBar(lists)))
+        .catch(error => console.log(error));
     })
 
+    form.appendChild(listNameInput);
+    form.appendChild(submitNewListButton);
+    form.appendChild(formattingElement);
+
+    listBar.prepend(form);
+    // listBar.appendChild(form);
     
     return listBar;
 }
