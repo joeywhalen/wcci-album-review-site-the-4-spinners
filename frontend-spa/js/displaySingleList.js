@@ -26,7 +26,7 @@ const displaySingleList = function (list){
   const listInput = document.createElement("input");
   listInput.classList.add("attach-list-name");
   listInput.setAttribute("type", "text");
-  listInput.setAttribute("placeholder", "Which list?...");
+  listInput.setAttribute("placeholder", "Which List?...");
   const titleInput = document.createElement("input");
   titleInput.classList.add("new-album-title");
   titleInput.setAttribute("type", "text");
@@ -34,21 +34,34 @@ const displaySingleList = function (list){
   const artistInput = document.createElement("input");
   artistInput.classList.add("new-album-artist");
   artistInput.setAttribute("type", "text");
-  artistInput.setAttribute("placeholder", "Album artist...");
+  artistInput.setAttribute("placeholder", "Album Artist...");
   const imageURLInput = document.createElement("input");
   imageURLInput.classList.add("new-album-cover-image");
   imageURLInput.setAttribute("type", "text");
-  imageURLInput.setAttribute("placeholder", "Album cover image URL...");
+  imageURLInput.setAttribute("placeholder", "Album Cover Image URL...");
   const recordLabelInput = document.createElement("input");
   recordLabelInput.classList.add("new-album-record-label");
   recordLabelInput.setAttribute("type", "text");
-  recordLabelInput.setAttribute("placeholder", "Album record label...");
+  recordLabelInput.setAttribute("placeholder", "Album Record Label...");
   const durationInput = document.createElement("input");
   durationInput.classList.add("new-album-duration");
   durationInput.setAttribute("type", "text");
-  durationInput.setAttribute("placeholder", "Album duration...");
+  durationInput.setAttribute("placeholder", "Album Duration...");
   const starRatingInput = document.createElement("input");
+  starRatingInput.classList.add("new-album-star-rating");
+  starRatingInput.setAttribute("type", "integer");
+  starRatingInput.setAttribute("placeholder", "Album Star Rating...");
+  const videoUrlInput = document.createElement("input");
+  videoUrlInput.classList.add("new-album-video-URL");
+  videoUrlInput.setAttribute("type", "text");
+  videoUrlInput.setAttribute("placeholder", "Album Video URL...");
+  const commentsInput = document.createElement("input");
+  commentsInput.classList.add("new-album-comments");
+  commentsInput.setAttribute("type", "text");
+  commentsInput.setAttribute("placeholder", "Album Comment...");
   
+
+
     return mainElement;
 }
 export {displaySingleList}
