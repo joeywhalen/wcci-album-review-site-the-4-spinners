@@ -1,3 +1,4 @@
+import { clearChildren, displayHome } from "./displayHome.js";
 import { displaySingleList } from "./displaySingleList.js";
 
 const createListBar = function(lists){
@@ -38,6 +39,7 @@ const createListBar = function(lists){
 
     submitNewListButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
+        clearChildren(listBar);
         const listJson = {
             "listName" : listNameInput.value
         }
@@ -48,9 +50,9 @@ const createListBar = function(lists){
             },
             body: JSON.stringify(listJson)
         })
-        .then(response => response.json())
-        .then(lists => container.appendChild(createListBar(lists)))
-        .catch(error => console.log(error));
+            .then(response => response.json())
+            .then(lists => listBar.appendChild(createListBar(lists)))
+            .catch(error => console.log(error));
     })
 
     form.appendChild(listNameInput);
