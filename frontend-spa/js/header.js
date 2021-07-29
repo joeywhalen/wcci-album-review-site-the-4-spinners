@@ -1,4 +1,6 @@
-const createHeader = function(){
+import { clearChildren, displayHome } from "./displayHome.js";
+
+const createHeader = function () {
     const header = document.createElement("header");    
     const navigation = document.createElement("nav");
     navigation.classList.add("nav");
@@ -12,9 +14,14 @@ const createHeader = function(){
     homeButton.classList.add("home-navigation");
     homeButton.innerText = "Home";
 
+    const mainElement = document.createElement("main");
+    mainElement.classList.add("main-content");
+
     homeButton.addEventListener("click", () => {
-        mainElement.appendChild(displayHome(allListJson));
-    })
+        clearChildren(mainElement);
+        mainElement.appendChild(displayHome(lists));
+        console.log("Clicked Home button");
+    });
 
     const title = document.createElement("div");
     title.classList.add("title");
