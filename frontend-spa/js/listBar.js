@@ -1,6 +1,41 @@
+import { clearChildren, displayHome } from "./displayHome.js";
 import { displaySingleList } from "./displaySingleList.js";
 
 const createListBar = function(lists){
+    const container = document.querySelector(".container");
+    const header = document.createElement("header");    
+    const navigation = document.createElement("nav");
+    navigation.classList.add("nav");
+    const navButtons = document.createElement("ul");
+    navButtons.classList.add("nav-btns");
+    navButtons.innerHTML = `<button>Home</button>
+                 <button>About Us</button> 
+                 <button>Back Page</button>`
+    
+    const homeButton = document.createElement("button");
+    homeButton.classList.add("home-navigation");
+    homeButton.innerText = "Home";
+
+    const mainElement = document.createElement("main");
+    mainElement.classList.add("main-content");
+
+    homeButton.addEventListener("click", () => {
+        clearChildren(mainElement);
+        mainElement.appendChild(displayHome(lists));
+        console.log("Clicked Home button");
+    });
+
+    const title = document.createElement("div");
+    title.classList.add("title");
+    //  <!-- <img src="/frontend-spa/images/Logo.png" alt=""> -->
+    title.innerHTML = `<h1>Welcome to Desert Island Jukebox</h1>`
+    
+    
+    // navigation.appendChild(navButtons);
+    // navButtons.appendChild(homeButton);
+    // header.appendChild(navigation);
+    // header.appendChild(title);
+    
     const listBar = document.createElement("div");
     listBar.classList.add("list-bar");
     const listBtns = document.createElement("div");
@@ -23,44 +58,50 @@ const createListBar = function(lists){
 
     })
 
-    // const form = document.createElement("form");
-    // form.classList.add("new-list-form");
-    // const listNameInput = document.createElement("input");
-    // listNameInput.classList.add("new-list-name");
-    // listNameInput.setAttribute("type", "text");
-    // listNameInput.setAttribute("placeholder", "Name your list...");
+    const form = document.createElement("form");
+    form.classList.add("new-list-form");
+    const listNameInput = document.createElement("input");
+    listNameInput.classList.add("new-list-name");
+    listNameInput.setAttribute("type", "text");
+    listNameInput.setAttribute("placeholder", "Name your list...");
 
-    // const submitNewListButton = document.createElement("button");
-    // submitNewListButton.classList.add("submit-new-list");
-    // submitNewListButton.innerText = "Submit New List";
-    // const formattingElement = document.createElement('div');
-    // formattingElement.innerHTML = "<br><hr><br>";
+    const submitNewListButton = document.createElement("button");
+    submitNewListButton.classList.add("submit-new-list");
+    submitNewListButton.innerText = "Submit New List";
+    const formattingElement = document.createElement('div');
+    formattingElement.innerHTML = "<br><hr><br>";
 
-    // submitNewListButton.addEventListener("click", (clickEvent) => {
-    //     clickEvent.preventDefault();
-    //     const listJson = {
-    //         "listName" : listNameInput.value
-    //     }
-    //     fetch("http://localhost:8080/api/lists", {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(listJson)
-    //     })
-    //     .then(response => response.json())
-    //     .then(lists => container.appendChild(createListBar(lists)))
-    //     .catch(error => console.log(error));
-    // })
+    submitNewListButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        clearChildren(header);
+        const listJson = {
+            "listName" : listNameInput.value
+        }
+        fetch("http://localhost:8080/api/lists", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(listJson)
+        })
+            .then(response => response.json())
+            .then(lists => container.prepend(createListBar(lists)))
+            .catch(error => console.log(error));
+    })
 
-    // form.appendChild(listNameInput);
-    // form.appendChild(submitNewListButton);
-    // form.appendChild(formattingElement);
+    form.appendChild(listNameInput);
+    form.appendChild(submitNewListButton);
+    form.appendChild(formattingElement);
 
-    // listBar.prepend(form);
+    listBar.prepend(form);
     // // listBar.appendChild(form);
+    navigation.appendChild(navButtons);
+    navButtons.appendChild(homeButton);
+    header.appendChild(navigation);
+    header.appendChild(title);
+    header.appendChild(listBar);
     
-    return listBar;
+    return header;
 }
 export {createListBar}
 
