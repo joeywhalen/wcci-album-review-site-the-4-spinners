@@ -68,6 +68,7 @@ const displaySingleList = function (list){
 
   submitNewAlbumButton.addEventListener("click", (clickEvent) => {
     clickEvent.preventDefault();
+    const albumElement = document.querySelector("section");
     clearChildren(albumElement);
     const albumJson = {
       "listName" : listNameInput.value,
@@ -105,8 +106,8 @@ const displaySingleList = function (list){
   form.appendChild(submitNewAlbumButton);
   form.appendChild(formattingElement);
 
-  mainElement.prepend(form);
-
+  // mainElement.prepend(form);
+  mainElement.appendChild(form);
 
     return mainElement;
 }
