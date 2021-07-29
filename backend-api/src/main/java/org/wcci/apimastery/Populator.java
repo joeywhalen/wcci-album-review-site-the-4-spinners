@@ -19,15 +19,15 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception{
-         List list1 = new List("joe's list");
-         listStorage.saveList(list1);
-         Album album1 = new Album(list1,"Album title","Artist", "WWW.com",
-                 "Record label", "90", 5,"video.com");
-         albumRepository.save(album1);
-         Song song1 = new Song(album1,"sing song", "90", 5);
-         songRepository.save(song1);
-         Song song2 = new Song(album1,"Blah blah", "45", 4);
-         songRepository.save(song2);
+        //  List list1 = new List("joe's list");
+        //  listStorage.saveList(list1);
+        //  Album album1 = new Album(list1,"Album title","Artist", "WWW.com",
+        //          "Record label", "90", 5,"video.com");
+        //  albumRepository.save(album1);
+        //  Song song1 = new Song(album1,"sing song", "90", 5);
+        //  songRepository.save(song1);
+        //  Song song2 = new Song(album1,"Blah blah", "45", 4);
+        //  songRepository.save(song2);
 
          List jawList = new List("jaw List");
          listStorage.saveList(jawList);
