@@ -3,7 +3,7 @@ GET http://localhost:8080/api/lists
 Accept: application/json
 
 ### Get a list with the given id.
-GET http://localhost:8080/api/lists/5
+GET http://localhost:8080/api/lists/1
 
 ### Delete a list with the given id.
 DELETE http://localhost:8080/api/lists/1
