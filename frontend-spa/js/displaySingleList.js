@@ -23,10 +23,10 @@ const displaySingleList = function (list){
   
   const form = document.createElement("form");
   form.classList.add("new-album-form");
-  const listNameInput = document.createElement("input");
-  listNameInput.classList.add("attach-list-name");
-  listNameInput.setAttribute("type", "text");
-  listNameInput.setAttribute("placeholder", "Which List?...");
+  const listInput = document.createElement("input");
+  listInput.classList.add("attach-list-name");
+  listInput.setAttribute("type", "text");
+  listInput.setAttribute("placeholder", "Which List?...");
   const titleInput = document.createElement("input");
   titleInput.classList.add("new-album-title");
   titleInput.setAttribute("type", "text");
@@ -71,7 +71,7 @@ const displaySingleList = function (list){
     const albumElement = document.querySelector("section");
     clearChildren(albumElement);
     const albumJson = {
-      "listName" : listNameInput.value,
+      "list" : listInput.value,
       "title" : titleInput.value,
       "artist" : artistInput.value,
       "imageURL": imageURLInput.value,
@@ -94,7 +94,7 @@ const displaySingleList = function (list){
 
   })
 
-  form.appendChild(listNameInput);
+  form.appendChild(listInput);
   form.appendChild(titleInput);
   form.appendChild(artistInput);
   form.appendChild(imageURLInput);

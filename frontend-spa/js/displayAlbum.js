@@ -35,6 +35,10 @@ const displayAlbum = function (album){
         songElement.appendChild(songNameElement);
         albumElement.appendChild(songElement);
     });
+
+    const form = document.createElement("form");
+    form.classList.add("new-song-form");
+    const 
     
     mainElement.appendChild(albumElement);
     return mainElement;
