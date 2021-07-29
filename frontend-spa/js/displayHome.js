@@ -5,7 +5,7 @@ const displayHome = function(mainElement) {
     mainElement.innerHTML = `<img src="/frontend-spa/images/Logo.png" alt="Desert Island Logo">`
     // mainElement.appendChild();
 
-const form = document.createElement("form");
+    const form = document.createElement("form");
     form.classList.add("new-list-form");
     const listNameInput = document.createElement("input");
     listNameInput.classList.add("new-list-name");

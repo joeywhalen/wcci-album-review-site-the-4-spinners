@@ -7,6 +7,14 @@ const createHeader = function(){
     navButtons.innerHTML = `<button>Home</button>
                  <button>About Us</button> 
                  <button>Back Page</button>`
+    
+    const homeButton = document.createElement("button");
+    homeButton.classList.add("home-navigation");
+    homeButton.innerText = "Home";
+
+    homeButton.addEventListener("click", () => {
+        mainElement.appendChild(displayHome(allListJson));
+    })
 
     const title = document.createElement("div");
     title.classList.add("title");
@@ -15,6 +23,7 @@ const createHeader = function(){
     
     
     navigation.appendChild(navButtons);
+    navButtons.appendChild(homeButton);
     header.appendChild(navigation);
     header.appendChild(title);
     return header;
