@@ -82,7 +82,7 @@ const displaySingleList = function (list){
       "comments" : commentsInput.value
     }
     fetch("http://localhost:8080/api/lists/" + list.id + "/albums", {
-      method: "PATCH",
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
