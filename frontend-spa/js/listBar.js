@@ -1,4 +1,4 @@
-import { displaySingleList } from "./displaySingleList";
+import { displaySingleList } from "./displaySingleList.js";
 
 const createListBar = function(lists){
     const listBar = document.createElement("div");
@@ -14,7 +14,7 @@ const createListBar = function(lists){
         listNameElement.innerText = list.listName;
         let listImage = document.createElement("div");
         listImage.innerHTML = `<img src="./images/Logo.png" alt="List logo"></img>`
-        listNameElement.addEventListener("click", ()=>{
+        listImage.addEventListener("click", ()=>{
             displaySingleList(list)
         });
         listElement.appendChild(listNameElement);

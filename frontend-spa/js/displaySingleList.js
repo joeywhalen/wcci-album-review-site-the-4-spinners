@@ -3,17 +3,21 @@ import { displayHome } from "./displayHome.js";
 import { createListBar } from "./listBar.js";
 
 
-const displaySingleList = function (mainElement){
-    clearChildren (mainElement);
+const displaySingleList = function (list){
+  const mainElement = document.querySelector(".main-content");  
+  clearChildren (mainElement);
     list.albums.forEach((album) =>{
-      let albumElement = document.createdElement("section");
+      let albumElement = document.createElement("section");
       albumElement.classList.add("btn-section");
-      let albumNameElement = doucment.createdElement("h3");
+      let albumNameElement = document.createElement("h3");
       albumNameElement.innerText = album.title;
-      let albumImage = document.createElement("div");
-      albumImage.innerHTML = '<a href="' + album.imageURL + '"  alt="Album Art"></a>'
+      let albumLink = document.createElement("a");
+      let albumImageURL = document.createElement("img");
+      albumImageURL.src = album.imageURL; 
+      albumLink.href = album.imageURL;
+      albumLink.appendChild(albumImageURL);
       albumElement.appendChild(albumNameElement);
-      albumElement.appendChild(albumImage);
+      albumElement.appendChild(albumLink);
       mainElement.appendChild(albumElement);
     });
     return mainElement;

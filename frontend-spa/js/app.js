@@ -1,6 +1,6 @@
 import { createHeader } from "./header.js";
 import { createFooter } from "./footer.js";
-import { allListJson } from "./sampleListJson.js";
+//import { allListJson } from "./sampleListJson.js";
 import { createListBar } from "./listBar.js";
 import { displayHome } from "./displayHome.js";
 
