@@ -6,7 +6,7 @@ import { displayHome } from "./displayHome.js";
 
 
 const container = document.querySelector(".container");
-container.append(createHeader());
+// container.append(createHeader());
 
 // container.append(createListBar(allListJson));
 
