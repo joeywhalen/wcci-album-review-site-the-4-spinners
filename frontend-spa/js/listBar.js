@@ -16,6 +16,34 @@ const createListBar = function(lists){
         listElement.appendChild(listImage);
         listBar.appendChild(listElement);
     })
+
+    const form = document.createElement("form");
+    form.classList.add("new-list-form");
+    const listNameInput = document.createElement("input");
+    listNameInput.classList.add("new-list-name");
+    listNameInput.setAttribute("type", "text");
+    listNameInput.setAttribute("placeholder", "Name your list...");
+
+    const submitNewListButton = document.createElement("button");
+    submitNewListButton.classList.add("submit-new-list");
+    submitNewListButton.innerText = "Submit New List";
+    const formattingElement = document.createElement('div');
+    formattingElement.innerHTML = "<br><hr><br>";
+
+    submitNewListButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const listJson = {
+            "listName" : listNameInput.value
+        }
+        fetch("http://localhost:8080/api/lists", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+    })
+
+    
     return listBar;
 }
 export {createListBar}
