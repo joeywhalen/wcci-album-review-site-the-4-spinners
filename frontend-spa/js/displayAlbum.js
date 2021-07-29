@@ -33,7 +33,7 @@ const displayAlbum = function (album){
         let songNameElement= document.createElement("h5");
         songNameElement.innerText = song.songTitle;
         songElement.appendChild(songNameElement);
-        albumArtistElement.appendChild(songElement);
+        albumElement.appendChild(songElement);
     });
     
     mainElement.appendChild(albumElement);
