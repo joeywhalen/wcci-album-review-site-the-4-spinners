@@ -23,10 +23,10 @@ const displaySingleList = function (list){
   
   const form = document.createElement("form");
   form.classList.add("new-album-form");
-  const listInput = document.createElement("input");
-  listInput.classList.add("attach-list-name");
-  listInput.setAttribute("type", "text");
-  listInput.setAttribute("placeholder", "Which List?...");
+  const listNameInput = document.createElement("input");
+  listNameInput.classList.add("attach-list-name");
+  listNameInput.setAttribute("type", "text");
+  listNameInput.setAttribute("placeholder", "Which List?...");
   const titleInput = document.createElement("input");
   titleInput.classList.add("new-album-title");
   titleInput.setAttribute("type", "text");
@@ -47,10 +47,10 @@ const displaySingleList = function (list){
   durationInput.classList.add("new-album-duration");
   durationInput.setAttribute("type", "text");
   durationInput.setAttribute("placeholder", "Album Duration...");
-  const starRatingInput = document.createElement("input");
-  starRatingInput.classList.add("new-album-star-rating");
-  starRatingInput.setAttribute("type", "integer");
-  starRatingInput.setAttribute("placeholder", "Album Star Rating...");
+  const ratingInput = document.createElement("input");
+  ratingInput.classList.add("new-album-star-rating");
+  ratingInput.setAttribute("type", "integer");
+  ratingInput.setAttribute("placeholder", "Album Star Rating...");
   const videoUrlInput = document.createElement("input");
   videoUrlInput.classList.add("new-album-video-URL");
   videoUrlInput.setAttribute("type", "text");
@@ -62,11 +62,50 @@ const displaySingleList = function (list){
 
   const submitNewAlbumButton = document.createElement("button");
   submitNewAlbumButton.classList.add("submit-new-album");
-  submitNewAlbum.innerText = "Submit New Album";
+  submitNewAlbumButton.innerText = "Submit New Album";
   const formattingElement = document.createElement('div');
   formattingElement.innerHTML = "<br><hr><br>";
 
-  
+  submitNewAlbumButton.addEventListener("click", (clickEvent) => {
+    clickEvent.preventDefault();
+    clearChildren(albumElement);
+    const albumJson = {
+      "listName" : listNameInput.value,
+      "title" : titleInput.value,
+      "artist" : artistInput.value,
+      "imageURL": imageURLInput.value,
+      "recordLabel": recordLabelInput.value,
+      "duration": durationInput.value,
+      "rating": ratingInput.value,
+      "videoUrl": videoUrlInput.value,
+      "comments" : commentsInput.value
+    }
+    fetch("http://localhost:8080/api/lists/" + list.id + "/albums", {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(albumJson)
+    })
+      .then(response => response.json())
+      .then(list => displaySingleList(list))
+      .catch(error => console.log(error));
+
+  })
+
+  form.appendChild(listNameInput);
+  form.appendChild(titleInput);
+  form.appendChild(artistInput);
+  form.appendChild(imageURLInput);
+  form.appendChild(recordLabelInput);
+  form.appendChild(durationInput);
+  form.appendChild(ratingInput);
+  form.appendChild(videoUrlInput);
+  form.appendChild(commentsInput);
+  form.appendChild(submitNewAlbumButton);
+  form.appendChild(formattingElement);
+
+  mainElement.prepend(form);
 
 
     return mainElement;
