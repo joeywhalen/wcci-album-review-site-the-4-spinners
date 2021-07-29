@@ -59,6 +59,13 @@ const displaySingleList = function (list){
   commentsInput.classList.add("new-album-comments");
   commentsInput.setAttribute("type", "text");
   commentsInput.setAttribute("placeholder", "Album Comment...");
+
+  const submitNewAlbumButton = document.createElement("button");
+  submitNewAlbumButton.classList.add("submit-new-album");
+  submitNewAlbum.innerText = "Submit New Album";
+  const formattingElement = document.createElement('div');
+  formattingElement.innerHTML = "<br><hr><br>";
+
   
 
 
