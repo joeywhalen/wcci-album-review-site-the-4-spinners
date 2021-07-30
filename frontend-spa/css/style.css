@@ -5,12 +5,25 @@
         
 }
 
-
 .nav {
     display: flex;
+    /* flex-direction: row; */
     justify-content: center;
     background-color: aqua;
-   
+    
+}
+
+/* come back to, needs to removed lines 10 & 11 on listbar.js */
+.nav button{
+    font-family: Verdana;    
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: bisque;
+
 }
 
 .list-bar {
@@ -36,21 +49,22 @@
     list-style: none;
 } */
 
-
-.title h1{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 3rem;
-    background-color: purple;
-
-   
-}
-
 .title h2{
     display: flex;
     justify-content: center;
     background-color: yellow;
+
 }
+
+.title h1{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    padding-bottom: 3rem;
+    background-color: purple;   
+}
+
+
 
 
 

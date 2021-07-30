@@ -9,8 +9,7 @@ const createListBar = function(lists){
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
-    navButtons.innerHTML = `<button>About Us</button> 
-                 <button>Back Page</button>`
+    navButtons.innerHTML = `<button>About Us</button>`
     
     const homeButton = document.createElement("button");
     homeButton.classList.add("home-navigation");
