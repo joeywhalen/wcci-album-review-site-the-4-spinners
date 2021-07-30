@@ -5,6 +5,7 @@ const displayAlbum = function (album){
     const mainElement = document.querySelector(".main-content");
     clearChildren(mainElement);
     const albumElement = document.createElement("div");
+    albumElement.classList.add("album-content");
     const albumTitleElement = document.createElement("h3");
     albumTitleElement.innerText = album.title;
     const albumImageElement = document.createElement("img");
@@ -42,10 +43,10 @@ const displayAlbum = function (album){
 
     const form = document.createElement("form");
     form.classList.add("new-song-form");
-    const albumTitleInput = document.createElement("input");
-    albumTitleInput.classList.add("attach-album-name");
-    albumTitleInput.setAttribute("type", "text");
-    albumTitleInput.setAttribute("placeholder", "Which Album?...");
+    // const albumTitleInput = document.createElement("input");
+    // albumTitleInput.classList.add("attach-album-name");
+    // albumTitleInput.setAttribute("type", "text");
+    // albumTitleInput.setAttribute("placeholder", "Which Album?...");
     const songTitleInput = document.createElement("input");
     songTitleInput.classList.add("new-song-title");
     songTitleInput.setAttribute("type", "text");
@@ -71,17 +72,19 @@ const displayAlbum = function (album){
 
     submitNewSongButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
-        albumElement = document.querySelector("div");
+        const albumElement = document.querySelector(".album-content");
         clearChildren(albumElement);
         const songJson = {
-            "title": albumTitleInput.value,
+            // "title": albumTitleInput.value,
             "songTitle": songTitleInput.value,
             "length": lengthInput.value,
             "starRating": starRatingInput.value,
-            "comments": commentsInput.value
+            "comments": [commentsInput.value]
         }
-        fetch("http://localhost:8080/api/lists/" + list.id + "/albums/" + album.id + "/songs", {
-            method: "PATCH",
+        const currentList = album.list;
+        console.log(album.list);
+        fetch("http://localhost:8080/api/lists/" + currentList + "/albums/" + album.id + "/songs", {
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -92,11 +95,13 @@ const displayAlbum = function (album){
             .catch(error => console.log(error));
     })
 
-    form.appendChild(albumTitleInput);
+    // form.appendChild(albumTitleInput);
     form.appendChild(songTitleInput);
     form.appendChild(lengthInput);
     form.appendChild(starRatingInput);
     form.appendChild(commentsInput);
+    form.appendChild(submitNewSongButton);
+    form.appendChild(formattingElement);
     
     mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
