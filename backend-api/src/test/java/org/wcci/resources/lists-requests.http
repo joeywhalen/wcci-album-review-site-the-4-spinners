@@ -106,8 +106,4 @@ New Changed Song Title
 POST http://localhost:8080/api/lists/1/albums/6/songs/7/comments
 Content-Type: application/json
 
-{
-  "comments": [
-        "New Test Comment"
-    ]
-}
+New Test Comment

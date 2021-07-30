@@ -186,5 +186,8 @@ public class ListController {
     @PostMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/comments")
     public Song addSongComment(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId, @RequestBody String newComment){
         Song songToChange = songRepository.findById(songId).get();
-        
+        songToChange.addSongComment(newComment);
+        songRepository.save(songToChange);
+        return songToChange;
+    }
 }
