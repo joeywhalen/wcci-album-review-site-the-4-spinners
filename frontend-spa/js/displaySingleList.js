@@ -23,10 +23,6 @@ const displaySingleList = function (list){
   
   const form = document.createElement("form");
   form.classList.add("new-album-form");
-  const listNameInput = document.createElement("input");
-  listNameInput.classList.add("attach-list-name");
-  listNameInput.setAttribute("type", "text");
-  listNameInput.setAttribute("placeholder", "Which List?...");
   const titleInput = document.createElement("input");
   titleInput.classList.add("new-album-title");
   titleInput.setAttribute("type", "text");
@@ -71,7 +67,6 @@ const displaySingleList = function (list){
     const albumElement = document.querySelector("section");
     clearChildren(albumElement);
     const albumJson = {
-      "listName" : listNameInput.value,
       "title" : titleInput.value,
       "artist" : artistInput.value,
       "imageURL": imageURLInput.value,
@@ -79,7 +74,7 @@ const displaySingleList = function (list){
       "duration": durationInput.value,
       "rating": ratingInput.value,
       "videoUrl": videoUrlInput.value,
-      "comments" : commentsInput.value
+      "comments": [commentsInput.value]
     }
     fetch("http://localhost:8080/api/lists/" + list.id + "/albums", {
       method: 'PATCH',
@@ -89,12 +84,11 @@ const displaySingleList = function (list){
       body: JSON.stringify(albumJson)
     })
       .then(response => response.json())
-      .then(list => displaySingleList(list))
+      .then(listResponse => displaySingleList(listResponse))
       .catch(error => console.log(error));
 
   })
 
-  form.appendChild(listNameInput);
   form.appendChild(titleInput);
   form.appendChild(artistInput);
   form.appendChild(imageURLInput);
@@ -106,7 +100,6 @@ const displaySingleList = function (list){
   form.appendChild(submitNewAlbumButton);
   form.appendChild(formattingElement);
 
-  // mainElement.prepend(form);
   mainElement.appendChild(form);
 
     return mainElement;

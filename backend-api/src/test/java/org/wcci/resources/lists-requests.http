@@ -68,7 +68,7 @@ Content-Type: application/json
           "The 'debut' album from White Zombie is pure unadulterated horror movie schlock in the best sense.  No filler, each song flowing into the next.  Wet, hot, summer fun."
         ]
       }
-
+//{"title":"test12345","artist":"test12345","imageURL":"test12345","recordLabel":"test12345","duration":"test12345","rating":"5","videoUrl":"test12345","comments":"test12345"}
 ### Delete an album with id from a list.
 DELETE http://localhost:8080/api/lists/1/albums/2
 

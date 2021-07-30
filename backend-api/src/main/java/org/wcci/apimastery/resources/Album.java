@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
@@ -20,28 +21,20 @@ public class Album {
     private String title;
     private String artist;
     private String imageURL;
-//    private String song;
     private String recordLabel;
     private String duration;
     private int rating;
     private String videoUrl;
 
-
-
     @ManyToOne
     @JsonIgnore
     private List list;
-
-//    @ManyToMany(mappedBy = "albums")
-//    private Collection<Song> songs;
 
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
     
     @Lob
     @ElementCollection
-//    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
-//    @ManyToOne (mappedBy = "albums")
     private Collection<String> comments;
 
     protected Album(){
@@ -53,7 +46,7 @@ public class Album {
         this.title = title;
         this.artist = artist;
         this.imageURL = imageURL;
-//        this.song = song;
+        this.songs = new ArrayList<Song>();
         this.recordLabel = recordLabel;
         this.duration = duration;
         this.rating = rating;
@@ -84,10 +77,6 @@ public class Album {
     public Collection<Song> getSongs() {
         return songs;
     }
-
-    //    public String getSong(){
-//        return song;
-//    }
 
     public String getRecordLabel(){
         return recordLabel;
@@ -125,7 +114,14 @@ public class Album {
         songs.remove(song);
     }
 
-    public void changeAlbumTitle(String newAlbumTitle){
+    public void changeAlbumTitle(String newAlbumTitle) {
         this.title = newAlbumTitle;
+    }
+
+    public boolean hasSongs() {
+        if(songs != null && songs.size() > 0){
+            return true;
+        }
+        return false;
     }
 }
