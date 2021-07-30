@@ -38,6 +38,13 @@ const displaySingleSong = function (song){
     form.appendChild(submitCommentButton);
     songElement.appendChild(form);
 
+    submitCommentButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const commentJson = {
+            "comment" : commentInput.value
+        }
+        fetch()
+    })
 
     mainElement.appendChild(songElement);
     return mainElement;

@@ -101,3 +101,13 @@ DELETE http://localhost:8080/api/lists/5/albums/6/songs/7
 PATCH http://localhost:8080/api/lists/5/albums/6/songs/7/songTitle
 
 New Changed Song Title
+
+### Add comment to song
+POST http://localhost:8080/api/lists/1/albums/6/songs/7/comments
+Content-Type: application/json
+
+{
+  "comments": [
+        "New Test Comment"
+    ]
+}
