@@ -76,8 +76,19 @@ const displayAlbum = function (album){
             "starRating": starRatingInput.value,
             "comments": commentsInput.value
         }
-        
+        fetch("http://localhost:8080/api/lists/" + list.id + "/albums" + album.id + "/songs", {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(songJson)
+        })
+            .then(response => response.json())
+            .then(album => displayAlbum(album))
+            .catch(error => console.log(error));
     })
+
+    
     
     mainElement.appendChild(albumElement);
     return mainElement;
