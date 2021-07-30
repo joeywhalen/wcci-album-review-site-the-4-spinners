@@ -102,6 +102,15 @@ const displayAlbum = function (album){
     form.appendChild(commentsInput);
     form.appendChild(submitNewSongButton);
     form.appendChild(formattingElement);
+
+    album.comments.forEach((comment) => {
+        let commentsElement = document.createElement("section");
+        commentsElement.classList.add("comments-section");
+        let singleCommentElement = document.createElement("p");
+        singleCommentElement.innerText = comment;
+        commentsElement.appendChild(singleCommentElement);
+        albumElement.appendChild(commentsElement);
+    });
     
     mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
