@@ -73,4 +73,8 @@ public class Song {
     public void changeSongTitle(String newSongTitle){
         this.songTitle = newSongTitle;
     }
+
+    public void addSongComment(String newSongComment){
+        this.comments.add(newSongComment);
+    }
 }
