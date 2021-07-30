@@ -1,4 +1,4 @@
-import { clearChildren } from "./displayHome";
+import { clearChildren } from "./displayHome.js";
 
 const displaySingleSong = function (song){
     const mainElement = document.querySelector(".main-content");
