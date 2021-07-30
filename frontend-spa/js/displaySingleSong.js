@@ -4,6 +4,7 @@ const displaySingleSong = function (list, album, song){
     const mainElement = document.querySelector(".main-content");
     clearChildren(mainElement);
     const songElement = document.createElement("div");
+    songElement.classList.add("song-content");
     const songTitleElement = document.createElement("h3");
     songTitleElement.innerText = song.songTitle;
     const songLengthElement = document.createElement("p");
@@ -40,10 +41,12 @@ const displaySingleSong = function (list, album, song){
 
     submitCommentButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
+        const songElement = document.querySelector(".song-content");
+        clearChildren(songElement);
         const commentJson = {
-            "comment" : commentInput.value
+            "comments" : [commentInput.value]
         }
-        fetch("http://localhost:8080/api/lists/"+list.id+"albums/"+album.id+"songs/" + song.id + "/comments", {
+        fetch("http://localhost:8080/api/lists/"+list.id+"/albums/"+album.id+"/songs/" + song.id + "/comments", {
             method: "PATCH",
             headers: {
                 'Content-Type' : 'application/json'
@@ -51,7 +54,7 @@ const displaySingleSong = function (list, album, song){
             body: JSON.stringify(commentJson)
         })
             .then(response => response.json())
-            .then(comment => displaySingleSong(comment))
+            .then(comments => displaySingleSong(comments))
             .catch(error => console.log(error));
     })
 
