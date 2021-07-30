@@ -37,17 +37,21 @@
 } */
 
 
-.title{
-    display: flex;
-    justify-content: center;
-}
-
-h1{
+.title h1{
     display: flex;
     justify-content: center;
     padding-bottom: 3rem;
-    
+    background-color: purple;
+
+   
 }
+
+.title h2{
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+}
+
 
 
 /* #btn-section {
@@ -70,6 +74,7 @@ h1{
     width: auto;
     cursor: pointer;
     border-radius: 100%;
+    background-color: purple;
 }
 
 

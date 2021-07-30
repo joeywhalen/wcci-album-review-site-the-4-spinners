@@ -26,7 +26,7 @@ const createListBar = function(lists){
 
     const title = document.createElement("div");
     title.classList.add("title");
-    title.innerHTML = `<h1>Welcome to Desert Island Jukebox</h1>`
+    title.innerHTML = `<h2>Welcome to <br></h2> <h1>Desert Island Jukebox</h1>`
     
     const listBar = document.createElement("div");
     listBar.classList.add("list-bar");
