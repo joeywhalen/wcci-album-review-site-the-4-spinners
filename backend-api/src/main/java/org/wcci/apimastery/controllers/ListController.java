@@ -108,11 +108,15 @@ public class ListController {
         albumToAdd.changeList(listToChange);
         albumRepository.save(albumToAdd);
 
-        for(Song song: albumToAdd.getSongs()) {
+        if (albumToAdd.hasSongs()) {
+            for(Song song: albumToAdd.getSongs()) {
             song.addAlbum(albumToAdd);
             songRepository.save(song);
+            albumRepository.save(albumToAdd);
         }
-        albumRepository.save(albumToAdd);
+       
+        }
+        
 
         return listToChange;
     }

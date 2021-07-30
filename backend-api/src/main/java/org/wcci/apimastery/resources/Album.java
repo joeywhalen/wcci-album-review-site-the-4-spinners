@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
@@ -53,7 +54,7 @@ public class Album {
         this.title = title;
         this.artist = artist;
         this.imageURL = imageURL;
-//        this.song = song;
+        this.songs = new ArrayList<Song>();
         this.recordLabel = recordLabel;
         this.duration = duration;
         this.rating = rating;
@@ -125,7 +126,14 @@ public class Album {
         songs.remove(song);
     }
 
-    public void changeAlbumTitle(String newAlbumTitle){
+    public void changeAlbumTitle(String newAlbumTitle) {
         this.title = newAlbumTitle;
+    }
+
+    public boolean hasSongs() {
+        if(songs != null && songs.size() > 0){
+            return true;
+        }
+        return false;
     }
 }
