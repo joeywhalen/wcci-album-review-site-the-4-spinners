@@ -24,6 +24,21 @@ const displaySingleSong = function (song){
         songElement.appendChild(commentsElement);
     });
 
+    const form = document.createElement("form");
+    form.classList.add("new-comment-form");
+    const commentInput = document.createElement("input");
+    commentInput.classList.add("new-comment");
+    commentInput.setAttribute("type", "text");
+    commentInput.setAttribute("placeholder", "Enter your comment...");
+    const submitCommentButton = document.createElement("button");
+    submitCommentButton.classList.add("comment-button");
+    submitCommentButton.innerText = "Submit a comment";
+
+    form.appendChild(commentInput);
+    form.appendChild(submitCommentButton);
+    songElement.appendChild(form);
+
+
     mainElement.appendChild(songElement);
     return mainElement;
 }
