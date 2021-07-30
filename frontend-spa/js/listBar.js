@@ -15,7 +15,7 @@ const createListBar = function(lists){
     const homeButton = document.createElement("button");
     homeButton.classList.add("home-navigation");
     homeButton.innerText = "Home";
-
+    //Need to work issue with reload
     homeButton.addEventListener("click", () => {
         const mainElement = document.querySelector("main");
         clearChildren(mainElement);
