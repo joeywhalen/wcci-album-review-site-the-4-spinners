@@ -76,7 +76,7 @@ const displayAlbum = function (album){
             "starRating": starRatingInput.value,
             "comments": commentsInput.value
         }
-        fetch("http://localhost:8080/api/lists/" + list.id + "/albums" + album.id + "/songs", {
+        fetch("http://localhost:8080/api/lists/" + list.id + "/albums/" + album.id + "/songs", {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'
@@ -96,7 +96,7 @@ const displayAlbum = function (album){
     
     mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
-    
+
     return mainElement;
 }
 export{displayAlbum}

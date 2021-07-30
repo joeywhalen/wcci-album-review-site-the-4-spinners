@@ -1,5 +1,6 @@
 import { clearChildren, displayHome } from "./displayHome.js";
 import { displaySingleList } from "./displaySingleList.js";
+import { createFooter } from "./footer.js";
 
 const createListBar = function(lists){
     const container = document.querySelector(".container");
@@ -19,6 +20,7 @@ const createListBar = function(lists){
         const mainElement = document.querySelector("main");
         clearChildren(mainElement);
         container.appendChild(displayHome(mainElement));
+        container.appendChild(createFooter(mainElement));
         console.log("Clicked Home button");
     });
 
