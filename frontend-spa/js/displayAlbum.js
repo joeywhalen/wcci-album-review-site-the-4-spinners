@@ -65,7 +65,19 @@ const displayAlbum = function (album){
     const formattingElement = document.createElement('div');
     formattingElement.innerHTML = "<br><hr><br>";
 
-    
+    submitNewSongButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        albumElement = document.querySelector("div");
+        clearChildren(albumElement);
+        const songJson = {
+            "title": albumTitleInput.value,
+            "songTitle": songTitleInput.value,
+            "length": lengthInput.value,
+            "starRating": starRatingInput.value,
+            "comments": commentsInput.value
+        }
+        
+    })
     
     mainElement.appendChild(albumElement);
     return mainElement;
