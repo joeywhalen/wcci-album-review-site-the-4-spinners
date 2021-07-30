@@ -99,12 +99,12 @@ public class ListController {
     //PATCH http://localhost:8080/api/lists/1/albums
     //Content-Type: application/json
     //{"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL","comments": "Sample commenrs"}
-    @PatchMapping("/api/lists/{id}/albums")
+    @PostMapping("/api/lists/{id}/albums")
     public List addAlbumToList(@PathVariable Long id, @RequestBody Album albumToAdd) {
         List listToChange = listStorage.retrieveListById(id);
         
-        listToChange.addAlbum(albumToAdd);
-        listStorage.saveList(listToChange);
+        // listToChange.addAlbum(albumToAdd);
+        // listStorage.saveList(listToChange);
         albumToAdd.changeList(listToChange);
         albumRepository.save(albumToAdd);
 
