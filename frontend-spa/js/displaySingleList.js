@@ -1,3 +1,4 @@
+import { displayAlbum } from "./displayAlbum.js";
 import { clearChildren } from "./displayHome.js";
 import { displayHome } from "./displayHome.js";
 import { createListBar } from "./listBar.js";
@@ -14,7 +15,10 @@ const displaySingleList = function (list){
       let albumLink = document.createElement("a");
       let albumImageURL = document.createElement("img");
       albumImageURL.src = album.imageURL; 
-      albumLink.href = album.imageURL;
+      // albumLink.href = album.imageURL;
+      albumLink.addEventListener("click", (clickEvent) => {
+        displayAlbum(album)
+      });
       albumLink.appendChild(albumImageURL);
       albumElement.appendChild(albumNameElement);
       albumElement.appendChild(albumLink);
