@@ -64,7 +64,7 @@ const displaySingleList = function (list){
 
   submitNewAlbumButton.addEventListener("click", (clickEvent) => {
     clickEvent.preventDefault();
-    const albumElement = document.querySelector("section");
+    const albumElement = document.querySelector(".main-content");
     clearChildren(albumElement);
     const albumJson = {
       "title" : titleInput.value,
@@ -77,7 +77,7 @@ const displaySingleList = function (list){
       "comments": [commentsInput.value]
     }
     fetch("http://localhost:8080/api/lists/" + list.id + "/albums", {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },

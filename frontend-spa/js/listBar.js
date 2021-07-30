@@ -19,8 +19,8 @@ const createListBar = function(lists){
     homeButton.addEventListener("click", () => {
         const mainElement = document.querySelector("main");
         clearChildren(mainElement);
-        container.appendChild(displayHome(mainElement));
-        container.appendChild(createFooter(mainElement));
+        displayHome(mainElement);
+        // container.appendChild(createFooter(mainElement));
         console.log("Clicked Home button");
     });
 
