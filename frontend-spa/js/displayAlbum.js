@@ -1,4 +1,5 @@
 import { clearChildren } from "./displayHome.js";
+import {displaySingleSong} from "./displaySingleSong.js"
 
 const displayAlbum = function (album){
     const mainElement = document.querySelector(".main-content");
@@ -31,7 +32,10 @@ const displayAlbum = function (album){
         let songElement = document.createElement("section");
         songElement.classList.add("song-btn-section");
         let songNameElement= document.createElement("h5");
-        songNameElement.innerText = song.songTitle;
+        songNameElement.innerText = song.songTitle;        
+        songNameElement.addEventListener("click", (clickEvent) => {
+            displaySingleSong(song)
+        });
         songElement.appendChild(songNameElement);
         albumElement.appendChild(songElement);
     });
