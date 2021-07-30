@@ -38,7 +38,28 @@ const displayAlbum = function (album){
 
     const form = document.createElement("form");
     form.classList.add("new-song-form");
-    const 
+    const albumTitleInput = document.createElement("input");
+    albumTitleInput.classList.add("attach-album-name");
+    albumTitleInput.setAttribute("type", "text");
+    albumTitleInput.setAttribute("placeholder", "Which Album?...");
+    const songTitleInput = document.createElement("input");
+    songTitleInput.classList.add("new-song-title");
+    songTitleInput.setAttribute("type", "text");
+    songTitleInput.setAttribute("placeholder", "Title of Song...");
+    const lengthInput = document.createElement("input");
+    lengthInput.classList.add("new-song-length");
+    lengthInput.setAttribute("type", "text");
+    lengthInput.setAttribute("placeholder", "Song Length...");
+    const starRatingInput = document.createElement("input");
+    starRatingInput.classList.add("new-song-star-rating");
+    starRatingInput.setAttribute("type", "integer");
+    starRatingInput.setAttribute("placeholder", "Song Star Rating...");
+    const commentsInput = document.createElement("input");
+    commentsInput.classList.add("new-song-comments");
+    commentsInput.setAttribute("type", "text");
+    commentsInput.setAttribute("placeholder", "Song Comment...");
+
+    
     
     mainElement.appendChild(albumElement);
     return mainElement;
