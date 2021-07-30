@@ -21,28 +21,20 @@ public class Album {
     private String title;
     private String artist;
     private String imageURL;
-//    private String song;
     private String recordLabel;
     private String duration;
     private int rating;
     private String videoUrl;
 
-
-
     @ManyToOne
     @JsonIgnore
     private List list;
-
-//    @ManyToMany(mappedBy = "albums")
-//    private Collection<Song> songs;
 
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
     
     @Lob
     @ElementCollection
-//    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
-//    @ManyToOne (mappedBy = "albums")
     private Collection<String> comments;
 
     protected Album(){
@@ -85,10 +77,6 @@ public class Album {
     public Collection<Song> getSongs() {
         return songs;
     }
-
-    //    public String getSong(){
-//        return song;
-//    }
 
     public String getRecordLabel(){
         return recordLabel;

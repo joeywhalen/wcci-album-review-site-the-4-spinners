@@ -114,10 +114,7 @@ public class ListController {
             songRepository.save(song);
             albumRepository.save(albumToAdd);
         }
-       
         }
-        
-
         return listToChange;
     }
 

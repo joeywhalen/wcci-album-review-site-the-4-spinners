@@ -23,10 +23,6 @@ const displaySingleList = function (list){
   
   const form = document.createElement("form");
   form.classList.add("new-album-form");
-  // const listNameInput = document.createElement("input");
-  // listNameInput.classList.add("attach-list-name");
-  // listNameInput.setAttribute("type", "text");
-  // listNameInput.setAttribute("placeholder", "Which List?...");
   const titleInput = document.createElement("input");
   titleInput.classList.add("new-album-title");
   titleInput.setAttribute("type", "text");
@@ -71,7 +67,6 @@ const displaySingleList = function (list){
     const albumElement = document.querySelector("section");
     clearChildren(albumElement);
     const albumJson = {
-      // "listName" : listNameInput.value,
       "title" : titleInput.value,
       "artist" : artistInput.value,
       "imageURL": imageURLInput.value,
@@ -90,12 +85,10 @@ const displaySingleList = function (list){
     })
       .then(response => response.json())
       .then(listResponse => displaySingleList(listResponse))
-      //.then(listResponse => console.log(listResponse))
       .catch(error => console.log(error));
 
   })
 
-  // form.appendChild(listNameInput);
   form.appendChild(titleInput);
   form.appendChild(artistInput);
   form.appendChild(imageURLInput);
@@ -107,7 +100,6 @@ const displaySingleList = function (list){
   form.appendChild(submitNewAlbumButton);
   form.appendChild(formattingElement);
 
-  // mainElement.prepend(form);
   mainElement.appendChild(form);
 
     return mainElement;
