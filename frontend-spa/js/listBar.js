@@ -1,5 +1,6 @@
 import { clearChildren, displayHome } from "./displayHome.js";
 import { displaySingleList } from "./displaySingleList.js";
+import { createFooter } from "./footer.js";
 
 const createListBar = function(lists){
     const container = document.querySelector(".container");
@@ -14,11 +15,12 @@ const createListBar = function(lists){
     const homeButton = document.createElement("button");
     homeButton.classList.add("home-navigation");
     homeButton.innerText = "Home";
-
+    //Need to work issue with reload
     homeButton.addEventListener("click", () => {
         const mainElement = document.querySelector("main");
         clearChildren(mainElement);
         container.appendChild(displayHome(mainElement));
+        container.appendChild(createFooter(mainElement));
         console.log("Clicked Home button");
     });
 
