@@ -1,6 +1,6 @@
 import { clearChildren } from "./displayHome.js";
 
-const displaySingleSong = function (song){
+const displaySingleSong = function (list, album, song){
     const mainElement = document.querySelector(".main-content");
     clearChildren(mainElement);
     const songElement = document.createElement("div");
@@ -43,7 +43,16 @@ const displaySingleSong = function (song){
         const commentJson = {
             "comment" : commentInput.value
         }
-        fetch()
+        fetch("http://localhost:8080/api/lists/"+list.id+"albums/"+album.id+"songs/" + song.id + "/comments", {
+            method: "PATCH",
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(commentJson)
+        })
+            .then(response => response.json())
+            .then(comment => displaySingleSong(comment))
+            .catch(error => console.log(error));
     })
 
     mainElement.appendChild(songElement);
