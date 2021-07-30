@@ -88,9 +88,15 @@ const displayAlbum = function (album){
             .catch(error => console.log(error));
     })
 
+    form.appendChild(albumTitleInput);
+    form.appendChild(songTitleInput);
+    form.appendChild(lengthInput);
+    form.appendChild(starRatingInput);
+    form.appendChild(commentsInput);
     
-    
+    mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
+    
     return mainElement;
 }
 export{displayAlbum}
