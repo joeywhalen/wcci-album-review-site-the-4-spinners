@@ -59,6 +59,12 @@ const displayAlbum = function (album){
     commentsInput.setAttribute("type", "text");
     commentsInput.setAttribute("placeholder", "Song Comment...");
 
+    const submitNewSongButton = document.createElement("button");
+    submitNewSongButton.classList.add("submit-new-song");
+    submitNewSongButton.innerText = "Submit New Song";
+    const formattingElement = document.createElement('div');
+    formattingElement.innerHTML = "<br><hr><br>";
+
     
     
     mainElement.appendChild(albumElement);
