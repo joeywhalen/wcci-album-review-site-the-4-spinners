@@ -182,6 +182,14 @@ input{
     color: #406EDB;
 }
 
+.album-artist-notation {
+    display: flex;
+}
+
+.album-duration-notation {
+    display: flex;
+}
+
 .new-song-form{
     display: flex;
     flex-direction: column;
