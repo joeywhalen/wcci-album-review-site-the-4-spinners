@@ -1,3 +1,7 @@
+body{
+    background-color: orange;
+}
+
 .container {
     background-color: brown;
     display: flex; 
@@ -12,9 +16,16 @@
     background-color: aqua;
     
 }
+.nav-btns{
+    display: flex;
+    background-color: antiquewhite;
+    padding: 10px;
 
-/* come back to, needs to removed lines 10 & 11 on listbar.js */
-.nav button{
+}
+
+
+/* Either delete lines 10-11 in listBar or rename 'button' on line 14 */
+.nav-btns button{
     font-family: Verdana;    
     font-size: 1rem;
     padding: 10px;
@@ -26,33 +37,55 @@
 
 }
 
+.nav-btns :hover{
+    transition-duration: .25s;
+  background-color: antiquewhite;
+  color: #406EDB;
+}
+
 .list-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: blanchedalmond;
+    background-color: antiquewhite;
     flex-wrap: wrap;
 }
 
-/* #nav-bar{
+.new-list-form{
     display: flex;
-    background-color: gray;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+}
+.new-list-form button{
+    font-family: Verdana;    
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: antiquewhite;
+}
 
-} */
+.new-list-form :hover{
+    transition-duration: .25s;
+  background-color: antiquewhite;
+  color: #406EDB;
+}
 
-/* #nav-btns {
-    display: flex;   
-
-} */
-
-/* #nav-btns li{   
-    list-style: none;
-} */
+.new-list-name{
+   border-color: #406EDB;
+   color: #406EDB;
+   
+}
 
 .title h2{
     display: flex;
     justify-content: center;
     background-color: yellow;
+    flex-wrap: wrap;
 
 }
 
@@ -65,24 +98,6 @@
 }
 
 
-
-
-
-/* #btn-section {
-    display: flex;
-    align-content: center;
-} */
-
-/* #logo-btns{
-    display: flex; 
-    justify-content: space-around;
-    align-items: flex-end;
-    position: relative;
-    flex-wrap: wrap;
-    padding-bottom: 1rem;
-    
-} */
-
 .list-bar img{
     height: 150px;
     width: auto;
@@ -91,11 +106,6 @@
     background-color: purple;
 }
 
-
-/* #logo-btns img:active{
-    transform: scale(95%);
-    border-radius: 100%;
-} */
 
 .info-box{
     padding: 3rem;
@@ -106,17 +116,23 @@
     background-color: purple;
 }
 
-/* #content{
-    display: flex;
-    justify-content: center;
-    max-width: 75vw;
-    background-color: pink;
-} */
 
 .main-content {
     display: flex;
     justify-content: space-around;
     background-color: yellow;
+}
+
+.main-content h3{
+    text-align: center;
+    font-variant: small-caps;
+}
+.new-album-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: chartreuse;
 }
 
 .main-footer {
@@ -126,7 +142,3 @@
     background-color: cornflowerblue;
 }
 
-.new-list-form{
-    background-color: pink;
-
-}
