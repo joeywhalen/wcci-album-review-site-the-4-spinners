@@ -1,5 +1,5 @@
 body{
-    /* background-color: orange; */
+    background-color: antiquewhite;
 }
 
 
@@ -37,7 +37,7 @@ input{
     cursor: pointer;
     border: none;
     background-color: #406EDB;
-    color: bisque;
+    color: white;
 
 }
 
@@ -48,7 +48,7 @@ input{
 
 .nav-btns :hover{
     transition-duration: .25s;
-  background-color: antiquewhite;
+  background-color: white;
   color: #406EDB;
 }
 
@@ -56,7 +56,6 @@ input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: antiquewhite;
     flex-wrap: wrap;
 }
 
@@ -77,12 +76,12 @@ input{
     cursor: pointer;
     border: none;
     background-color: #406EDB;
-    color: antiquewhite;
+    color: white;
 }
 
 .new-list-form button:hover{
     transition-duration: .25s;
-  background-color: antiquewhite;
+  background-color: white;
   color: #406EDB;
 }
 
@@ -199,11 +198,11 @@ input{
     cursor: pointer;
     border: none;
     background-color: #406EDB;
-    color: antiquewhite;
+    color: white;
 }
 .new-song-form button:hover{
     transition-duration: .25s;
-    background-color: antiquewhite;
+    background-color: white;
     color: #406EDB;
 }
 
@@ -226,11 +225,11 @@ input{
     cursor: pointer;
     border: none;
     background-color: #406EDB;
-    color: antiquewhite;
+    color: white;
 }
 .new-comment-form button:hover{
     transition-duration: .25s;
-    background-color: antiquewhite;
+    background-color: white;
     color: #406EDB;
 }
 
