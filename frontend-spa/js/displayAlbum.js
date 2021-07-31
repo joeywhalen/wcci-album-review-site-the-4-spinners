@@ -155,12 +155,16 @@ const displayAlbum = function (album) {
     mainElement.appendChild(albumElement);
 
     if (album.userRatings !== null && album.userRatings.length !== 0) {
+        let userRatingHeading = document.createElement("h3");
+        userRatingHeading.innerText = "User Ratings:";
+        albumElement.appendChild(userRatingHeading);
+        
         album.userRatings.forEach((userRating) => {
             let userRatingsElement = document.createElement("section");
             userRatingsElement.classList.add("userRatings-section");
             let singleUserRatingElement = document.createElement("p");
             singleUserRatingElement.innerText = userRating;
-            userRatingElement.appendChild(singleUserRatingElement);
+            userRatingsElement.appendChild(singleUserRatingElement);
             albumElement.appendChild(userRatingsElement);
         });
     }
@@ -183,13 +187,12 @@ const displayAlbum = function (album) {
         const albumElement = document.querySelector(".album-content");
         clearChildren(albumElement);
         if (userRatingInput.value !== "") {
-            const userRatingJson = JSON.stringify(userRatingInput.value);
             fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/userRatings", {
                 method: "PATCH",
                 headers: {
                     'Content-Type' : 'application/json'
                 },
-                body: JSON.stringify(userRatingJson)
+                body: userRatingInput.value
             })
                 .then(response => response.json())
                 .then(album => displayAlbum(album))
@@ -197,7 +200,7 @@ const displayAlbum = function (album) {
         }
     })
 
-    mainElement.appendChild(form);
+    mainElement.appendChild(commentForm);
     mainElement.appendChild(albumElement);
 
     return mainElement;

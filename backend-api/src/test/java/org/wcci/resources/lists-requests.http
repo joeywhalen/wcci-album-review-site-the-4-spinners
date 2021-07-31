@@ -78,7 +78,7 @@ Content-Type: application/json
 
 New Album Test Comment
 
-### Add user rating to an album
+### Add user rating to an album 
 PATCH http://localhost:8080/api/lists/1/albums/2/userRatings
 Content-Type: application/json
 

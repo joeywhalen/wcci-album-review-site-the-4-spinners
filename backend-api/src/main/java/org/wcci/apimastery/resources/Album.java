@@ -32,7 +32,8 @@ public class Album {
     private Collection<Song> songs;
 
     // @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
-    // private Collection<Integer> userRatings;
+    @ElementCollection
+    private Collection<Integer> userRatings;
     
     @Lob
     @ElementCollection
@@ -48,7 +49,7 @@ public class Album {
         this.artist = artist;
         this.imageURL = imageURL;
         this.songs = new ArrayList<Song>();
-        // this.userRatings = new ArrayList<>(userRatings);
+        this.userRatings = new ArrayList<Integer>();
         this.recordLabel = recordLabel;
         this.duration = duration;
         this.rating = rating;
@@ -131,13 +132,13 @@ public class Album {
         this.comments.add(newComment);
     }
 
-    // public Iterable<Integer> getUserRatings() {
-    //     return userRatings;
-    // }
+    public Iterable<Integer> getUserRatings() {
+        return userRatings;
+    }
 
-    // public void addAlbumUserRating(Integer newUserRating) {
-    //     this.userRatings.add(newUserRating);
-    // }
+    public void addAlbumUserRating(Integer newUserRating) {
+        this.userRatings.add(newUserRating);
+    }
 
     public void changeAlbumTitle(String newAlbumTitle) {
         this.title = newAlbumTitle;
