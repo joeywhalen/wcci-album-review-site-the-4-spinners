@@ -2,15 +2,15 @@ import { clearChildren, displayHome } from "./displayHome.js";
 import { displaySingleList } from "./displaySingleList.js";
 import { createFooter } from "./footer.js";
 
-const createListBar = function(lists){
+const createListBar = function (lists) {
     const container = document.querySelector(".container");
-    const header = document.createElement("header");    
+    const header = document.createElement("header");
     const navigation = document.createElement("nav");
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
     navButtons.innerHTML = `<button>About Us</button>`
-    
+
     const homeButton = document.createElement("button");
     // homeButton.classList.add("home-navigation");
     homeButton.innerText = "Home";
@@ -26,22 +26,30 @@ const createListBar = function(lists){
     const title = document.createElement("div");
     title.classList.add("title");
     title.innerHTML = `<h2>Welcome to <br></h2> <h1>Desert Island Jukebox</h1>`
-    
+
     const listBar = document.createElement("div");
     listBar.classList.add("list-bar");
     const listBtns = document.createElement("div");
     listBtns.classList.add("list-btns");
     listBar.appendChild(listBtns);
 
-    lists.forEach((list)=>{
+    lists.forEach((list) => {
         let listElement = document.createElement("section");
         listElement.classList.add("btn-section");
         let listNameElement = document.createElement("h2");
         listNameElement.innerText = list.listName;
         let listImage = document.createElement("div");
         listImage.innerHTML = `<img src="./images/RecordLogo.png" alt="List logo"></img>`
-        listImage.addEventListener("click", ()=>{
-            displaySingleList(list)
+        listImage.addEventListener("click", () => {
+            let clicked = true;
+            clearChildren(header);
+            if (clicked) {
+                fetch("http://localhost:8080/api/lists")
+                    .then(response => response.json())
+                    .then(lists => container.prepend(createListBar(lists)))
+                    .catch(error => console.log(error));
+            }
+            displaySingleList(list);
         });
         listElement.appendChild(listNameElement);
         listElement.appendChild(listImage);
@@ -55,7 +63,7 @@ const createListBar = function(lists){
     listNameInput.classList.add("new-list-name");
     listNameInput.setAttribute("type", "text");
     listNameInput.setAttribute("placeholder", "Name your list...")
-    ;
+        ;
 
     const submitNewListButton = document.createElement("button");
     submitNewListButton.classList.add("submit-new-list");
@@ -67,7 +75,7 @@ const createListBar = function(lists){
         clickEvent.preventDefault();
         clearChildren(header);
         const listJson = {
-            "listName" : listNameInput.value
+            "listName": listNameInput.value
         }
         fetch("http://localhost:8080/api/lists", {
             method: 'POST',
@@ -91,10 +99,10 @@ const createListBar = function(lists){
     header.appendChild(navigation);
     header.appendChild(title);
     header.appendChild(listBar);
-    
+
     return header;
 }
-export {createListBar}
+export { createListBar }
 
 
 
@@ -110,16 +118,16 @@ export {createListBar}
 
 //     <section id="btn-section">
 //     <img id="h-btn" src="/frontend-spa/images/Logo.png" alt="Harrison's List logo"> [Harrison logo]</section>
-    
+
 
 //     <section id="btn-section">
 //     <img id="add-btn"src="/frontend-spa/images/Logo.png" alt="Add List logo">
 //     [add your own list] </section>
-    
+
 
 //     <section id="btn-section">
 //     <img id="j-btn" src="/frontend-spa/images/Logo.png" alt="Joey's List logo"> [Joey logo] </section>
-    
+
 
 //     <section id="btn-section">
 //     <img id="n-btn" src="/frontend-spa/images/Logo.png" alt="Nana's List logo"> [Nana logo]</section>
