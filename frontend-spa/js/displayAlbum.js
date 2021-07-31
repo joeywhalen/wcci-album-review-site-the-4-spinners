@@ -10,13 +10,17 @@ const displayAlbum = function (album) {
     albumTitleElement.innerText = album.title;
     const albumImageElement = document.createElement("img");
     albumImageElement.src = album.imageURL;
-    const albumArtistElement = document.createElement("h4");
-    albumArtistElement.innerText = album.artist;
     const albumArtistNotationElement = document.createElement("album-artist");
     albumArtistNotationElement.classList.add("album-artist-notation");
     albumArtistNotationElement.innerText = "Album Artist: ";
+    const albumArtistElement = document.createElement("h4");
+    albumArtistElement.innerText = album.artist;
+    const recordLabelNotationElement = document.createElement("album-record-label");
+    recordLabelNotationElement.classList.add("album-record-label-notation");
+    recordLabelNotationElement.innerText = "Record Label: "
     const recordLabelElement = document.createElement("p");
     recordLabelElement.innerText = album.recordLabel;
+    
     const albumDurationElement = document.createElement("p");
     albumDurationElement.innerText = album.duration;
     const albumRatingElement = document.createElement("p");
@@ -28,6 +32,7 @@ const displayAlbum = function (album) {
     albumElement.appendChild(albumImageElement);
     albumElement.appendChild(albumArtistNotationElement);
     albumElement.appendChild(albumArtistElement);
+    albumElement.appendChild(recordLabelNotationElement);
     albumElement.appendChild(recordLabelElement);
     albumElement.appendChild(albumDurationElement);
     albumElement.appendChild(albumRatingElement);
