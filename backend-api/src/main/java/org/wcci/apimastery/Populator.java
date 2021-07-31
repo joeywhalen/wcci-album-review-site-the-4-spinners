@@ -303,7 +303,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-         List harrisonList = new List("Harrison List");
+         List harrisonList = new List("Harrison's List");
          listStorage.saveList(harrisonList);
 
          Album foodAndLiquor = new Album(harrisonList,"Lupe Fiasco's Food & Liquor ","Lupe Fiasco","https://images-na.ssl-images-amazon.com/images/I/81B4l7WTz3L._SL1453_.jpg","Atlantic Records","72m 13s", 4, "https://www.youtube.com/watch?v=Gl83mI69nX4","blah blah blah");

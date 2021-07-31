@@ -64,7 +64,7 @@ const displaySingleList = function (list){
   submitNewAlbumButton.classList.add("submit-new-album");
   submitNewAlbumButton.innerText = "Submit New Album";
   const formattingElement = document.createElement('div');
-  formattingElement.innerHTML = "<br><hr><br>";
+  formattingElement.innerHTML = "";
 
   submitNewAlbumButton.addEventListener("click", (clickEvent) => {
     clickEvent.preventDefault();
