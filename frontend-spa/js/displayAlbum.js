@@ -1,7 +1,7 @@
 import { clearChildren } from "./displayHome.js";
 import {displaySingleSong} from "./displaySingleSong.js"
 
-const displayAlbum = function (list, album){
+const displayAlbum = function (album){
     const mainElement = document.querySelector(".main-content");
     clearChildren(mainElement);
     const albumElement = document.createElement("div");
@@ -35,7 +35,7 @@ const displayAlbum = function (list, album){
         let songNameElement= document.createElement("h5");
         songNameElement.innerText = song.songTitle;        
         songNameElement.addEventListener("click", (clickEvent) => {
-            displaySingleSong(list, album, song)
+            displaySingleSong(song)
         });
         songElement.appendChild(songNameElement);
         albumElement.appendChild(songElement);
@@ -82,7 +82,7 @@ const displayAlbum = function (list, album){
             "comments": [commentsInput.value]
         }
         console.log(album.list);
-        fetch("http://localhost:8080/api/lists/" + list.id + "/albums/" + album.id + "/songs", {
+        fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/songs", {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'

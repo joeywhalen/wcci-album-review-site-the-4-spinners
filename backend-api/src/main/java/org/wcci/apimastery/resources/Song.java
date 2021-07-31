@@ -46,6 +46,10 @@ public class Song {
     public Album getAlbum() {
         return album;
     }
+    
+    public long getAlbumId(){
+        return album.getId();
+    }
 
     public String getSongTitle() {
         return songTitle;
@@ -65,6 +69,10 @@ public class Song {
 
     public Iterable<String> getComments() {
         return comments;
+    }
+
+    public long getListId(){
+        return album.getList().getId();
     }
     public void addAlbum(Album album){
         this.album = album;

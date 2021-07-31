@@ -25,7 +25,7 @@ GET http://localhost:8080/api/lists/5/albums
 Content-Type: application/json
 
 ### Display single ablbum of a list
-GET http://localhost:8080/api/lists/5/albums/6
+GET http://localhost:8080/api/lists/1/albums/2
 
 
 ### Update Albums name property

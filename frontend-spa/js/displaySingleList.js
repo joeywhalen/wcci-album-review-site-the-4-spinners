@@ -17,7 +17,7 @@ const displaySingleList = function (list){
       albumImageURL.src = album.imageURL; 
       // albumLink.href = album.imageURL;
       albumLink.addEventListener("click", (clickEvent) => {
-        displayAlbum(list, album)
+        displayAlbum(album)
       });
       albumLink.appendChild(albumImageURL);
       albumElement.appendChild(albumNameElement);
