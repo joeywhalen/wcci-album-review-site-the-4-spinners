@@ -1,5 +1,5 @@
 body{
-    background-color: orange;
+    /* background-color: orange; */
 }
 
 
@@ -8,29 +8,27 @@ input{
     color: #406EDB;
 }
 
-.container {
-    background-color: brown;
+.container {    
     display: flex; 
     flex-direction: column;
-        
+    /* background-color: brown;     */
 }
 
 .nav {
     display: flex;
     /* flex-direction: row; */
     justify-content: center;
-    background-color: aqua;
     
 }
+
+/* this keep buttons center */
 .nav-btns{
     display: flex;
-    background-color: antiquewhite;
-    padding: 10px;
-
+    padding: 5px;
 }
 
 
-/* Either delete lines 10-11 in listBar or rename 'button' on line 14 */
+/* Either delete lines 10-11 in listBar or rename 'button' on line 14  to space out buttons*/
 .nav-btns button{
     font-family: Verdana;    
     font-size: 1rem;
@@ -41,6 +39,11 @@ input{
     background-color: #406EDB;
     color: bisque;
 
+}
+
+.main-content{
+    display: flex;
+    justify-content: center;
 }
 
 .nav-btns :hover{
@@ -64,7 +67,7 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: pink;
+    /* background-color: pink; */
 }
 .new-list-form button{
     font-family: Verdana;    
@@ -86,7 +89,6 @@ input{
 .title h2{
     display: flex;
     justify-content: center;
-    background-color: yellow;
     flex-wrap: wrap;
 
 }
@@ -95,17 +97,37 @@ input{
     display: flex;
     justify-content: center;
     font-size: 3rem;
-    padding-bottom: 3rem;
-    background-color: purple;   
+    padding-bottom: 3rem; 
 }
 
+.list-bar{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .list-bar img{
+    display: flex;
     height: 150px;
     width: auto;
     cursor: pointer;
     border-radius: 100%;
-    background-color: purple;
+}
+
+.btn-section h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+.btn-section img:active{
+  transform: scale(95%);
+  border-radius: 100%;  
+}
+
+.list-btns{
+    display: flex;
+    justify-content: left;
 }
 
 
@@ -115,26 +137,29 @@ input{
     flex-direction: column;
     justify-content: center;
     padding:10px;
-    background-color: purple;
+    /* background-color: purple; */
 }
+
+
 
 /* css for displaySingleList*/
 .main-content {
     display: flex;
-    justify-content: space-around;
-    background-color: yellow;
+    /* justify-content: space-around;
+    background-color: yellow; */
 }
 
 .main-content h3{
     text-align: center;
     font-variant: small-caps;
+    max-width: 200px;
 }
 .new-album-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
 }
 
 input{
@@ -163,7 +188,7 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
 }
 
 .new-song-form button{
@@ -187,7 +212,7 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
 }
 .new-comment{
     font-size: larger;
@@ -209,12 +234,16 @@ input{
     color: #406EDB;
 }
 
-
+/* .album-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
 
 .main-footer {
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
 }
 
