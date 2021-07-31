@@ -9,11 +9,10 @@ const createListBar = function(lists){
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
-    navButtons.innerHTML = `<button>About Us</button> 
-                 <button>Back Page</button>`
+    navButtons.innerHTML = `<button>About Us</button>`
     
     const homeButton = document.createElement("button");
-    homeButton.classList.add("home-navigation");
+    // homeButton.classList.add("home-navigation");
     homeButton.innerText = "Home";
     //Need to work issue with reload
     homeButton.addEventListener("click", () => {
@@ -26,7 +25,7 @@ const createListBar = function(lists){
 
     const title = document.createElement("div");
     title.classList.add("title");
-    title.innerHTML = `<h1>Welcome to Desert Island Jukebox</h1>`
+    title.innerHTML = `<h2>Welcome to <br></h2> <h1>Desert Island Jukebox</h1>`
     
     const listBar = document.createElement("div");
     listBar.classList.add("list-bar");
@@ -40,7 +39,7 @@ const createListBar = function(lists){
         let listNameElement = document.createElement("h2");
         listNameElement.innerText = list.listName;
         let listImage = document.createElement("div");
-        listImage.innerHTML = `<img src="./images/Logo.png" alt="List logo"></img>`
+        listImage.innerHTML = `<img src="./images/RecordLogo.png" alt="List logo"></img>`
         listImage.addEventListener("click", ()=>{
             displaySingleList(list)
         });
@@ -55,13 +54,14 @@ const createListBar = function(lists){
     const listNameInput = document.createElement("input");
     listNameInput.classList.add("new-list-name");
     listNameInput.setAttribute("type", "text");
-    listNameInput.setAttribute("placeholder", "Name your list...");
+    listNameInput.setAttribute("placeholder", "Name your list...")
+    ;
 
     const submitNewListButton = document.createElement("button");
     submitNewListButton.classList.add("submit-new-list");
     submitNewListButton.innerText = "Submit New List";
     const formattingElement = document.createElement('div');
-    formattingElement.innerHTML = "<br><hr><br>";
+    // formattingElement.innerHTML = "";
 
     submitNewListButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();

@@ -29,7 +29,7 @@ public class Populator implements CommandLineRunner {
         //  Song song2 = new Song(album1,"Blah blah", "45", 4);
         //  songRepository.save(song2);
 
-         List jawList = new List("jaw List");
+         List jawList = new List("Joey's List");
          listStorage.saveList(jawList);
 
          Album laSex = new Album(jawList, "La Sexorcisto: Devil Music Volume One", "White Zombie",
@@ -254,7 +254,7 @@ public class Populator implements CommandLineRunner {
          songRepository.save(disgustipated);
 
 
-         List naList = new List("nana List");
+         List naList = new List("Nana's List");
          listStorage.saveList(naList);
 
          Album inASilentWay = new Album(naList,"In A Silent Way ","Miles Davis","https://www.bluescentric.com/images/product/large/4310.jpg","Columbia Records","38m 09s", 5, "https://www.youtube.com/watch?v=YHesqaMhh34","Miles Davies gave us a mighty touch with his 'In A Silent Way' album, It is a musical rebirth, a sense of motherly warmth takes over, and then we hear, yet again, Davis’ cosmic trumpet playing which concludes the album with a calming fade.");
@@ -303,7 +303,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-         List harrisonList = new List("harrison List");
+         List harrisonList = new List("Harrison List");
          listStorage.saveList(harrisonList);
 
          Album foodAndLiquor = new Album(harrisonList,"Lupe Fiasco's Food & Liquor ","Lupe Fiasco","https://images-na.ssl-images-amazon.com/images/I/81B4l7WTz3L._SL1453_.jpg","Atlantic Records","72m 13s", 4, "https://www.youtube.com/watch?v=Gl83mI69nX4","blah blah blah");
