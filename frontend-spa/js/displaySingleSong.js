@@ -50,20 +50,23 @@ const displaySingleSong = function(song) {
         clickEvent.preventDefault();
         const songElement = document.querySelector(".song-content");
         clearChildren(songElement);
-        const commentJson = {
-            "comments": [commentInput.value]
+        if (commentInput.value !== "") {
+
+            const json = JSON.stringify(commentInput.value);
+            const unqoutedJson = json.replace(/\"/g,"");//this removes qoutes from the stringify
+            fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/comments", {
+                    method: "PATCH",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: unqoutedJson
+                })
+                .then(response => response.json())
+                .then(song => displaySingleSong(song))
+                .catch(error => console.log(error));
         }
-        fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/comments", {
-                method: "PATCH",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(commentJson)
-            })
-            .then(response => response.json())
-            .then(song => displaySingleSong(song))
-            .catch(error => console.log(error));
     })
+
 
     mainElement.appendChild(songElement);
     return mainElement;
