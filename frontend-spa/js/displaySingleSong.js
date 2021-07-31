@@ -11,15 +11,19 @@ const displaySingleSong = function(song) {
     const songElement = document.createElement("div");
     songElement.classList.add("song-content");
     const songTitleElement = document.createElement("h3");
-    songTitleElement.innerText = song.songTitle;
+    songTitleElement.innerText = "Song Title: " + song.songTitle;
     const songLengthElement = document.createElement("p");
-    songLengthElement.innerText = song.length;
+    songLengthElement.innerText = "Song Length: " + song.length;
     const songStarRatingElement = document.createElement("p");
-    songStarRatingElement.innerText = song.starRating + "/5";
+    songStarRatingElement.innerText = "Song Rating: " + song.starRating + "/5";
+    const songCommentsNotationelement = document.createElement("song-comments");
+    songCommentsNotationelement.classList.add("song-comments-notation");
+    songCommentsNotationelement.innerText = "Comments: ";
 
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songLengthElement);
     songElement.appendChild(songStarRatingElement);
+    songElement.appendChild(songCommentsNotationelement);
 
     if (song.comments !== null && song.comments.length !== 0) {
         song.comments.forEach((comment) => {

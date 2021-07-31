@@ -151,7 +151,8 @@ input{
 .main-content h3{
     text-align: center;
     font-variant: small-caps;
-    max-width: 200px;
+    /* max-width: 200px; */
+    max-width: 600px;
 }
 .new-album-form{
     display: flex;
