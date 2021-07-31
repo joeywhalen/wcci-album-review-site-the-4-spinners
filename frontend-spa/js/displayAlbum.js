@@ -126,7 +126,25 @@ const displayAlbum = function (album) {
     commentForm.appendChild(submitCommentButton);
     albumElement.appendChild(commentForm);
 
-    submitCommentButton.addEventListener("")
+    submitCommentButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const albumElement = document.querySelector(".album-content");
+        clearChildren(albumElement);
+        if(commentInput.value !== ""){
+            const json = JSON.stringify(commentInput.value);
+            const unqoutedJson = json.replace(/\"/g,"");
+            fetch("http://localhost:8080/api/lists/"+album.listId+"/albums/"+album.id+"/comments", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: unqoutedJson
+            })
+            .then(response => response.json())
+            .then(album => displayAlbum(album))
+            .catch(error => console.log(error));
+        }
+    })
 
     mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
