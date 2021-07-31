@@ -10,45 +10,33 @@ const displayAlbum = function (album) {
     albumTitleElement.innerText = album.title;
     const albumImageElement = document.createElement("img");
     albumImageElement.src = album.imageURL;
-    // const formattingElement = document.createElement('div');
-    // formattingElement.innerHTML = "<br></br>";
-    const albumArtistNotationElement = document.createElement("album-artist");
-    albumArtistNotationElement.classList.add("album-artist-notation");
-    albumArtistNotationElement.innerText = "Album Artist: ";
     const albumArtistElement = document.createElement("h4");
     albumArtistElement.classList.add("album-artist-notation");
-    albumArtistElement.innerText = album.artist;
-    const recordLabelNotationElement = document.createElement("album-record-label");
-    recordLabelNotationElement.classList.add("album-record-label-notation");
-    recordLabelNotationElement.innerText = "Record Label: "
+    albumArtistElement.innerText = "Album Artist: " + album.artist; 
     const recordLabelElement = document.createElement("p");
-    recordLabelElement.innerText = album.recordLabel;
-    const albumDurationNotationElement = document.createElement("album-duration");
-    albumDurationNotationElement.classList.add("album-duration-notation");
-    albumDurationNotationElement.innerText = "Album Duration: "
+    recordLabelElement.innerText = "Record Label: " + album.recordLabel;
     const albumDurationElement = document.createElement("p");
     albumDurationElement.classList.add("album-duration-notation");
-    albumDurationElement.innerText = album.duration;
-    const albumRatingNotationElement = document.createElement("album-rating");
-    albumRatingNotationElement.classList.add("album-rating-notation");
-    albumRatingNotationElement.innerText = "Album Rating: ";
+    albumDurationElement.innerText = "Album Duration: " + album.duration;
     const albumRatingElement = document.createElement("p");
-    albumRatingElement.innerText = album.rating + "/5";
+    albumRatingElement.innerText = "Album Rating: " + album.rating + "/5";
     const albumVideoElement = document.createElement("a");
     albumVideoElement.href = album.videoURL;
+    const albumSongsNotationElement = document.createElement("album-songs");
+    albumSongsNotationElement.classList.add("album-songs-notation");
+    albumSongsNotationElement.innerText = "Songs: ";
+    const albumCommentsNotationelement = document.createElement("album-comments");
+    albumCommentsNotationelement.classList.add("album-comments-notation");
+    albumCommentsNotationelement.innerText = "Comments: ";
 
     albumElement.appendChild(albumTitleElement);
     albumElement.appendChild(albumImageElement);
-    // albumElement.appendChild(formattingElement);
-    albumElement.appendChild(albumArtistNotationElement);
     albumElement.appendChild(albumArtistElement);
-    albumElement.appendChild(recordLabelNotationElement);
     albumElement.appendChild(recordLabelElement);
-    albumElement.appendChild(albumDurationNotationElement);
     albumElement.appendChild(albumDurationElement);
-    albumElement.appendChild(albumRatingNotationElement);
     albumElement.appendChild(albumRatingElement);
     albumElement.appendChild(albumVideoElement);
+    albumElement.appendChild(albumSongsNotationElement);
 
     album.songs.forEach((song) => {
         let songElement = document.createElement("section");
@@ -62,12 +50,10 @@ const displayAlbum = function (album) {
         albumElement.appendChild(songElement);
     });
 
+    albumElement.appendChild(albumCommentsNotationelement);
+
     const form = document.createElement("form");
     form.classList.add("new-song-form");
-    // const albumTitleInput = document.createElement("input");
-    // albumTitleInput.classList.add("attach-album-name");
-    // albumTitleInput.setAttribute("type", "text");
-    // albumTitleInput.setAttribute("placeholder", "Which Album?...");
     const songTitleInput = document.createElement("input");
     songTitleInput.classList.add("new-song-title");
     songTitleInput.setAttribute("type", "text");
@@ -96,7 +82,6 @@ const displayAlbum = function (album) {
         const albumElement = document.querySelector(".album-content");
         clearChildren(albumElement);
         const songJson = {
-            // "title": albumTitleInput.value,
             "songTitle": songTitleInput.value,
             "length": lengthInput.value,
             "starRating": starRatingInput.value,
@@ -115,7 +100,6 @@ const displayAlbum = function (album) {
             .catch(error => console.log(error));
     })
 
-    // form.appendChild(albumTitleInput);
     form.appendChild(songTitleInput);
     form.appendChild(lengthInput);
     form.appendChild(starRatingInput);
