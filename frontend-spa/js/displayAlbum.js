@@ -12,6 +12,9 @@ const displayAlbum = function (album) {
     albumImageElement.src = album.imageURL;
     const albumArtistElement = document.createElement("h4");
     albumArtistElement.innerText = album.artist;
+    const albumArtistNotationElement = document.createElement("album-artist");
+    albumArtistNotationElement.classList.add("album-artist-notation");
+    albumArtistNotationElement.innerText = "Album Artist: ";
     const recordLabelElement = document.createElement("p");
     recordLabelElement.innerText = album.recordLabel;
     const albumDurationElement = document.createElement("p");
@@ -23,6 +26,7 @@ const displayAlbum = function (album) {
 
     albumElement.appendChild(albumTitleElement);
     albumElement.appendChild(albumImageElement);
+    albumElement.appendChild(albumArtistNotationElement);
     albumElement.appendChild(albumArtistElement);
     albumElement.appendChild(recordLabelElement);
     albumElement.appendChild(albumDurationElement);
