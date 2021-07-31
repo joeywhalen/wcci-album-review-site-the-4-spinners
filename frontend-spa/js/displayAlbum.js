@@ -168,7 +168,7 @@ const displayAlbum = function (album) {
             userRatingsElement.appendChild(singleUserRatingElement);
             albumElement.appendChild(userRatingsElement);
         });
-        let average = total / album.userRatings.length;
+        let average = Math.round((total / album.userRatings.length) * 10) / 10;
         let averageRatingElement = document.createElement("h4");
         averageRatingElement.innerText = "Average User Rating: " + average;
         albumElement.appendChild(averageRatingElement);
@@ -178,7 +178,7 @@ const displayAlbum = function (album) {
     const userRatingInput = document.createElement("input");
     userRatingInput.classList.add("new-user-rating");
     userRatingInput.setAttribute("type", "integer");
-    userRatingInput.setAttribute("placeholder", "Enter your star rating between 1 & 5...");
+    userRatingInput.setAttribute("placeholder", "Enter a rating (1 - 5)...");
     const submitUserRatingButton = document.createElement("button");
     submitUserRatingButton.classList.add("user-rating-button");
     submitUserRatingButton.innerText = "Submit a rating";
@@ -205,7 +205,7 @@ const displayAlbum = function (album) {
         }
     })
 
-    mainElement.appendChild(commentForm);
+    mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
 
     return mainElement;

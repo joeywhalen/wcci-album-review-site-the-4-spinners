@@ -234,6 +234,35 @@ input{
     color: #406EDB;
 }
 
+.new-user-rating-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 600px;
+}
+
+.new-user-rating {
+    font-size: larger;
+}
+
+.new-user-rating-form button {
+    font-family: Verdana;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: white;
+}
+
+.new-user-rating-form button:hover {
+    transition-duration: .25s;
+    background-color: white;
+    color: #406EDB;
+}
+
 /* .album-content {
     display: flex;
     flex-direction: column;
