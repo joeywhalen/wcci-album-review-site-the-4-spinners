@@ -58,6 +58,10 @@ public class Album {
         return list;
     }
 
+    public long getListId(){
+        return list.getId();
+    }
+
     public Long getId(){
         return id;
     }

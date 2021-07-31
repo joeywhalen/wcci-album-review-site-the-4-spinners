@@ -25,7 +25,7 @@ GET http://localhost:8080/api/lists/5/albums
 Content-Type: application/json
 
 ### Display single ablbum of a list
-GET http://localhost:8080/api/lists/5/albums/6
+GET http://localhost:8080/api/lists/1/albums/2
 
 
 ### Update Albums name property
@@ -35,7 +35,7 @@ New Test Album Name Change
 
 
 ### Add a new album resource to the list's albums. {"title": "New Album","artist": "Sample Artist","imageURL": "Sample image URL","recordLabel": "Sample Record Label","duration": "Sample duration","rating": 5,"videoUrl": "Sample video URL", "songs": [{"test comment": "this is a test comment"}]}
-PATCH http://localhost:8080/api/lists/1/albums
+POST  http://localhost:8080/api/lists/1/albums
 Content-Type: application/json
  
 {
@@ -101,3 +101,9 @@ DELETE http://localhost:8080/api/lists/5/albums/6/songs/7
 PATCH http://localhost:8080/api/lists/5/albums/6/songs/7/songTitle
 
 New Changed Song Title
+
+### Add comment to song
+PATCH  http://localhost:8080/api/lists/1/albums/6/songs/7/comments
+Content-Type: application/json
+
+New Test Comment

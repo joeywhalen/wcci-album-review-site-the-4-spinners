@@ -103,8 +103,8 @@ public class ListController {
     public List addAlbumToList(@PathVariable Long id, @RequestBody Album albumToAdd) {
         List listToChange = listStorage.retrieveListById(id);
         
-        // listToChange.addAlbum(albumToAdd);
-        // listStorage.saveList(listToChange);
+        listToChange.addAlbum(albumToAdd);
+        listStorage.saveList(listToChange);
         albumToAdd.changeList(listToChange);
         albumRepository.save(albumToAdd);
 
@@ -149,7 +149,7 @@ public class ListController {
     //     ### Add new song to specific album
     // PATCH http://localhost:8080/api/lists/5/albums/6/songs
     // Content-Type: application/json
-    @PostMapping("/api/lists/{id}/albums/{albumId}/songs")
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs")
     public Album addSongToAlbum(@PathVariable Long id, @PathVariable Long albumId, @RequestBody Song songToAdd) {
         Album albumToChange = listStorage.retrieveAlbumById(albumId);
         songRepository.save(songToAdd);
@@ -175,6 +175,19 @@ public class ListController {
     public Song changeSongTitle(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId, @RequestBody String newSongTitle){
         Song songToChange = songRepository.findById(songId).get();
         songToChange.changeSongTitle(newSongTitle);
+        songRepository.save(songToChange);
+        return songToChange;
+    }
+
+    //     ### Add comment to song
+    // POST http://localhost:8080/api/lists/1/albums/6/songs/7/comments
+    // Content-Type: application/json
+
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/comments")
+    public Song addSongComment(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId, @RequestBody String newComment){
+        Song songToChange = songRepository.findById(songId).get();
+        
+        songToChange.addSongComment(newComment);
         songRepository.save(songToChange);
         return songToChange;
     }

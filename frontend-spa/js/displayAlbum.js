@@ -81,10 +81,9 @@ const displayAlbum = function (album){
             "starRating": starRatingInput.value,
             "comments": [commentsInput.value]
         }
-        const currentList = album.list;
         console.log(album.list);
-        fetch("http://localhost:8080/api/lists/" + currentList + "/albums/" + album.id + "/songs", {
-            method: "POST",
+        fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/songs", {
+            method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'
             },
