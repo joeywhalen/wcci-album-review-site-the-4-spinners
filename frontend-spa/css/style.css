@@ -2,6 +2,12 @@ body{
     background-color: orange;
 }
 
+
+input{
+    font-size: large;
+    color: #406EDB;
+}
+
 .container {
     background-color: brown;
     display: flex; 
@@ -51,6 +57,8 @@ body{
     flex-wrap: wrap;
 }
 
+
+/* css for listBar */
 .new-list-form{
     display: flex;
     flex-direction: column;
@@ -69,16 +77,10 @@ body{
     color: antiquewhite;
 }
 
-.new-list-form :hover{
+.new-list-form button:hover{
     transition-duration: .25s;
   background-color: antiquewhite;
   color: #406EDB;
-}
-
-.new-list-name{
-   border-color: #406EDB;
-   color: #406EDB;
-   
 }
 
 .title h2{
@@ -116,7 +118,7 @@ body{
     background-color: purple;
 }
 
-
+/* css for displaySingleList*/
 .main-content {
     display: flex;
     justify-content: space-around;
@@ -134,6 +136,80 @@ body{
     justify-content: center;
     background-color: chartreuse;
 }
+
+input{
+    font-size: large;
+}
+
+/* css for singleAlbum */
+.new-album-form button{
+    font-family: Verdana;    
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: antiquewhite;
+}
+.new-album-form button:hover{
+    transition-duration: .25s;
+    background-color: antiquewhite;
+    color: #406EDB;
+}
+
+.new-song-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: chartreuse;
+}
+
+.new-song-form button{
+    font-family: Verdana;    
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: antiquewhite;
+}
+.new-song-form button:hover{
+    transition-duration: .25s;
+    background-color: antiquewhite;
+    color: #406EDB;
+}
+
+.new-comment-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: chartreuse;
+}
+.new-comment{
+    font-size: larger;
+}
+
+.new-comment-form button{
+    font-family: Verdana;    
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: antiquewhite;
+}
+.new-comment-form button:hover{
+    transition-duration: .25s;
+    background-color: antiquewhite;
+    color: #406EDB;
+}
+
+
 
 .main-footer {
     display: flex;
