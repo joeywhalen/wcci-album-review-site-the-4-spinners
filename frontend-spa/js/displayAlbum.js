@@ -1,7 +1,7 @@
 import { clearChildren } from "./displayHome.js";
-import {displaySingleSong} from "./displaySingleSong.js"
+import { displaySingleSong } from "./displaySingleSong.js"
 
-const displayAlbum = function (album){
+const displayAlbum = function (album) {
     const mainElement = document.querySelector(".main-content");
     clearChildren(mainElement);
     const albumElement = document.createElement("div");
@@ -27,13 +27,13 @@ const displayAlbum = function (album){
     albumElement.appendChild(recordLabelElement);
     albumElement.appendChild(albumDurationElement);
     albumElement.appendChild(albumRatingElement);
-    albumElement.appendChild(albumVideoElement);    
-    
-    album.songs.forEach((song)=>{
+    albumElement.appendChild(albumVideoElement);
+
+    album.songs.forEach((song) => {
         let songElement = document.createElement("section");
         songElement.classList.add("song-btn-section");
-        let songNameElement= document.createElement("h5");
-        songNameElement.innerText = song.songTitle;        
+        let songNameElement = document.createElement("h5");
+        songNameElement.innerText = song.songTitle;
         songNameElement.addEventListener("click", (clickEvent) => {
             displaySingleSong(song)
         });
@@ -102,18 +102,35 @@ const displayAlbum = function (album){
     form.appendChild(submitNewSongButton);
     form.appendChild(formattingElement);
 
-    album.comments.forEach((comment) => {
-        let commentsElement = document.createElement("section");
-        commentsElement.classList.add("comments-section");
-        let singleCommentElement = document.createElement("p");
-        singleCommentElement.innerText = comment;
-        commentsElement.appendChild(singleCommentElement);
-        albumElement.appendChild(commentsElement);
-    });
-    
+    if (album.comments !== null && album.comments.length !== 0) {
+        album.comments.forEach((comment) => {
+            let commentsElement = document.createElement("section");
+            commentsElement.classList.add("comments-section");
+            let singleCommentElement = document.createElement("p");
+            singleCommentElement.innerText = comment;
+            commentsElement.appendChild(singleCommentElement);
+            albumElement.appendChild(commentsElement);
+        });
+    }
+    const commentForm = document.createElement("form");
+    commentForm.classList.add("new-comment-form");
+    const commentInput = document.createElement("input");
+    commentInput.classList.add("new-comment");
+    commentInput.setAttribute("type", "text");
+    commentInput.setAttribute("placeholder", "Enter your comment...");
+    const submitCommentButton = document.createElement("button");
+    submitCommentButton.classList.add("comment-button");
+    submitCommentButton.innerText = "Submit a comment";
+
+    commentForm.appendChild(commentInput);
+    commentForm.appendChild(submitCommentButton);
+    albumElement.appendChild(commentForm);
+
+    submitCommentButton.addEventListener("")
+
     mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
 
     return mainElement;
 }
-export{displayAlbum}
+export { displayAlbum }

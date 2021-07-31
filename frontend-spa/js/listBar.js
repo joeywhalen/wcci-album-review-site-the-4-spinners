@@ -41,14 +41,11 @@ const createListBar = function (lists) {
         let listImage = document.createElement("div");
         listImage.innerHTML = `<img src="./images/RecordLogo.png" alt="List logo"></img>`
         listImage.addEventListener("click", () => {
-            let clicked = true;
             clearChildren(header);
-            if (clicked) {
                 fetch("http://localhost:8080/api/lists")
                     .then(response => response.json())
                     .then(lists => container.prepend(createListBar(lists)))
                     .catch(error => console.log(error));
-            }
             displaySingleList(list);
         });
         listElement.appendChild(listNameElement);
