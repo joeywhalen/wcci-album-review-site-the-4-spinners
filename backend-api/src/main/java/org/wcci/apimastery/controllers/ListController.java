@@ -191,4 +191,16 @@ public class ListController {
         songRepository.save(songToChange);
         return songToChange;
     }
+
+//     ### Add comment to album
+// PATCH http://localhost:8080/api/lists/1/albums/6/comments
+// Content-Type: application/json
+@PatchMapping("/api/lists/{id}/albums/{albumId}/comments")
+public Album addAlbumComment(@PathVariable Long id, @PathVariable Long albumId, @RequestBody String newComment){
+    Album albumToChange = albumRepository.findById(albumId).get();
+    
+    albumToChange.addComment(newComment);
+    albumRepository.save(albumToChange);
+    return albumToChange;
+}
 }

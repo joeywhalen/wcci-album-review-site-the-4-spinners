@@ -128,4 +128,8 @@ public class Album {
         }
         return false;
     }
+
+    public void addComment(String newComment){
+        this.comments.add(newComment);
+    }
 }

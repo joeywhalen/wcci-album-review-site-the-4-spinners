@@ -72,6 +72,12 @@ Content-Type: application/json
 ### Delete an album with id from a list.
 DELETE http://localhost:8080/api/lists/1/albums/2
 
+### Add comment to album
+PATCH http://localhost:8080/api/lists/1/albums/2/comments
+Content-Type: application/json
+
+New Album Test Comment
+
 ### List songs of a specific album
 GET http://localhost:8080/api/lists/5/albums/6/songs
 Content-Type: application/json
