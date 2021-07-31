@@ -1,7 +1,5 @@
 package org.wcci.apimastery.resources;
 
-
-
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -62,6 +60,10 @@ public class Album {
         return list.getId();
     }
 
+    public void changeList(List list) {
+        this.list = list;
+    }
+
     public Long getId(){
         return id;
     }
@@ -74,12 +76,31 @@ public class Album {
         return artist;
     }
 
-    public String getImageURL(){
+    public String getImageURL() {
         return imageURL;
+    }
+    
+    public void addSong(Song song) {
+        songs.add(song);
+    }
+
+    public boolean hasSongs() {
+        if (songs != null && songs.size() > 0) {
+            return true;
+        }
+        return false;
     }
 
     public Collection<Song> getSongs() {
         return songs;
+    }
+
+    public void deleteSongs() {
+        songs.clear();
+    }
+
+    public void removeSong(Song song) {
+        songs.remove(song);
     }
 
     public String getRecordLabel(){
@@ -98,38 +119,16 @@ public class Album {
         return videoUrl;
     }
 
-    public Iterable<String> getComments(){
+    public Iterable<String> getComments() {
         return comments;
     }
-
-    public void addSong(Song song) {
-        songs.add(song);
-    }
-
-    public void changeList(List list) {
-        this.list = list;
-    }
-
-    public void deleteSongs(){
-        songs.clear();
-    }
-
-    public void removeSong(Song song){
-        songs.remove(song);
+    
+    public void addComment(String newComment) {
+        this.comments.add(newComment);
     }
 
     public void changeAlbumTitle(String newAlbumTitle) {
         this.title = newAlbumTitle;
     }
-
-    public boolean hasSongs() {
-        if(songs != null && songs.size() > 0){
-            return true;
-        }
-        return false;
-    }
-
-    public void addComment(String newComment){
-        this.comments.add(newComment);
-    }
+    
 }
