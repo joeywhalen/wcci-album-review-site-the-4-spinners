@@ -138,7 +138,7 @@ const displayAlbum = function (album) {
         if(commentInput.value !== ""){
             const json = JSON.stringify(commentInput.value);
             const unqoutedJson = json.replace(/\"/g,"");
-            fetch("http://localhost:8080/api/lists/"+album.listId+"/albums/"+album.id+"/comments", {
+            fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/comments", {
                 method: "PATCH",
                 headers: {
                     'Content-Type' : 'application/json'
@@ -153,6 +153,37 @@ const displayAlbum = function (album) {
 
     mainElement.appendChild(form);
     mainElement.appendChild(albumElement);
+
+    if (album.userRatings !== null && album.userRatings.length !== 0) {
+        album.userRatings.forEach((userRating) => {
+            let userRatingsElement = document.createElement("section");
+            userRatingsElement.classList.add("userRatings-section");
+            let singleUserRatingElement = document.createElement("p");
+            singleUserRatingElement.innerText = userRating;
+            userRatingElement.appendChild(singleUserRatingElement);
+            albumElement.appendChild(userRatingsElement);
+        });
+    }
+    const userRatingForm = document.createElement("form");
+    userRatingForm.classList.add("new-user-rating-form");
+    const userRatingInput = document.createElement("input");
+    userRatingInput.classList.add("new-user-rating");
+    userRatingInput.setAttribute("type", "integer");
+    userRatingInput.setAttribute("placeholder", "Enter your star rating between 1 & 5...");
+    const submitUserRatingButton = document.createElement("button");
+    submitUserRatingButton.classList.add("user-rating-button");
+    submitUserRatingButton.innerText = "Submit a rating";
+
+    userRatingForm.appendChild(userRatingInput);
+    userRatingForm.appendChild(submitUserRatingButton);
+    albumElement.appendChild(userRatingForm);
+
+    submitUserRatingButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const albumElement = document.querySelector(".album-content");
+        clearChildren(albumElement);
+        
+    })
 
     return mainElement;
 }
