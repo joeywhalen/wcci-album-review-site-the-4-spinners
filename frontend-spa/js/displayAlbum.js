@@ -158,15 +158,20 @@ const displayAlbum = function (album) {
         let userRatingHeading = document.createElement("h3");
         userRatingHeading.innerText = "User Ratings:";
         albumElement.appendChild(userRatingHeading);
-        
+        let total = 0; 
         album.userRatings.forEach((userRating) => {
             let userRatingsElement = document.createElement("section");
             userRatingsElement.classList.add("userRatings-section");
             let singleUserRatingElement = document.createElement("p");
             singleUserRatingElement.innerText = userRating;
+            total += userRating;
             userRatingsElement.appendChild(singleUserRatingElement);
             albumElement.appendChild(userRatingsElement);
         });
+        let average = total / album.userRatings.length;
+        let averageRatingElement = document.createElement("h4");
+        averageRatingElement.innerText = "Average User Rating: " + average;
+        albumElement.appendChild(averageRatingElement);
     }
     const userRatingForm = document.createElement("form");
     userRatingForm.classList.add("new-user-rating-form");
