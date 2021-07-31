@@ -20,9 +20,14 @@ const displayAlbum = function (album) {
     recordLabelNotationElement.innerText = "Record Label: "
     const recordLabelElement = document.createElement("p");
     recordLabelElement.innerText = album.recordLabel;
-    
+    const albumDurationNotationElement = document.createElement("album-duration");
+    albumDurationNotationElement.classList.add("album-duration-notation");
+    albumDurationNotationElement.innerText = "Album Duration: "
     const albumDurationElement = document.createElement("p");
     albumDurationElement.innerText = album.duration;
+    const albumRatingNotationElement = document.createElement("album-rating");
+    albumRatingNotationElement.classList.add("album-rating-notation");
+    albumRatingNotationElement.innerText = "Album Rating: ";
     const albumRatingElement = document.createElement("p");
     albumRatingElement.innerText = album.rating + "/5";
     const albumVideoElement = document.createElement("a");
@@ -34,7 +39,9 @@ const displayAlbum = function (album) {
     albumElement.appendChild(albumArtistElement);
     albumElement.appendChild(recordLabelNotationElement);
     albumElement.appendChild(recordLabelElement);
+    albumElement.appendChild(albumDurationNotationElement);
     albumElement.appendChild(albumDurationElement);
+    albumElement.appendChild(albumRatingNotationElement);
     albumElement.appendChild(albumRatingElement);
     albumElement.appendChild(albumVideoElement);
 
