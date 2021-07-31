@@ -135,7 +135,7 @@ public class Album {
     //     return userRatings;
     // }
 
-    // public void addUserRating(String newUserRating) {
+    // public void addAlbumUserRating(Integer newUserRating) {
     //     this.userRatings.add(newUserRating);
     // }
 

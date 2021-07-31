@@ -130,6 +130,18 @@ public class ListController {
         return albumToChange;
     }
 
+    // ### Add user rating to an album
+    // PATCH http://localhost:8080/api/lists/1/albums/2/userRatings
+    // Content-Type: application/json
+    // @PatchMapping("/api/lists/{id}/albums/{albumId}/userRatings")
+    // public Album addAlbumUserRating(@PathVariable Long id, @PathVariable Long albumId,
+    //         @RequestBody Integer newUserRating) {
+    //     Album albumToChange = albumRepository.findById(albumId).get();
+    //     albumToChange.addAlbumUserRating(newUserRating);
+    //     albumRepository.save(albumToChange);
+    //     return albumToChange;
+    // }
+
     //### Delete an album with id from a list.
     //DELETE http://localhost:8080/api/lists/1/albums/2
     @DeleteMapping("/api/lists/{id}/albums/{albumId}")
