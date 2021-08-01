@@ -71,7 +71,7 @@ const displaySingleSong = function(song) {
         }
     })
 
-
+    // mainElement.appendChild(form);
     mainElement.appendChild(songElement);
 
     if (song.songUserRatings !== null && song.songUserRatings.length !== 0) {
@@ -79,7 +79,7 @@ const displaySingleSong = function(song) {
         songUserRatingHeading.innerText = "User Ratings: ";
         songElement.appendChild(songUserRatingHeading);
         let total = 0;
-        song.songUserRatings.forEach((songUserRatings) => {
+        song.songUserRatings.forEach((songUserRating) => {
             let songUserRatingsElement = document.createElement("section");
             songUserRatingsElement.classList.add("song-userRatings-section");
             let singleSongUserRatingElement = document.createElement("p");
@@ -110,7 +110,7 @@ const displaySingleSong = function(song) {
 
     submitSongUserRatingButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
-        const songElement = document.querySelector(".album-content");
+        const songElement = document.querySelector(".song-content");
         clearChildren(songElement);
         if(songUserRatingInput.vaule !== ""){
             fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songUserRatings", {

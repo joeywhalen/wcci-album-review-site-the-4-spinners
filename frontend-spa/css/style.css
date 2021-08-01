@@ -170,9 +170,11 @@ main .btn-section img {
     background-color: yellow; */
 }
 
+
 main h3{
     display: inline-flex;
     flex-shrink: inherit;
+
     text-align: center;
     font-variant: small-caps;
     max-width: 200px;
