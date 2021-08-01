@@ -1,5 +1,6 @@
 import { clearChildren } from "./displayHome.js";
-import { displaySingleSong } from "./displaySingleSong.js"
+import { displaySingleSong } from "./displaySingleSong.js";
+import { displaySingleList } from "./displaySingleList.js";
 
 const displayAlbum = function (album) {
     const mainElement = document.querySelector(".main-content");
