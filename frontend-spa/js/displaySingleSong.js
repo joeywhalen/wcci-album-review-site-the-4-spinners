@@ -35,10 +35,10 @@ const displaySingleSong = function(song) {
         clickEvent.preventDefault();
         clearChildren(songElement);
         const retitleSongJson = JSON.stringify(songRetitleInput.value);
-        const unquotedJson = retitleSongJson.replace(/\"/g, "");
+        const unquotedSongJson = retitleSongJson.replace(/\"/g, "");
         fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songTitle", {
             method: "PATCH",
-            body: unqoutedJson
+            body: unquotedSongJson
         })
             .then(response => response.json())
             .then(song => displaySingleSong(song))

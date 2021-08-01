@@ -7,7 +7,7 @@ const displayAlbum = function (album) {
     const albumElement = document.createElement("div");
     albumElement.classList.add("album-content");
     const albumTitleElement = document.createElement("h3");
-    albumTitleElement.innerText = album.title;
+    albumTitleElement.innerText = "Album Title: " + album.title;
     const albumImageElement = document.createElement("img");
     albumImageElement.src = album.imageURL;
     const albumArtistElement = document.createElement("h4");
