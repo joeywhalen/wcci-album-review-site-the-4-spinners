@@ -100,9 +100,34 @@ const displaySingleSong = function(song) {
     songUserRatingInput.classList.add("new-user-rating");
     songUserRatingInput.setAttribute("type", "integer");
     songUserRatingInput.setAttribute("placeholder", "Enter a rating (1 - 5)...");
-    const submitsongUserRatingButton = document.createElement("button");
-    submitsongUserRatingButton.classList.add("user-rating-button");
-    submitsongUserRatingButton.innerText = "Submit a rating";
+    const submitSongUserRatingButton = document.createElement("button");
+    submitSongUserRatingButton.classList.add("user-rating-button");
+    submitSongUserRatingButton.innerText = "Submit a rating";
+
+    songUserRatingForm.appendChild(songUserRatingInput);
+    songUserRatingForm.appendChild(submitSongUserRatingButton);
+    songElement.appendChild(songUserRatingForm);
+
+    submitSongUserRatingButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const songElement = document.querySelector(".album-content");
+        clearChildren(songElement);
+        if(songUserRatingInput.vaule !== ""){
+            fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songUserRatings", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: songUserRatingInput.value
+            })
+                .then(response => response.json())
+                .then(song => displaySingleSong(song))
+                .catch(error => console.log(error));
+        } 
+    })
+    
+    mainElement.appendChild(form);
+    mainElement.appendChild(songElement);
 
     
     return mainElement;
