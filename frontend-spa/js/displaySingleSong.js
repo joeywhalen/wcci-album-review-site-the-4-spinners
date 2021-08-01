@@ -48,6 +48,12 @@ const displaySingleSong = function(song) {
     songRetitleForm.appendChild(songRetitleInput);
     songRetitleForm.appendChild(submitRetitleSongButton);
 
+    const deleteSongButton = document.createElement("button");
+    deleteSongButton.classList.add("delete-song");
+    deleteSongButton.innerText = "Delete this Song";
+
+    
+
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songRetitleForm);
     songElement.appendChild(songLengthElement);
