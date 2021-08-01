@@ -64,6 +64,7 @@ const displaySingleSong = function(song) {
 
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songRetitleForm);
+    songElement.appendChild(deleteSongButton);
     songElement.appendChild(songLengthElement);
     songElement.appendChild(songStarRatingElement);
     songElement.appendChild(songCommentsNotationelement);
