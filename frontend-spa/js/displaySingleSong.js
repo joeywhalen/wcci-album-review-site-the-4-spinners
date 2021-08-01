@@ -48,8 +48,23 @@ const displaySingleSong = function(song) {
     songRetitleForm.appendChild(songRetitleInput);
     songRetitleForm.appendChild(submitRetitleSongButton);
 
+    const deleteSongButton = document.createElement("button");
+    deleteSongButton.classList.add("delete-song");
+    deleteSongButton.innerText = "Delete this Song";
+
+    deleteSongButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id, {
+            method: "DELETE",
+        })
+            .then(response => response.json())
+            .then(album => displayAlbum(album))
+            .catch(error => console.log(error));
+    })
+
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songRetitleForm);
+    songElement.appendChild(deleteSongButton);
     songElement.appendChild(songLengthElement);
     songElement.appendChild(songStarRatingElement);
     songElement.appendChild(songCommentsNotationelement);
