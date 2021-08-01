@@ -7,7 +7,7 @@ const displayAlbum = function (album) {
     const albumElement = document.createElement("div");
     albumElement.classList.add("album-content");
     const albumTitleElement = document.createElement("h3");
-    albumTitleElement.innerText = album.title;
+    albumTitleElement.innerText = "Album Title: " + album.title;
     const albumImageElement = document.createElement("img");
     albumImageElement.src = album.imageURL;
     const albumArtistElement = document.createElement("h4");
@@ -34,7 +34,7 @@ const displayAlbum = function (album) {
     const albumRetitleInput = document.createElement("input");
     albumRetitleInput.classList.add("new-album-title");
     albumRetitleInput.setAttribute("type", "text");
-    albumRetitleInput.setAttribute("placeholder", "Retitle your album...");
+    albumRetitleInput.setAttribute("placeholder", "Retitle the album...");
 
     const submitRetitleAlbumButton = document.createElement("button");
     submitRetitleAlbumButton.classList.add("submit-album-retitle");
@@ -43,13 +43,11 @@ const displayAlbum = function (album) {
     submitRetitleAlbumButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
         clearChildren(albumElement);
-        const retitleJson = albumRetitleInput.value
-        // const retitleJson = {
-        //     "title": albumRetitleInput.value
-        // }
+        const retitleJson = JSON.stringify(albumRetitleInput.value);
+        const unqoutedJson = retitleJson.replace(/\"/g,"");
         fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/albumName", {
             method: "PATCH",
-            body: JSON.stringify(retitleJson)
+            body: unqoutedJson
         })
             .then(response => response.json())
             .then(album => displayAlbum(album))
