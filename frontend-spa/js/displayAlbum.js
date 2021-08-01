@@ -55,7 +55,11 @@ const displayAlbum = function (album) {
             .catch(error => console.log(error));
     })
 
+    albumRetitleForm.appendChild(albumRetitleInput);
+    albumRetitleForm.appendChild(submitRetitleAlbumButton);
+
     albumElement.appendChild(albumTitleElement);
+    albumElement.appendChild(albumRetitleForm);
     albumElement.appendChild(albumImageElement);
     albumElement.appendChild(albumArtistElement);
     albumElement.appendChild(recordLabelElement);
