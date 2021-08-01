@@ -11,7 +11,7 @@ input{
 .container {    
     display: flex; 
     flex-direction: column;
-    /* background-color: brown;     */
+
 }
 
 .nav {
@@ -171,7 +171,7 @@ main .btn-section img {
     flex-direction: column;
     justify-content: center;
     padding:10px;
-    /* background-color: purple; */
+
 }
 
 
@@ -180,13 +180,12 @@ main .btn-section img {
 .main-content {
     display: flex;
     /* justify-content: space-around;
-    background-color: yellow; */
+
 }
 
 
 .btn-section h3{
     display:flex;
-    /* flex-shrink: inherit; */
     text-align: center;
     font-variant: small-caps;
     max-width: 200px;
@@ -197,7 +196,6 @@ main .btn-section img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: chartreuse; */
 }
 
 input{
@@ -227,7 +225,7 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    /* background-color: chartreuse; */
+
 }
 
 .new-song-form button{
@@ -250,12 +248,17 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    /* background-color: chartreuse; */
+    flex-wrap: wrap;
 }
+
+
 .new-comment{
+    display: flex;
+    flex-wrap: wrap;
     font-size: larger;
+    max-width: 50vw;
 }
+
 
 .new-comment-form button{
     font-family: Verdana;    
@@ -277,9 +280,8 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    width: 600px;
 }
+
 
 .new-user-rating {
     font-size: larger;
