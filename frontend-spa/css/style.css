@@ -148,6 +148,12 @@ input{
     background-color: yellow; */
 }
 
+img {
+    display: flex;
+    max-width: 250px;
+    padding: 10px;
+}
+
 .main-content h3{
     text-align: center;
     font-variant: small-caps;

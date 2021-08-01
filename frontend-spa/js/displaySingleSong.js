@@ -71,7 +71,7 @@ const displaySingleSong = function(song) {
         }
     })
 
-
+    // mainElement.appendChild(form);
     mainElement.appendChild(songElement);
 
     if (song.songUserRatings !== null && song.songUserRatings.length !== 0) {
