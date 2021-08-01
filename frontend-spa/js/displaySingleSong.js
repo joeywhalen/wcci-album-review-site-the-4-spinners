@@ -78,6 +78,16 @@ const displaySingleSong = function(song) {
         let songUserRatingHeading = document.createElement("h3");
         songUserRatingHeading.innerText = "User Ratings: ";
         songElement.appendChild(songUserRatingHeading);
+        let total = 0;
+        song.songUserRatings.forEach((songUserRatings) => {
+            let songUserRatingsElement = document.createElement("section");
+            songUserRatingsElement.classList.add("song-userRatings-section");
+            let singleSongUserRatingElement = document.createElement("p");
+            singleSongUserRatingElement.innerText = songUserRating;
+            total += songUserRating;
+            songUserRatingsElement.appendChild(singleSongUserRatingElement);
+            songElement.appendChild(songUserRatingsElement);
+        });
     }
 
     return mainElement;
