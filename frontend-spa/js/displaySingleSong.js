@@ -73,6 +73,13 @@ const displaySingleSong = function(song) {
 
 
     mainElement.appendChild(songElement);
+
+    if (song.songUserRatings !== null && song.songUserRatings.length !== 0) {
+        let songUserRatingHeading = document.createElement("h3");
+        songUserRatingHeading.innerText = "User Ratings: ";
+        songElement.appendChild(songUserRatingHeading);
+    }
+
     return mainElement;
 }
 export {
