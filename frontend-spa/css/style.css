@@ -184,14 +184,13 @@ main .btn-section img {
 }
 
 
-main h3{
-    display: inline-flex;
-    flex-shrink: inherit;
-
+.btn-section h3{
+    display:flex;
+    /* flex-shrink: inherit; */
     text-align: center;
     font-variant: small-caps;
     max-width: 200px;
-    column-gap: -100;
+    /* column-gap: -100; */
 }
 .new-album-form{
     display: flex;
@@ -328,11 +327,14 @@ input{
 
 .album-content h3{
     display: flex;
-    width: 45vw;
+    justify-content: center;
+    width: auto;
     background-color: green;
 }
 
 .album-content img{
+    display: flex;
+    justify-content: end;
     height: 400px;
     width: 400px;
     padding: 15px;
