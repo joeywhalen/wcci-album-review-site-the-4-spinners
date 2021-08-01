@@ -88,8 +88,23 @@ const displaySingleSong = function(song) {
             songUserRatingsElement.appendChild(singleSongUserRatingElement);
             songElement.appendChild(songUserRatingsElement);
         });
-    }
 
+        let average = Math.round((total / song.songUserRatings.length) * 10) / 10;
+        let averageRatingElement = document.createElement("h4");
+        averageRatingElement.innerText = "Average User Rating: " + average;
+        songElement.appendChild(averageRatingElement);
+    }
+    const songUserRatingForm = document.createElement("form");
+    songUserRatingForm.classList.add("new-user-rating-form");
+    const songUserRatingInput = document.createElement("input");
+    songUserRatingInput.classList.add("new-user-rating");
+    songUserRatingInput.setAttribute("type", "integer");
+    songUserRatingInput.setAttribute("placeholder", "Enter a rating (1 - 5)...");
+    const submitsongUserRatingButton = document.createElement("button");
+    submitsongUserRatingButton.classList.add("user-rating-button");
+    submitsongUserRatingButton.innerText = "Submit a rating";
+
+    
     return mainElement;
 }
 export {
