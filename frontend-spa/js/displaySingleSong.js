@@ -52,7 +52,15 @@ const displaySingleSong = function(song) {
     deleteSongButton.classList.add("delete-song");
     deleteSongButton.innerText = "Delete this Song";
 
-    
+    deleteSongButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id, {
+            method: "DELETE",
+        })
+            .then(response => response.json())
+            .then(album => displayAlbum(album))
+            .catch(error => console.log(error));
+    })
 
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songRetitleForm);
