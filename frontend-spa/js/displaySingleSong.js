@@ -11,15 +11,19 @@ const displaySingleSong = function(song) {
     const songElement = document.createElement("div");
     songElement.classList.add("song-content");
     const songTitleElement = document.createElement("h3");
-    songTitleElement.innerText = song.songTitle;
+    songTitleElement.innerText = "Song Title: " + song.songTitle;
     const songLengthElement = document.createElement("p");
-    songLengthElement.innerText = song.length;
+    songLengthElement.innerText = "Song Length: " + song.length;
     const songStarRatingElement = document.createElement("p");
-    songStarRatingElement.innerText = song.starRating + "/5";
+    songStarRatingElement.innerText = "Song Rating: " + song.starRating + "/5";
+    const songCommentsNotationelement = document.createElement("song-comments");
+    songCommentsNotationelement.classList.add("song-comments-notation");
+    songCommentsNotationelement.innerText = "Comments: ";
 
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songLengthElement);
     songElement.appendChild(songStarRatingElement);
+    songElement.appendChild(songCommentsNotationelement);
 
     if (song.comments !== null && song.comments.length !== 0) {
         song.comments.forEach((comment) => {
@@ -69,6 +73,63 @@ const displaySingleSong = function(song) {
 
 
     mainElement.appendChild(songElement);
+
+    if (song.songUserRatings !== null && song.songUserRatings.length !== 0) {
+        let songUserRatingHeading = document.createElement("h3");
+        songUserRatingHeading.innerText = "User Ratings: ";
+        songElement.appendChild(songUserRatingHeading);
+        let total = 0;
+        song.songUserRatings.forEach((songUserRatings) => {
+            let songUserRatingsElement = document.createElement("section");
+            songUserRatingsElement.classList.add("song-userRatings-section");
+            let singleSongUserRatingElement = document.createElement("p");
+            singleSongUserRatingElement.innerText = songUserRating;
+            total += songUserRating;
+            songUserRatingsElement.appendChild(singleSongUserRatingElement);
+            songElement.appendChild(songUserRatingsElement);
+        });
+
+        let average = Math.round((total / song.songUserRatings.length) * 10) / 10;
+        let averageRatingElement = document.createElement("h4");
+        averageRatingElement.innerText = "Average User Rating: " + average;
+        songElement.appendChild(averageRatingElement);
+    }
+    const songUserRatingForm = document.createElement("form");
+    songUserRatingForm.classList.add("new-user-rating-form");
+    const songUserRatingInput = document.createElement("input");
+    songUserRatingInput.classList.add("new-user-rating");
+    songUserRatingInput.setAttribute("type", "integer");
+    songUserRatingInput.setAttribute("placeholder", "Enter a rating (1 - 5)...");
+    const submitSongUserRatingButton = document.createElement("button");
+    submitSongUserRatingButton.classList.add("user-rating-button");
+    submitSongUserRatingButton.innerText = "Submit a rating";
+
+    songUserRatingForm.appendChild(songUserRatingInput);
+    songUserRatingForm.appendChild(submitSongUserRatingButton);
+    songElement.appendChild(songUserRatingForm);
+
+    submitSongUserRatingButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const songElement = document.querySelector(".album-content");
+        clearChildren(songElement);
+        if(songUserRatingInput.vaule !== ""){
+            fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songUserRatings", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: songUserRatingInput.value
+            })
+                .then(response => response.json())
+                .then(song => displaySingleSong(song))
+                .catch(error => console.log(error));
+        } 
+    })
+    
+    mainElement.appendChild(form);
+    mainElement.appendChild(songElement);
+
+    
     return mainElement;
 }
 export {

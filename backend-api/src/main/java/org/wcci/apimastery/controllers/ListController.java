@@ -102,20 +102,44 @@ public class ListController {
     @PostMapping("/api/lists/{id}/albums")
     public List addAlbumToList(@PathVariable Long id, @RequestBody Album albumToAdd) {
         List listToChange = listStorage.retrieveListById(id);
-        
+
         listToChange.addAlbum(albumToAdd);
         listStorage.saveList(listToChange);
         albumToAdd.changeList(listToChange);
         albumRepository.save(albumToAdd);
 
         if (albumToAdd.hasSongs()) {
-            for(Song song: albumToAdd.getSongs()) {
-            song.addAlbum(albumToAdd);
-            songRepository.save(song);
-            albumRepository.save(albumToAdd);
-        }
+            for (Song song : albumToAdd.getSongs()) {
+                song.addAlbum(albumToAdd);
+                songRepository.save(song);
+                albumRepository.save(albumToAdd);
+            }
         }
         return listToChange;
+    }
+    
+    // ### Add comment to album
+    // PATCH http://localhost:8080/api/lists/1/albums/6/comments
+    // Content-Type: application/json
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/comments")
+    public Album addAlbumComment(@PathVariable Long id, @PathVariable Long albumId, @RequestBody String newComment) {
+        Album albumToChange = albumRepository.findById(albumId).get();
+
+        albumToChange.addComment(newComment);
+        albumRepository.save(albumToChange);
+        return albumToChange;
+    }
+
+    // ### Add user rating to an album
+    // PATCH http://localhost:8080/api/lists/1/albums/2/userRatings
+    // Content-Type: application/json
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/userRatings")
+    public Album addAlbumUserRating(@PathVariable Long id, @PathVariable Long albumId,
+            @RequestBody Integer newUserRating) {
+        Album albumToChange = albumRepository.findById(albumId).get();
+        albumToChange.addAlbumUserRating(newUserRating);
+        albumRepository.save(albumToChange);
+        return albumToChange;
     }
 
     //### Delete an album with id from a list.
@@ -182,25 +206,25 @@ public class ListController {
     //     ### Add comment to song
     // POST http://localhost:8080/api/lists/1/albums/6/songs/7/comments
     // Content-Type: application/json
-
     @PatchMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/comments")
-    public Song addSongComment(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId, @RequestBody String newComment){
+    public Song addSongComment(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId,
+            @RequestBody String newComment) {
         Song songToChange = songRepository.findById(songId).get();
-        
         songToChange.addSongComment(newComment);
         songRepository.save(songToChange);
         return songToChange;
     }
-
-//     ### Add comment to album
-// PATCH http://localhost:8080/api/lists/1/albums/6/comments
-// Content-Type: application/json
-@PatchMapping("/api/lists/{id}/albums/{albumId}/comments")
-public Album addAlbumComment(@PathVariable Long id, @PathVariable Long albumId, @RequestBody String newComment){
-    Album albumToChange = albumRepository.findById(albumId).get();
     
-    albumToChange.addComment(newComment);
-    albumRepository.save(albumToChange);
-    return albumToChange;
-}
+    // ### Add user rating to a song
+    // PATCH http://localhost:8080/api/lists/1/albums/6/songs/7/songUserRatings
+    // Content-Type:application/json
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/songUserRatings")
+    public Song addSongUserRating(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId,
+            @RequestBody Integer newSongUserRating) {
+        Song songToChange = songRepository.findById(songId).get();
+        songToChange.addSongUserRating(newSongUserRating);
+        songRepository.save(songToChange);
+        return songToChange;
+            }
+
 }
