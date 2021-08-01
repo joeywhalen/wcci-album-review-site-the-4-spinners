@@ -29,6 +29,14 @@ const displayAlbum = function (album) {
     albumCommentsNotationelement.classList.add("album-comments-notation");
     albumCommentsNotationelement.innerText = "Comments: ";
 
+    const albumTitleForm = document.createElement("form");
+    albumTitleForm.classList.add("change-album-title-form");
+    const albumTitleInput = document.createElement("input");
+    albumTitleInput.classList.add("new-album-title");
+    albumTitleInput.setAttribute("type", "text");
+    albumTitleInput.setAttribute("placeholder", "Retitle your album...");
+    
+
     albumElement.appendChild(albumTitleElement);
     albumElement.appendChild(albumImageElement);
     albumElement.appendChild(albumArtistElement);
