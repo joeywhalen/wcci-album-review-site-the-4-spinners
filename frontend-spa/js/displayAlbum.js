@@ -21,7 +21,7 @@ const displayAlbum = function (album) {
     const albumRatingElement = document.createElement("p");
     albumRatingElement.innerText = "Album Rating: " + album.rating + "/5";
     const albumVideoElement = document.createElement("a");
-    albumVideoElement.href = album.videoURL;
+    albumVideoElement.href = album.videoUrl;
     const albumSongsNotationElement = document.createElement("album-songs");
     albumSongsNotationElement.classList.add("album-songs-notation");
     albumSongsNotationElement.innerText = "Songs: ";
