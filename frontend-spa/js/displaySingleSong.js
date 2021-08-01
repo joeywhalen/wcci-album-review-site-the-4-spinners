@@ -27,9 +27,29 @@ const displaySingleSong = function(song) {
     songRetitleInput.setAttribute("type", "text");
     songRetitleInput.setAttribute("placeholder", "Retitle the song...");
 
-    
+    const submitRetitleSongButton = document.createElement("button");
+    submitRetitleSongButton.classList.add("submit-song-retitle");
+    submitRetitleSongButton.innerText = "Submit New Song Title";
+
+    submitRetitleSongButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        clearChildren(songElement);
+        const retitleSongJson = JSON.stringify(songRetitleInput.value);
+        const unquotedJson = retitleSongJson.replace(/\"/g, "");
+        fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songTitle", {
+            method: "PATCH",
+            body: unqoutedJson
+        })
+            .then(response => response.json())
+            .then(song => displaySingleSong(song))
+            .catch(error => console.log(error));
+    })
+
+    songRetitleForm.appendChild(songRetitleInput);
+    songRetitleForm.appendChild(submitRetitleSongButton);
 
     songElement.appendChild(songTitleElement);
+    songElement.appendChild(songRetitleForm);
     songElement.appendChild(songLengthElement);
     songElement.appendChild(songStarRatingElement);
     songElement.appendChild(songCommentsNotationelement);
