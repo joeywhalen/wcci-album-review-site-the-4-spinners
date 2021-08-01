@@ -29,7 +29,38 @@ const displayAlbum = function (album) {
     albumCommentsNotationelement.classList.add("album-comments-notation");
     albumCommentsNotationelement.innerText = "Comments: ";
 
+    const albumRetitleForm = document.createElement("form");
+    albumRetitleForm.classList.add("change-album-title-form");
+    const albumRetitleInput = document.createElement("input");
+    albumRetitleInput.classList.add("new-album-title");
+    albumRetitleInput.setAttribute("type", "text");
+    albumRetitleInput.setAttribute("placeholder", "Retitle your album...");
+
+    const submitRetitleAlbumButton = document.createElement("button");
+    submitRetitleAlbumButton.classList.add("submit-album-retitle");
+    submitRetitleAlbumButton.innerText = "Submit New Album Title";
+
+    submitRetitleAlbumButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        clearChildren(albumElement);
+        const retitleJson = albumRetitleInput.value
+        // const retitleJson = {
+        //     "title": albumRetitleInput.value
+        // }
+        fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/albumName", {
+            method: "PATCH",
+            body: JSON.stringify(retitleJson)
+        })
+            .then(response => response.json())
+            .then(album => displayAlbum(album))
+            .catch(error => console.log(error));
+    })
+
+    albumRetitleForm.appendChild(albumRetitleInput);
+    albumRetitleForm.appendChild(submitRetitleAlbumButton);
+
     albumElement.appendChild(albumTitleElement);
+    albumElement.appendChild(albumRetitleForm);
     albumElement.appendChild(albumImageElement);
     albumElement.appendChild(albumArtistElement);
     albumElement.appendChild(recordLabelElement);

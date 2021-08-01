@@ -12,14 +12,11 @@ const createListBar = function (lists) {
     navButtons.innerHTML = `<button>About Us</button>`
 
     const homeButton = document.createElement("button");
-    // homeButton.classList.add("home-navigation");
     homeButton.innerText = "Home";
-    //Need to work issue with reload
     homeButton.addEventListener("click", () => {
         const mainElement = document.querySelector("main");
         clearChildren(mainElement);
         displayHome(mainElement);
-        // container.appendChild(createFooter(mainElement));
         console.log("Clicked Home button");
     });
 
@@ -59,14 +56,12 @@ const createListBar = function (lists) {
     const listNameInput = document.createElement("input");
     listNameInput.classList.add("new-list-name");
     listNameInput.setAttribute("type", "text");
-    listNameInput.setAttribute("placeholder", "Name your list...")
-        ;
+    listNameInput.setAttribute("placeholder", "Name your list...");
 
     const submitNewListButton = document.createElement("button");
     submitNewListButton.classList.add("submit-new-list");
     submitNewListButton.innerText = "Submit New List";
     const formattingElement = document.createElement('div');
-    // formattingElement.innerHTML = "";
 
     submitNewListButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
