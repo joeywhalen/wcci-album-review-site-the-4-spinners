@@ -1,5 +1,6 @@
 import { clearChildren } from "./displayHome.js";
-import { displaySingleSong } from "./displaySingleSong.js"
+import { displaySingleSong } from "./displaySingleSong.js";
+import { displaySingleList } from "./displaySingleList.js";
 
 const displayAlbum = function (album) {
     const mainElement = document.querySelector(".main-content");
@@ -57,8 +58,24 @@ const displayAlbum = function (album) {
     albumRetitleForm.appendChild(albumRetitleInput);
     albumRetitleForm.appendChild(submitRetitleAlbumButton);
 
+    const deleteAlbumButton = document.createElement("button");
+    deleteAlbumButton.classList.add("delete-album");
+    deleteAlbumButton.innerText = "Delete this Album";
+
+    deleteAlbumButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id, {
+            method: "DELETE",
+        })
+            .then(response => response.json())
+            .then(listResponse => displaySingleList(listResponse))
+            .catch(error => console.log(error));
+    })
+
+
     albumElement.appendChild(albumTitleElement);
     albumElement.appendChild(albumRetitleForm);
+    albumElement.appendChild(deleteAlbumButton);
     albumElement.appendChild(albumImageElement);
     albumElement.appendChild(albumArtistElement);
     albumElement.appendChild(recordLabelElement);
