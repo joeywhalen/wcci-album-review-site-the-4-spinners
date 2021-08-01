@@ -43,13 +43,11 @@ const displayAlbum = function (album) {
     submitRetitleAlbumButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
         clearChildren(albumElement);
-        const retitleJson = albumRetitleInput.value
-        // const retitleJson = {
-        //     "title": albumRetitleInput.value
-        // }
+        const retitleJson = JSON.stringify(albumRetitleInput.value);
+        const unqoutedJson = retitleJson.replace(/\"/g,"");
         fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/albumName", {
             method: "PATCH",
-            body: JSON.stringify(retitleJson)
+            body: unqoutedJson
         })
             .then(response => response.json())
             .then(album => displayAlbum(album))
