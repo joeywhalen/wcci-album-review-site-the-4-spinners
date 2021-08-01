@@ -10,6 +10,9 @@ const createListBar = function (lists) {
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
     navButtons.innerHTML = `<button>About Us</button>`
+    navButtons.addEventListener('click', () => {
+        const jawTab = window.open('https://joeywhalen.github.io/ProfessionalPortfolio', '_blank');
+    })
 
     const homeButton = document.createElement("button");
     homeButton.innerText = "Home";
