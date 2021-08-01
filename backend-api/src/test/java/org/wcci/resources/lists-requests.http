@@ -119,3 +119,9 @@ PATCH  http://localhost:8080/api/lists/1/albums/6/songs/7/comments
 Content-Type: application/json
 
 New Test Comment
+
+### Add user rating to a song 
+PATCH http://localhost:8080/api/lists/1/albums/6/songs/7/songUserRatings
+Content-Type: application/json
+
+3

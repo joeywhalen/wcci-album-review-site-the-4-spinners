@@ -206,15 +206,25 @@ public class ListController {
     //     ### Add comment to song
     // POST http://localhost:8080/api/lists/1/albums/6/songs/7/comments
     // Content-Type: application/json
-
     @PatchMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/comments")
-    public Song addSongComment(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId, @RequestBody String newComment){
+    public Song addSongComment(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId,
+            @RequestBody String newComment) {
         Song songToChange = songRepository.findById(songId).get();
-        
         songToChange.addSongComment(newComment);
         songRepository.save(songToChange);
         return songToChange;
     }
-
+    
+    // ### Add user rating to a song
+    // PATCH http://localhost:8080/api/lists/1/albums/6/songs/7/songUserRatings
+    // Content-Type:application/json
+    @PatchMapping("/api/lists/{id}/albums/{albumId}/songs/{songId}/songUserRatings")
+    public Song addSongUserRating(@PathVariable Long id, @PathVariable Long albumId, @PathVariable Long songId,
+            @RequestBody Integer newSongUserRating) {
+        Song songToChange = songRepository.findById(songId).get();
+        songToChange.addSongUserRating(newSongUserRating);
+        songRepository.save(songToChange);
+        return songToChange;
+            }
 
 }
