@@ -308,13 +308,6 @@ input{
     justify-content: center;
 } */
 
-.main-footer {
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-    /* background-color: cornflowerblue; */
-}
-
 /* album content */
 .album-content{
     display: flex;
@@ -322,14 +315,13 @@ input{
     border: black;
     border-style: groove;
     width: 75vw;
-    background-color: gray;
 }
 
 .album-content h3{
     display: flex;
     justify-content: center;
     width: auto;
-    background-color: green;
+    font-size: 2rem;
 }
 
 .album-content img{
@@ -342,25 +334,58 @@ input{
 }
 
 .album-content h4{
+    display: flex;
+    justify-content: center;
+    width: auto;
+
     background-color: pink;
+    font-size: 2rem;
 
 }
 
-.song-btn-section{
-
+/* .song-btn-section{
+    width: fit-content;
     cursor: pointer;
     background-color: antiquewhite;
+} */
+
+.album-songs-notation{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-size: 2rem;
+    background-color: azure;
+}
+
+.song-btn-section h5{
+    width: fit-content;
+    background-color: aqua;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .album-comments-notation{
-
+    display: flex;
+    justify-content: center;
+    width: auto;
     background-color: blueviolet;
 }
 
 .comments-section{
+    display: flex;
+    justify-content: center;
+    
     max-width: 50vw;
     border-style: double;
 
     background-color: coral;
 }
 
+
+
+.main-footer {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    /* background-color: cornflowerblue; */
+}
