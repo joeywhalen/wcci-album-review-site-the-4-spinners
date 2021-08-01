@@ -184,14 +184,13 @@ main .btn-section img {
 }
 
 
-main h3{
-    display: inline-flex;
-    flex-shrink: inherit;
-
+.btn-section h3{
+    display:flex;
+    /* flex-shrink: inherit; */
     text-align: center;
     font-variant: small-caps;
     max-width: 200px;
-    column-gap: -100;
+    /* column-gap: -100; */
 }
 .new-album-form{
     display: flex;
@@ -309,10 +308,90 @@ input{
     justify-content: center;
 } */
 
+/* album content */
+.album-content{
+    display: flex;
+    flex-direction: column;
+    border: black;
+    border-style: groove;
+    width: 75vw;
+}
+
+.album-content h3{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-size: 2rem;
+}
+
+main .album-content img{
+    display: flex;
+    justify-content: end;
+    height: 400px;
+    width: 400px;
+    padding: 15px;
+    background-color: #406EDB;
+}
+
+.album-content h4{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-size: 2rem;
+
+}
+
+/* .song-btn-section{
+    width: fit-content;
+    cursor: pointer;
+    background-color: antiquewhite;
+} */
+
+.album-songs-notation{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-size: 2rem;
+
+}
+
+.song-btn-section h5{
+    border-style: groove;
+    width: fit-content;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.song-btn-section h5:hover{
+    border-style: groove;
+    width: fit-content;
+    transform: scale(97%);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.album-comments-notation{
+    display: flex;
+    justify-content: left;
+    width: auto;
+    font-size: 2rem;
+    background-color: blueviolet;
+}
+
+.comments-section{
+    display: flex;
+    justify-content: center;    
+    max-width: 50vw;
+    border-style: double;
+
+    background-color: coral;
+}
+
+
+
 .main-footer {
     display: flex;
     justify-content: center;
     font-size: 1rem;
     /* background-color: cornflowerblue; */
 }
-
