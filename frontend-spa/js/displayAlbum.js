@@ -29,12 +29,17 @@ const displayAlbum = function (album) {
     albumCommentsNotationelement.classList.add("album-comments-notation");
     albumCommentsNotationelement.innerText = "Comments: ";
 
-    const albumTitleForm = document.createElement("form");
-    albumTitleForm.classList.add("change-album-title-form");
-    const albumTitleInput = document.createElement("input");
-    albumTitleInput.classList.add("new-album-title");
-    albumTitleInput.setAttribute("type", "text");
-    albumTitleInput.setAttribute("placeholder", "Retitle your album...");
+    const albumRetitleForm = document.createElement("form");
+    albumRetitleForm.classList.add("change-album-title-form");
+    const albumRetitleInput = document.createElement("input");
+    albumRetitleInput.classList.add("new-album-title");
+    albumRetitleInput.setAttribute("type", "text");
+    albumRetitleInput.setAttribute("placeholder", "Retitle your album...");
+
+    const submitRetitleAlbumButton = document.createElement("button");
+    submitRetitleAlbumButton.classList.add("submit-album-retitle");
+    submitRetitleAlbumButton.innerText = "Submit New Album Title";
+
     
 
     albumElement.appendChild(albumTitleElement);
