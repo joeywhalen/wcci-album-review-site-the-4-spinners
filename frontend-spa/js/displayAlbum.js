@@ -40,7 +40,20 @@ const displayAlbum = function (album) {
     submitRetitleAlbumButton.classList.add("submit-album-retitle");
     submitRetitleAlbumButton.innerText = "Submit New Album Title";
 
-    
+    submitRetitleAlbumButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        clearChildren(albumElement);
+        const retitleJson = {
+            "title": albumRetitleInput.value
+        }
+        fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/albumName", {
+            method: "PATCH",
+            body: JSON.stringify(retitleJson)
+        })
+            .then(response => response.json())
+            .then(album => displayAlbum(album))
+            .catch(error => console.log(error));
+    })
 
     albumElement.appendChild(albumTitleElement);
     albumElement.appendChild(albumImageElement);
