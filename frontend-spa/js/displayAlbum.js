@@ -11,15 +11,23 @@ const displayAlbum = function (album) {
     const albumImageElement = document.createElement("img");
     albumImageElement.src = album.imageURL;
     const albumArtistElement = document.createElement("h4");
-    albumArtistElement.innerText = album.artist;
+    albumArtistElement.classList.add("album-artist-notation");
+    albumArtistElement.innerText = "Album Artist: " + album.artist; 
     const recordLabelElement = document.createElement("p");
-    recordLabelElement.innerText = album.recordLabel;
+    recordLabelElement.innerText = "Record Label: " + album.recordLabel;
     const albumDurationElement = document.createElement("p");
-    albumDurationElement.innerText = album.duration;
+    albumDurationElement.classList.add("album-duration-notation");
+    albumDurationElement.innerText = "Album Duration: " + album.duration;
     const albumRatingElement = document.createElement("p");
-    albumRatingElement.innerText = album.rating + "/5";
+    albumRatingElement.innerText = "Album Rating: " + album.rating + "/5";
     const albumVideoElement = document.createElement("a");
     albumVideoElement.href = album.videoURL;
+    const albumSongsNotationElement = document.createElement("album-songs");
+    albumSongsNotationElement.classList.add("album-songs-notation");
+    albumSongsNotationElement.innerText = "Songs: ";
+    const albumCommentsNotationelement = document.createElement("album-comments");
+    albumCommentsNotationelement.classList.add("album-comments-notation");
+    albumCommentsNotationelement.innerText = "Comments: ";
 
     albumElement.appendChild(albumTitleElement);
     albumElement.appendChild(albumImageElement);
@@ -28,6 +36,7 @@ const displayAlbum = function (album) {
     albumElement.appendChild(albumDurationElement);
     albumElement.appendChild(albumRatingElement);
     albumElement.appendChild(albumVideoElement);
+    albumElement.appendChild(albumSongsNotationElement);
 
     album.songs.forEach((song) => {
         let songElement = document.createElement("section");
@@ -41,12 +50,10 @@ const displayAlbum = function (album) {
         albumElement.appendChild(songElement);
     });
 
+    albumElement.appendChild(albumCommentsNotationelement);
+
     const form = document.createElement("form");
     form.classList.add("new-song-form");
-    // const albumTitleInput = document.createElement("input");
-    // albumTitleInput.classList.add("attach-album-name");
-    // albumTitleInput.setAttribute("type", "text");
-    // albumTitleInput.setAttribute("placeholder", "Which Album?...");
     const songTitleInput = document.createElement("input");
     songTitleInput.classList.add("new-song-title");
     songTitleInput.setAttribute("type", "text");
@@ -75,7 +82,6 @@ const displayAlbum = function (album) {
         const albumElement = document.querySelector(".album-content");
         clearChildren(albumElement);
         const songJson = {
-            // "title": albumTitleInput.value,
             "songTitle": songTitleInput.value,
             "length": lengthInput.value,
             "starRating": starRatingInput.value,
@@ -94,7 +100,6 @@ const displayAlbum = function (album) {
             .catch(error => console.log(error));
     })
 
-    // form.appendChild(albumTitleInput);
     form.appendChild(songTitleInput);
     form.appendChild(lengthInput);
     form.appendChild(starRatingInput);
@@ -133,7 +138,7 @@ const displayAlbum = function (album) {
         if(commentInput.value !== ""){
             const json = JSON.stringify(commentInput.value);
             const unqoutedJson = json.replace(/\"/g,"");
-            fetch("http://localhost:8080/api/lists/"+album.listId+"/albums/"+album.id+"/comments", {
+            fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/comments", {
                 method: "PATCH",
                 headers: {
                     'Content-Type' : 'application/json'
@@ -143,6 +148,60 @@ const displayAlbum = function (album) {
             .then(response => response.json())
             .then(album => displayAlbum(album))
             .catch(error => console.log(error));
+        }
+    })
+
+    mainElement.appendChild(form);
+    mainElement.appendChild(albumElement);
+
+    if (album.userRatings !== null && album.userRatings.length !== 0) {
+        let userRatingHeading = document.createElement("h3");
+        userRatingHeading.innerText = "User Ratings:";
+        albumElement.appendChild(userRatingHeading);
+        let total = 0; 
+        album.userRatings.forEach((userRating) => {
+            let userRatingsElement = document.createElement("section");
+            userRatingsElement.classList.add("userRatings-section");
+            let singleUserRatingElement = document.createElement("p");
+            singleUserRatingElement.innerText = userRating;
+            total += userRating;
+            userRatingsElement.appendChild(singleUserRatingElement);
+            albumElement.appendChild(userRatingsElement);
+        });
+        let average = Math.round((total / album.userRatings.length) * 10) / 10;
+        let averageRatingElement = document.createElement("h4");
+        averageRatingElement.innerText = "Average User Rating: " + average;
+        albumElement.appendChild(averageRatingElement);
+    }
+    const userRatingForm = document.createElement("form");
+    userRatingForm.classList.add("new-user-rating-form");
+    const userRatingInput = document.createElement("input");
+    userRatingInput.classList.add("new-user-rating");
+    userRatingInput.setAttribute("type", "integer");
+    userRatingInput.setAttribute("placeholder", "Enter a rating (1 - 5)...");
+    const submitUserRatingButton = document.createElement("button");
+    submitUserRatingButton.classList.add("user-rating-button");
+    submitUserRatingButton.innerText = "Submit a rating";
+
+    userRatingForm.appendChild(userRatingInput);
+    userRatingForm.appendChild(submitUserRatingButton);
+    albumElement.appendChild(userRatingForm);
+
+    submitUserRatingButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const albumElement = document.querySelector(".album-content");
+        clearChildren(albumElement);
+        if (userRatingInput.value !== "") {
+            fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/userRatings", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: userRatingInput.value
+            })
+                .then(response => response.json())
+                .then(album => displayAlbum(album))
+                .catch(error => console.log(error));
         }
     })
 

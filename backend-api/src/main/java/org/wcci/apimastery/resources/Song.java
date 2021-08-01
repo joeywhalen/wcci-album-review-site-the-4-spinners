@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
@@ -21,13 +22,11 @@ public class Song {
     @JsonIgnore
     private Album album;
 
-//    @ManyToMany
-//    private Collection<Album> albums;
+    @ElementCollection
+    private Collection<Integer> songUserRatings;
 
     @Lob
     @ElementCollection
-//    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
-//    @OneToMany(mappedBy = "songs")
     private Collection<String> comments;
 
     private int starRating;
@@ -40,6 +39,7 @@ public class Song {
         this.songTitle = songTitle;
         this.length = length;
         this.starRating = starRating;
+        this.songUserRatings = new ArrayList<Integer>();
         this.comments = Set.of(comments);
     }
 
@@ -67,8 +67,20 @@ public class Song {
         return id;
     }
 
+    public void addSongComment(String newSongComment) {
+        this.comments.add(newSongComment);
+    }
+
     public Iterable<String> getComments() {
         return comments;
+    }
+
+    public Iterable<Integer> getSongUserRatings() {
+        return songUserRatings;
+    }
+
+    public void addSongUserRating(Integer newSongUserRating) {
+        this.songUserRatings.add(newSongUserRating);
     }
 
     public long getListId(){
@@ -82,7 +94,4 @@ public class Song {
         this.songTitle = newSongTitle;
     }
 
-    public void addSongComment(String newSongComment){
-        this.comments.add(newSongComment);
-    }
 }

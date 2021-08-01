@@ -78,6 +78,12 @@ Content-Type: application/json
 
 New Album Test Comment
 
+### Add user rating to an album 
+PATCH http://localhost:8080/api/lists/1/albums/2/userRatings
+Content-Type: application/json
+
+3
+
 ### List songs of a specific album
 GET http://localhost:8080/api/lists/5/albums/6/songs
 Content-Type: application/json
@@ -113,3 +119,9 @@ PATCH  http://localhost:8080/api/lists/1/albums/6/songs/7/comments
 Content-Type: application/json
 
 New Test Comment
+
+### Add user rating to a song 
+PATCH http://localhost:8080/api/lists/1/albums/6/songs/7/songUserRatings
+Content-Type: application/json
+
+3
