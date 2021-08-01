@@ -20,6 +20,15 @@ const displaySingleSong = function(song) {
     songCommentsNotationelement.classList.add("song-comments-notation");
     songCommentsNotationelement.innerText = "Comments: ";
 
+    const songRetitleForm = document.createElement("form");
+    songRetitleForm.classList.add("change-song-title-form");
+    const songRetitleInput = document.createElement("input");
+    songRetitleInput.classList.add("new-song-title");
+    songRetitleInput.setAttribute("type", "text");
+    songRetitleInput.setAttribute("placeholder", "Retitle the song...");
+
+    
+
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songLengthElement);
     songElement.appendChild(songStarRatingElement);

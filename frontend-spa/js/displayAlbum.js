@@ -34,7 +34,7 @@ const displayAlbum = function (album) {
     const albumRetitleInput = document.createElement("input");
     albumRetitleInput.classList.add("new-album-title");
     albumRetitleInput.setAttribute("type", "text");
-    albumRetitleInput.setAttribute("placeholder", "Retitle your album...");
+    albumRetitleInput.setAttribute("placeholder", "Retitle the album...");
 
     const submitRetitleAlbumButton = document.createElement("button");
     submitRetitleAlbumButton.classList.add("submit-album-retitle");
