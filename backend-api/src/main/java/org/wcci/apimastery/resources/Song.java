@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
@@ -21,6 +22,9 @@ public class Song {
     @JsonIgnore
     private Album album;
 
+    @ElementCollection
+    private Collection<Integer> songUserRatings;
+
     @Lob
     @ElementCollection
     private Collection<String> comments;
@@ -35,6 +39,7 @@ public class Song {
         this.songTitle = songTitle;
         this.length = length;
         this.starRating = starRating;
+        this.songUserRatings = new ArrayList<Integer>();
         this.comments = Set.of(comments);
     }
 
@@ -68,6 +73,14 @@ public class Song {
 
     public Iterable<String> getComments() {
         return comments;
+    }
+
+    public Iterable<Integer> getSongUserRatings() {
+        return songUserRatings;
+    }
+
+    public void addSongUserRating(Integer newSongUserRating) {
+        this.songUserRatings.add(newSongUserRating);
     }
 
     public long getListId(){
