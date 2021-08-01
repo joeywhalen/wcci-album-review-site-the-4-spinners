@@ -21,13 +21,8 @@ public class Song {
     @JsonIgnore
     private Album album;
 
-//    @ManyToMany
-//    private Collection<Album> albums;
-
     @Lob
     @ElementCollection
-//    @CollectionTable(name="COMMENTS", joinColumns=@JoinColumn(name="COMMENT_ID"))
-//    @OneToMany(mappedBy = "songs")
     private Collection<String> comments;
 
     private int starRating;
@@ -67,6 +62,10 @@ public class Song {
         return id;
     }
 
+    public void addSongComment(String newSongComment) {
+        this.comments.add(newSongComment);
+    }
+
     public Iterable<String> getComments() {
         return comments;
     }
@@ -82,7 +81,4 @@ public class Song {
         this.songTitle = newSongTitle;
     }
 
-    public void addSongComment(String newSongComment){
-        this.comments.add(newSongComment);
-    }
 }
