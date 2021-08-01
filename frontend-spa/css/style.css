@@ -316,3 +316,49 @@ input{
     /* background-color: cornflowerblue; */
 }
 
+/* album content */
+.album-content{
+    display: flex;
+    flex-direction: column;
+    border: black;
+    border-style: groove;
+    width: 75vw;
+    background-color: gray;
+}
+
+.album-content h3{
+    display: flex;
+    width: 45vw;
+    background-color: green;
+}
+
+.album-content img{
+    height: 400px;
+    width: 400px;
+    padding: 15px;
+    background-color: #406EDB;
+}
+
+.album-content h4{
+    background-color: pink;
+
+}
+
+.song-btn-section{
+
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+.album-comments-notation{
+
+    background-color: blueviolet;
+}
+
+.comments-section{
+    max-width: 50vw;
+    border-style: double;
+
+    background-color: coral;
+}
+
