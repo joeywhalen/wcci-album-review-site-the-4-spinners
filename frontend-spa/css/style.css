@@ -25,6 +25,7 @@ input{
 .nav-btns{
     display: flex;
     padding: 5px;
+    gap: 10px;
 }
 
 
@@ -38,6 +39,7 @@ input{
     border: none;
     background-color: #406EDB;
     color: white;
+    min-width: 7rem;
 
 }
 
@@ -52,13 +54,27 @@ input{
   color: #406EDB;
 }
 
+
+
 .list-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex; 
+    justify-content: space-evenly;
+    /* row-gap: 3rem; */
     flex-wrap: wrap;
 }
 
+/* .list-bar section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #406EDB;
+} */
+
+/* .list-bar .btn-section{
+    display: flex;
+    flex-direction: column;
+    background-color: #406EDB;
+} */
 
 /* css for listBar */
 .new-list-form{
@@ -140,16 +156,13 @@ main .btn-section h3{
 
 main .btn-section img {
     max-height: 250px;
-    width: auto;
-    
-    background-color: #406EDB;
-    
+    width: auto;    
 }
 
-.list-btns{
+/* .list-btns{
     display: flex;
     justify-content: left;
-}
+} */
 
 
 .info-box{
@@ -200,11 +213,11 @@ input{
     cursor: pointer;
     border: none;
     background-color: #406EDB;
-    color: antiquewhite;
+    color: white;
 }
 .new-album-form button:hover{
     transition-duration: .25s;
-    background-color: antiquewhite;
+    background-color: white;
     color: #406EDB;
 }
 
