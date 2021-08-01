@@ -112,16 +112,38 @@ input{
     border-radius: 100%;
 }
 
-.btn-section h2{
+main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+main .btn-section h3{
     display: flex;
     justify-content: center;
     text-align: center;
     font-variant: small-caps;
 }
 
+.btn-section img:hover{
+    transform: scale(95%);
+  border-radius: 100%; 
+  cursor: pointer;
+  transition: 500ms;
+}
+
 .btn-section img:active{
   transform: scale(95%);
   border-radius: 100%;  
+  background-color: black;
+}
+
+main .btn-section img {
+    max-height: 250px;
+    width: auto;
+    
+    background-color: #406EDB;
+    
 }
 
 .list-btns{
@@ -148,17 +170,15 @@ input{
     background-color: yellow; */
 }
 
-img {
-    display: flex;
-    max-width: 250px;
-    padding: 10px;
-}
 
-.main-content h3{
+main h3{
+    display: inline-flex;
+    flex-shrink: inherit;
+
     text-align: center;
     font-variant: small-caps;
-    /* max-width: 200px; */
-    max-width: 600px;
+    max-width: 200px;
+    column-gap: -100;
 }
 .new-album-form{
     display: flex;
@@ -174,6 +194,7 @@ input{
 
 /* css for singleAlbum */
 .new-album-form button{
+
     font-family: Verdana;    
     font-size: 1rem;
     padding: 10px;
