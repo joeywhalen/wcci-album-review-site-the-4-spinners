@@ -1,7 +1,13 @@
 body{
-    background-color: antiquewhite;
+    background-color: white;
 }
-
+header{
+    align-self: center;
+    width: 90vw;
+    background-color: #a5c3cf;
+    /* border-style: dotted; */
+    
+}
 
 input{
     font-size: large;
@@ -267,6 +273,7 @@ input{
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -439,6 +446,7 @@ main .album-content img{
 .song-content p{
     font-size: 1rem;
     text-align: center;
+    font-weight: bolder;
 }
 
 /* .song-content .comments-section p{
