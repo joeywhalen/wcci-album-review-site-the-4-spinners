@@ -29,7 +29,7 @@ const createListBar = function (lists) {
     const nanaPortfolioButton = document.createElement("button");
     nanaPortfolioButton.innerText = "About Nana";
     nanaPortfolioButton.addEventListener("click", () => {
-        const nanaTab = window.open('', '_blank');
+        const nanaTab = window.open('https://nyirenkyi17.github.io/', '_blank');
     });
 
     const harrisonPortfolioButton = document.createElement("button");
