@@ -344,17 +344,13 @@ input{
     font-size: 2rem;
 }
 
-/* Needs to center image   */
-/* Needs to center image   */
-/* Needs to center image   */
-/* Needs to center image   */
+
 main .album-content img{
     display: flex;
     width: 100%;
   max-width: 400px;
   height: auto;
-    padding: 15px;
-    background-color: #406EDB;
+  padding: 10px;
     align-self: center;
 }
 
@@ -369,6 +365,7 @@ main .album-content img{
 .album-content p{
     font-size: 1rem;
     text-align: center;
+    font-weight: bolder;
 
 }
 
@@ -387,12 +384,13 @@ main .album-content img{
 
 }
 
-.song-btn-section h5{
+.song-btn-section{
+    display: flex;
+    align-self: center;
     border-style: groove;
     width: fit-content;
     font-size: 1rem;
-    cursor: pointer;
-    margin-left: 3rem;
+    cursor: pointer; 
 }
 
 .song-btn-section h5:hover{
@@ -401,6 +399,7 @@ main .album-content img{
     transform: scale(97%);
     font-size: 1rem;
     cursor: pointer;
+    
 }
 
 .album-comments-notation{
@@ -490,13 +489,20 @@ button.delete-song{
     font-size: 1rem;
     max-width: fit-content;
     align-self: center;
+    margin-top: 1rem;
 }
 
-button.delete-song :hover{
-    background-color: purple;
+button.delete-album{
+    display: flex;
+    justify-content: center;
+    background-color: red;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    font-size: 1rem;
+    max-width: fit-content;
+    align-self: center;
+    margin-top: 1rem;
 }
 
 .song-content{
@@ -505,6 +511,21 @@ button.delete-song :hover{
     border: black;
     border-style: groove;
     width: 75vw;
+}
+
+button{
+    font-family: Verdana;    
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: white;
+    max-width: fit-content;
+    align-self: center;
+    margin-top: 1rem;
+
 }
 
 .main-footer {
