@@ -1,18 +1,26 @@
+
 body{
     background-image: url("https://images.saymedia-content.com/.image/t_share/MTc0MTM0OTg3MzUwNjE1MzU1/top-ten-items-to-have-on-a-deserted-island.jpg");
     background-repeat: no-repeat;    
     background-attachment: fixed;
     background-size: cover;
+    font-family:Georgia, 'Times New Roman', Times, serif
+    
 }
+
 
 header{
     align-self: center;
     width: 90vw;
-    background-color: #a5c3cf;
-    /* border-style: dotted; */    
+
+    
+        
 }
-main section{
-    background-color: ;
+.main-content{
+   
+    width: 90vw;
+    align-self: center;
+    padding-bottom: 1rem;
 }
 
 input{
@@ -117,6 +125,9 @@ input{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    font-family: 'Staatliches', cursive;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 
 }
 
@@ -125,11 +136,17 @@ input{
     justify-content: center;
     font-size: 3rem;
     padding-bottom: 3rem; 
+    font-family: 'Staatliches', cursive;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 }
 
 .list-bar{
     display: flex;
     flex-wrap: wrap;
+    color: #f3d3b8;
+    font-variant: small-caps;
+    text-shadow: 1px 1px 2px black;
 }
 
 .list-bar img{
@@ -151,6 +168,8 @@ main .btn-section h3{
     justify-content: center;
     text-align: center;
     font-variant: small-caps;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 }
 
 .btn-section img:hover{
@@ -171,12 +190,6 @@ main .btn-section img {
     width: auto;    
 }
 
-/* .list-btns{
-    display: flex;
-    justify-content: left;
-} */
-
-
 .info-box{
     padding: 3rem;
     display: flex;
@@ -189,15 +202,7 @@ main .btn-section img {
 /* css for displaySingleList*/
 .main-content {
     display: flex;
-    /* justify-content: space-around; */
 }
-
-/* .btn-section h3{
-    display:flex;
-    text-align: center;
-    font-variant: small-caps;
-    max-width: 200px;
-} */
 
 .new-album-form{
     display: flex;
@@ -543,7 +548,11 @@ button{
 }
 
 .main-footer {
+    
     display: flex;
     justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
