@@ -22,9 +22,18 @@ const createListBar = function (lists) {
 
     const jawPortfolioButton = document.createElement("button");
     jawPortfolioButton.innerText = "About Joey";
-    jawPortfolioButton.addEventListener('click', () => {
+    jawPortfolioButton.addEventListener("click", () => {
         const jawTab = window.open('https://joeywhalen.github.io/ProfessionalPortfolio', '_blank');  
     });
+
+    const nanaPortfolioButton = document.createElement("button");
+    nanaPortfolioButton.innerText = "About Nana";
+    nanaPortfolioButton.addEventListener("click", () => {
+        const nanaTab = window.open('', '_blank');
+    });
+
+    const harrisonPortfolioButton = document.createElement("button");
+    
 
     const title = document.createElement("div");
     title.classList.add("title");
@@ -95,6 +104,7 @@ const createListBar = function (lists) {
     navigation.appendChild(navButtons);
     navButtons.appendChild(homeButton);
     navButtons.appendChild(jawPortfolioButton);
+    navButtons.appendChild(nanaPortfolioButton);
     header.appendChild(navigation);
     header.appendChild(title);
     header.appendChild(listBar);
