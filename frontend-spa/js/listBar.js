@@ -9,7 +9,7 @@ const createListBar = function (lists) {
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
-    navButtons.innerHTML = `<button>About Us</button>`
+    // navButtons.innerHTML = `<button>About Us</button>`
 
     const homeButton = document.createElement("button");
     homeButton.innerText = "Home";
@@ -19,6 +19,30 @@ const createListBar = function (lists) {
         displayHome(mainElement);
         console.log("Clicked Home button");
     });
+
+    const jawPortfolioButton = document.createElement("button");
+    jawPortfolioButton.innerText = "About Joey";
+    jawPortfolioButton.addEventListener("click", () => {
+        const jawTab = window.open('https://joeywhalen.github.io/ProfessionalPortfolio', '_blank');  
+    });
+
+    const nanaPortfolioButton = document.createElement("button");
+    nanaPortfolioButton.innerText = "About Nana";
+    nanaPortfolioButton.addEventListener("click", () => {
+        const nanaTab = window.open('', '_blank');
+    });
+
+    const harrisonPortfolioButton = document.createElement("button");
+    harrisonPortfolioButton.innerText = "About Harrison";
+    harrisonPortfolioButton.addEventListener("click", () => {
+        const harrisonTab = window.open('https://hewiggins.github.io/', '_blank');
+    });
+
+    const georgePortfolioButton = document.createElement("button");
+    georgePortfolioButton.innerText = "About George";
+    georgePortfolioButton.addEventListener("click", () => {
+        const georgeTab = window.open('', '_blank');
+    })
 
     const title = document.createElement("div");
     title.classList.add("title");
@@ -88,6 +112,10 @@ const createListBar = function (lists) {
     listBar.prepend(form);
     navigation.appendChild(navButtons);
     navButtons.appendChild(homeButton);
+    navButtons.appendChild(jawPortfolioButton);
+    navButtons.appendChild(nanaPortfolioButton);
+    navButtons.appendChild(harrisonPortfolioButton);
+    navButtons.appendChild(georgePortfolioButton);
     header.appendChild(navigation);
     header.appendChild(title);
     header.appendChild(listBar);
