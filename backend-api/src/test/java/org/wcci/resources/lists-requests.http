@@ -85,15 +85,15 @@ Content-Type: application/json
 3
 
 ### List songs of a specific album
-GET http://localhost:8080/api/lists/5/albums/6/songs
+GET http://localhost:8080/api/lists/1/albums/2/songs
 Content-Type: application/json
 
 ### Display single song of a specific album
-GET http://localhost:8080/api/lists/5/albums/6/songs/7
+GET http://localhost:8080/api/lists/1/albums/2/songs/7
 Content-Type: application/json
 
 ### Add new song to specific album
-PATCH http://localhost:8080/api/lists/5/albums/6/songs
+PATCH http://localhost:8080/api/lists/1/albums/2/songs
 Content-Type: application/json
 
 {

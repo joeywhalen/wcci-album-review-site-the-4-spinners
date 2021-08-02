@@ -5,7 +5,7 @@ import {
     clearChildren
 } from "./displayHome.js";
 
-const displaySingleSong = function(song) {
+const displaySingleSong = function (song) {
     const mainElement = document.querySelector(".main-content");
     clearChildren(mainElement);
     const songElement = document.createElement("div");
@@ -62,9 +62,23 @@ const displaySingleSong = function(song) {
             .catch(error => console.log(error));
     })
 
+    const backButtonElement = document.createElement("button")
+    backButtonElement.innerText = "back";
+
+    backButtonElement.addEventListener("click", (clickEvent) => {
+        fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId, {
+            method: "GET",
+        })
+            .then(response => response.json())
+            .then(album => displayAlbum(album))
+            .catch(error => console.log(error));
+    })
+
+
     songElement.appendChild(songTitleElement);
     songElement.appendChild(songRetitleForm);
     songElement.appendChild(deleteSongButton);
+    songElement.appendChild(backButtonElement);
     songElement.appendChild(songLengthElement);
     songElement.appendChild(songStarRatingElement);
     songElement.appendChild(songCommentsNotationelement);
@@ -101,14 +115,14 @@ const displaySingleSong = function(song) {
         if (commentInput.value !== "") {
 
             const json = JSON.stringify(commentInput.value);
-            const unqoutedJson = json.replace(/\"/g,"");//this removes qoutes from the stringify
+            const unqoutedJson = json.replace(/\"/g, "");//this removes qoutes from the stringify
             fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/comments", {
-                    method: "PATCH",
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: unqoutedJson
-                })
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: unqoutedJson
+            })
                 .then(response => response.json())
                 .then(song => displaySingleSong(song))
                 .catch(error => console.log(error));
@@ -156,7 +170,7 @@ const displaySingleSong = function(song) {
         clickEvent.preventDefault();
         const songElement = document.querySelector(".song-content");
         clearChildren(songElement);
-        if(songUserRatingInput.vaule !== ""){
+        if (songUserRatingInput.vaule !== "") {
             fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songUserRatings", {
                 method: "PATCH",
                 headers: {
@@ -167,13 +181,13 @@ const displaySingleSong = function(song) {
                 .then(response => response.json())
                 .then(song => displaySingleSong(song))
                 .catch(error => console.log(error));
-        } 
+        }
     })
-    
+
     mainElement.appendChild(form);
     mainElement.appendChild(songElement);
 
-    
+
     return mainElement;
 }
 export {
