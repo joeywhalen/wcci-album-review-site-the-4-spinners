@@ -41,7 +41,7 @@ const createListBar = function (lists) {
     const georgePortfolioButton = document.createElement("button");
     georgePortfolioButton.innerText = "About George";
     georgePortfolioButton.addEventListener("click", () => {
-        const georgeTab = window.open('', '_blank');
+        const georgeTab = window.open('https://georgefought.github.io/', '_blank');
     })
 
     const title = document.createElement("div");
