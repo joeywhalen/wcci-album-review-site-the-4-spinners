@@ -33,7 +33,16 @@ const createListBar = function (lists) {
     });
 
     const harrisonPortfolioButton = document.createElement("button");
-    
+    harrisonPortfolioButton.innerText = "About Harrison";
+    harrisonPortfolioButton.addEventListener("click", () => {
+        const harrisonTab = window.open('https://hewiggins.github.io/', '_blank');
+    });
+
+    const georgePortfolioButton = document.createElement("button");
+    georgePortfolioButton.innerText = "About George";
+    georgePortfolioButton.addEventListener("click", () => {
+        const georgeTab = window.open('', '_blank');
+    })
 
     const title = document.createElement("div");
     title.classList.add("title");
@@ -105,6 +114,8 @@ const createListBar = function (lists) {
     navButtons.appendChild(homeButton);
     navButtons.appendChild(jawPortfolioButton);
     navButtons.appendChild(nanaPortfolioButton);
+    navButtons.appendChild(harrisonPortfolioButton);
+    navButtons.appendChild(georgePortfolioButton);
     header.appendChild(navigation);
     header.appendChild(title);
     header.appendChild(listBar);
