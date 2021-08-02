@@ -13,7 +13,7 @@ const displayAlbum = function (album) {
     albumImageElement.src = album.imageURL;
     const albumArtistElement = document.createElement("h4");
     albumArtistElement.classList.add("album-artist-notation");
-    albumArtistElement.innerText = "Album Artist: " + album.artist; 
+    albumArtistElement.innerText = "Album Artist: " + album.artist;
     const recordLabelElement = document.createElement("p");
     recordLabelElement.innerText = "Record Label: " + album.recordLabel;
     const albumDurationElement = document.createElement("p");
@@ -45,7 +45,7 @@ const displayAlbum = function (album) {
         clickEvent.preventDefault();
         clearChildren(albumElement);
         const retitleJson = JSON.stringify(albumRetitleInput.value);
-        const unqoutedJson = retitleJson.replace(/\"/g,"");
+        const unqoutedJson = retitleJson.replace(/\"/g, "");
         fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/albumName", {
             method: "PATCH",
             body: unqoutedJson
@@ -76,6 +76,20 @@ const displayAlbum = function (album) {
     albumElement.appendChild(albumTitleElement);
     albumElement.appendChild(albumRetitleForm);
     albumElement.appendChild(deleteAlbumButton);
+
+    const backButtonElement = document.createElement("button")
+    backButtonElement.innerText = "back";
+
+    backButtonElement.addEventListener("click", (clickEvent) => {
+        fetch("http://localhost:8080/api/lists/" + album.listId, {
+            method: "GET",
+        })
+            .then(response => response.json())
+            .then(list => displaySingleList(list))
+            .catch(error => console.log(error));
+    })
+    albumElement.appendChild(backButtonElement);
+
     albumElement.appendChild(albumImageElement);
     albumElement.appendChild(albumArtistElement);
     albumElement.appendChild(recordLabelElement);
@@ -146,6 +160,7 @@ const displayAlbum = function (album) {
             .catch(error => console.log(error));
     })
 
+
     form.appendChild(songTitleInput);
     form.appendChild(lengthInput);
     form.appendChild(starRatingInput);
@@ -181,19 +196,19 @@ const displayAlbum = function (album) {
         clickEvent.preventDefault();
         const albumElement = document.querySelector(".album-content");
         clearChildren(albumElement);
-        if(commentInput.value !== ""){
+        if (commentInput.value !== "") {
             const json = JSON.stringify(commentInput.value);
-            const unqoutedJson = json.replace(/\"/g,"");
+            const unqoutedJson = json.replace(/\"/g, "");
             fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/comments", {
                 method: "PATCH",
                 headers: {
-                    'Content-Type' : 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: unqoutedJson
             })
-            .then(response => response.json())
-            .then(album => displayAlbum(album))
-            .catch(error => console.log(error));
+                .then(response => response.json())
+                .then(album => displayAlbum(album))
+                .catch(error => console.log(error));
         }
     })
 
@@ -204,7 +219,7 @@ const displayAlbum = function (album) {
         let userRatingHeading = document.createElement("h3");
         userRatingHeading.innerText = "User Ratings:";
         albumElement.appendChild(userRatingHeading);
-        let total = 0; 
+        let total = 0;
         album.userRatings.forEach((userRating) => {
             let userRatingsElement = document.createElement("section");
             userRatingsElement.classList.add("userRatings-section");
@@ -241,7 +256,7 @@ const displayAlbum = function (album) {
             fetch("http://localhost:8080/api/lists/" + album.listId + "/albums/" + album.id + "/userRatings", {
                 method: "PATCH",
                 headers: {
-                    'Content-Type' : 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: userRatingInput.value
             })
