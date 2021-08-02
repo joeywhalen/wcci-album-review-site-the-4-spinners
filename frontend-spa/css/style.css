@@ -1,57 +1,47 @@
-
-body{
+body {
     background-image: url("https://images.saymedia-content.com/.image/t_share/MTc0MTM0OTg3MzUwNjE1MzU1/top-ten-items-to-have-on-a-deserted-island.jpg");
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family:Georgia, 'Times New Roman', Times, serif
-    
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 
-header{
+header {
     align-self: center;
     width: 90vw;
-
-    
-        
 }
-.main-content{
-   
+
+.main-content {
     width: 90vw;
     align-self: center;
     padding-bottom: 1rem;
 }
 
-input{
+input {
+   
     font-size: large;
     color: #406EDB;
 }
 
-.container {    
-    display: flex; 
+.container {
+    display: flex;
     flex-direction: column;
-
 }
 
 .nav {
     display: flex;
-    /* flex-direction: row; */
     justify-content: center;
-    
 }
 
-/* this keep buttons center */
-.nav-btns{
+.nav-btns {
     display: flex;
     padding: 5px;
     gap: 10px;
 }
 
-
-/* Either delete lines 10-11 in listBar or rename 'button' on line 14  to space out buttons*/
-.nav-btns button{
-    font-family: Verdana;    
+.nav-btns button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -63,49 +53,36 @@ input{
 
 }
 
-.main-content{
+.main-content {
     display: flex;
     justify-content: center;
 }
 
-.nav-btns :hover{
+.nav-btns :hover {
     transition-duration: .25s;
-  background-color: white;
-  color: #406EDB;
+    background-color: white;
+    color: #406EDB;
 }
-
-
 
 .list-bar {
-    display: flex; 
+    display: flex;
     justify-content: space-evenly;
-    /* row-gap: 3rem; */
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
-/* .list-bar section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: #406EDB;
-} */
-
-/* .list-bar .btn-section{
-    display: flex;
-    flex-direction: column;
-    background-color: #406EDB;
-} */
 
 /* listBar Section */
-.new-list-form{
+.new-list-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
 }
-.new-list-form button{
-    font-family: Verdana;    
+
+.new-list-form button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -115,33 +92,34 @@ input{
     color: white;
 }
 
-.new-list-form button:hover{
+.new-list-form button:hover {
     transition-duration: .25s;
-  background-color: white;
-  color: #406EDB;
+    background-color: white;
+    color: #406EDB;
 }
 
-.title h2{
+.title h2 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     font-family: 'Staatliches', cursive;
     color: #f3d3b8;
     text-shadow: 1px 1px 2px black;
-
+    font-size:2rem;
+    letter-spacing: 1px;
 }
 
-.title h1{
+.title h1 {
     display: flex;
     justify-content: center;
-    font-size: 3rem;
-    padding-bottom: 3rem; 
+    font-size: 4rem;
     font-family: 'Staatliches', cursive;
     color: #f3d3b8;
     text-shadow: 1px 1px 2px black;
+    letter-spacing: 1px;
 }
 
-.list-bar{
+.list-bar {
     display: flex;
     flex-wrap: wrap;
     color: #f3d3b8;
@@ -149,7 +127,7 @@ input{
     text-shadow: 1px 1px 2px black;
 }
 
-.list-bar img{
+.list-bar img {
     display: flex;
     height: 150px;
     width: auto;
@@ -157,13 +135,13 @@ input{
     border-radius: 100%;
 }
 
-main{
+main {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
 }
 
-main .btn-section h3{
+main .btn-section h3 {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -172,30 +150,30 @@ main .btn-section h3{
     text-shadow: 1px 1px 2px black;
 }
 
-.btn-section img:hover{
+.btn-section img:hover {
     transform: scale(95%);
-  border-radius: 100%; 
-  cursor: pointer;
-  transition: 500ms;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 500ms;
 }
 
-.btn-section img:active{
-  transform: scale(95%);
-  border-radius: 100%;  
-  background-color: black;
+.btn-section img:active {
+    transform: scale(95%);
+    border-radius: 100%;
+    background-color: black;
 }
 
 main .btn-section img {
     max-height: 250px;
-    width: auto;    
+    width: auto;
 }
 
-.info-box{
+.info-box {
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding:10px;
+    padding: 10px;
 
 }
 
@@ -204,20 +182,20 @@ main .btn-section img {
     display: flex;
 }
 
-.new-album-form{
+.new-album-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-input{
+input {
     font-size: large;
 }
 
 /* Single Album Section */
-.new-album-form button{
-    font-family: Verdana;    
+.new-album-form button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -226,20 +204,22 @@ input{
     background-color: #406EDB;
     color: white;
 }
-.new-album-form button:hover{
+
+.new-album-form button:hover {
     transition-duration: .25s;
     background-color: white;
     color: #406EDB;
 }
 
-.change-album-title-form{
+.change-album-title-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
 }
-.change-album-title-form button{
-    font-family: Verdana;    
+
+.change-album-title-form button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -249,13 +229,13 @@ input{
     color: white;
 }
 
-.change-album-title-form button:hover{
+.change-album-title-form button:hover {
     transition-duration: .25s;
     background-color: white;
     color: #406EDB;
 }
 
-.new-song-form{
+.new-song-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -263,8 +243,8 @@ input{
 
 }
 
-.new-song-form button{
-    font-family: Verdana;    
+.new-song-form button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -273,13 +253,14 @@ input{
     background-color: #406EDB;
     color: white;
 }
-.new-song-form button:hover{
+
+.new-song-form button:hover {
     transition-duration: .25s;
     background-color: white;
     color: #406EDB;
 }
 
-.new-comment-form{
+.new-comment-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,7 +269,7 @@ input{
 }
 
 
-.new-comment{
+.new-comment {
     display: flex;
     flex-wrap: wrap;
     font-size: larger;
@@ -296,8 +277,8 @@ input{
 }
 
 
-.new-comment-form button{
-    font-family: Verdana;    
+.new-comment-form button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -305,8 +286,10 @@ input{
     border: none;
     background-color: #406EDB;
     color: white;
+    margin-bottom: 2%;
 }
-.new-comment-form button:hover{
+
+.new-comment-form button:hover {
     transition-duration: .25s;
     background-color: white;
     color: #406EDB;
@@ -332,6 +315,7 @@ input{
     border: none;
     background-color: #406EDB;
     color: white;
+    margin-bottom: 1rem;
 }
 
 .new-user-rating-form button:hover {
@@ -340,22 +324,17 @@ input{
     color: #406EDB;
 }
 
-/* .album-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
 
 /* Album Content Section */
-.album-content{
+.album-content {
     display: flex;
     flex-direction: column;
-    border: black;
+    border: #406EDB;
     border-style: groove;
     width: 75vw;
 }
 
-.album-content h3{
+.album-content h3 {
     display: flex;
     justify-content: center;
     width: auto;
@@ -366,17 +345,17 @@ input{
 }
 
 
-main .album-content img{
+main .album-content img {
     display: flex;
     width: 100%;
-  max-width: 400px;
-  height: auto;
-  padding: 10px;
+    max-width: 400px;
+    height: auto;
+    padding: 10px;
     align-self: center;
 }
 
 
-.album-artist-notation{
+.album-artist-notation {
     display: flex;
     justify-content: center;
     width: auto;
@@ -386,23 +365,16 @@ main .album-content img{
     text-shadow: 1px 1px 2px black;
 }
 
-.album-content p{
+.album-content p {
     font-size: 1rem;
     text-align: center;
     font-weight: bolder;
     color: #f3d3b8;
     text-shadow: 1px 1px 2px black;
 
-
 }
 
-/* .song-btn-section{
-    width: fit-content;
-    cursor: pointer;
-    background-color: antiquewhite;
-} */
-
-.album-songs-notation{
+.album-songs-notation {
     display: flex;
     justify-content: left;
     width: auto;
@@ -413,27 +385,26 @@ main .album-content img{
 
 }
 
-.song-btn-section{
+.song-btn-section {
     display: flex;
     align-self: center;
     border-style: groove;
     width: fit-content;
     font-size: 1rem;
-    cursor: pointer; 
+    cursor: pointer;
     color: #f3d3b8;
     text-shadow: 1px 1px 2px black;
 }
 
-.song-btn-section h5:hover{
-    border-style: groove;
+.song-btn-section h5:hover {
+    border-style: none;
     width: fit-content;
-    transform: scale(97%);
+    transform: scale(125%);
     font-size: 1rem;
     cursor: pointer;
-    
 }
 
-.album-comments-notation{
+.album-comments-notation {
     display: flex;
     justify-content: left;
     width: auto;
@@ -441,55 +412,53 @@ main .album-content img{
     margin-left: 2rem;
 }
 
-.comments-section{
+.comments-section {
     display: flex;
     width: 75vw;
     justify-content: center;
     max-width: auto;
 }
-.comments-section p{
-    display: flex;
-    justify-content: center;    
-    max-width: 50vw;
-    border-style: double;
-    color:black;
-    text-shadow:none;
-}
 
 /* Single Song Section  */
-.song-content{
+.song-content {
     display: flex;
     flex-direction: column;
 }
-.change-song-title-form{
+
+.change-song-title-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.song-content p{
+.song-content p {
     font-size: 1rem;
     text-align: center;
     font-weight: bolder;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 }
 
-.song-content h3{
+.song-content h3 {
     display: flex;
     justify-content: center;
     width: auto;
     font-size: 2rem;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 }
 
-.song-comments-notation{
+.song-comments-notation {
     display: flex;
     justify-content: left;
     width: auto;
     font-size: 2rem;
     margin-left: 2rem;
 }
-.change-song-title-form button{
-    font-family: Verdana;    
+
+.change-song-title-form button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -499,13 +468,13 @@ main .album-content img{
     color: white;
 }
 
-.change-song-title-form button:hover{
+.change-song-title-form button:hover {
     transition-duration: .25s;
     background-color: white;
     color: #406EDB;
 }
 
-button.delete-song{
+button.delete-song {
     display: flex;
     justify-content: center;
     background-color: red;
@@ -518,7 +487,7 @@ button.delete-song{
     margin-top: 1rem;
 }
 
-button.delete-album{
+button.delete-album {
     display: flex;
     justify-content: center;
     background-color: red;
@@ -531,7 +500,7 @@ button.delete-album{
     margin-top: 1rem;
 }
 
-.song-content{
+.song-content {
     display: flex;
     flex-direction: column;
     border: black;
@@ -539,8 +508,8 @@ button.delete-album{
     width: 75vw;
 }
 
-button{
-    font-family: Verdana;    
+button {
+    font-family: Verdana;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50px;
@@ -551,15 +520,23 @@ button{
     max-width: fit-content;
     align-self: center;
     margin-top: 1rem;
+}
 
+.comments-section p {
+    display: flex;
+    justify-content: center;
+    max-width: 50vw;
+    border-style: double;
+    color: black;
+    text-shadow: none;
 }
 
 .main-footer {
-    
     display: flex;
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
     color: white;
     text-shadow: 1px 1px 2px black;
+    margin-top: 1rem;
 }
