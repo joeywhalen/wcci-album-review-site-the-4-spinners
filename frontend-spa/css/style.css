@@ -202,9 +202,8 @@ input{
     font-size: large;
 }
 
-/* css for singleAlbum */
+/* Single Album Section */
 .new-album-form button{
-
     font-family: Verdana;    
     font-size: 1rem;
     padding: 10px;
@@ -215,6 +214,29 @@ input{
     color: white;
 }
 .new-album-form button:hover{
+    transition-duration: .25s;
+    background-color: white;
+    color: #406EDB;
+}
+
+.change-album-title-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.change-album-title-form button{
+    font-family: Verdana;    
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #406EDB;
+    color: white;
+}
+
+.change-album-title-form button:hover{
     transition-duration: .25s;
     background-color: white;
     color: #406EDB;
