@@ -9,10 +9,7 @@ const createListBar = function (lists) {
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
-    navButtons.innerHTML = `<button>About Us</button>`
-    navButtons.addEventListener('click', () => {
-        const jawTab = window.open('https://joeywhalen.github.io/ProfessionalPortfolio', '_blank');
-    })
+    // navButtons.innerHTML = `<button>About Us</button>`
 
     const homeButton = document.createElement("button");
     homeButton.innerText = "Home";
@@ -21,6 +18,12 @@ const createListBar = function (lists) {
         clearChildren(mainElement);
         displayHome(mainElement);
         console.log("Clicked Home button");
+    });
+
+    const jawPortfolioButton = document.createElement("button");
+    jawPortfolioButton.innerText = "About Joey";
+    jawPortfolioButton.addEventListener('click', () => {
+        const jawTab = window.open('https://joeywhalen.github.io/ProfessionalPortfolio', '_blank');  
     });
 
     const title = document.createElement("div");
@@ -91,6 +94,7 @@ const createListBar = function (lists) {
     listBar.prepend(form);
     navigation.appendChild(navButtons);
     navButtons.appendChild(homeButton);
+    navButtons.appendChild(jawPortfolioButton);
     header.appendChild(navigation);
     header.appendChild(title);
     header.appendChild(listBar);
