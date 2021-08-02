@@ -106,6 +106,16 @@ const displaySingleList = function (list){
 
   mainElement.appendChild(form);
 
+  const backButton = document.createElement("button");
+  backButton.innerText = "back";
+  backButton.addEventListener("click", () => {
+      const mainElement = document.querySelector("main");
+      clearChildren(mainElement);
+      displayHome(mainElement);
+  });
+
+  mainElement.appendChild(backButton);
+
     return mainElement;
 }
 export {displaySingleList}
