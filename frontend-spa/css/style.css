@@ -1,12 +1,18 @@
 body{
-    background-color: white;
+    background-image: url("https://images.saymedia-content.com/.image/t_share/MTc0MTM0OTg3MzUwNjE1MzU1/top-ten-items-to-have-on-a-deserted-island.jpg");
+    background-repeat: no-repeat;    
+    background-attachment: fixed;
+    background-size: cover;
 }
+
 header{
     align-self: center;
     width: 90vw;
     background-color: #a5c3cf;
-    /* border-style: dotted; */
-    
+    /* border-style: dotted; */    
+}
+main section{
+    background-color: ;
 }
 
 input{
