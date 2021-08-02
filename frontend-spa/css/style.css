@@ -360,6 +360,9 @@ input{
     justify-content: center;
     width: auto;
     font-size: 2rem;
+    font-family: 'Staatliches', cursive;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 }
 
 
@@ -378,12 +381,18 @@ main .album-content img{
     justify-content: center;
     width: auto;
     font-size: 2rem;
+    font-family: 'Staatliches', cursive;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 }
 
 .album-content p{
     font-size: 1rem;
     text-align: center;
     font-weight: bolder;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
+
 
 }
 
@@ -399,6 +408,8 @@ main .album-content img{
     width: auto;
     font-size: 2rem;
     margin-left: 2rem;
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 
 }
 
@@ -409,6 +420,8 @@ main .album-content img{
     width: fit-content;
     font-size: 1rem;
     cursor: pointer; 
+    color: #f3d3b8;
+    text-shadow: 1px 1px 2px black;
 }
 
 .song-btn-section h5:hover{
@@ -439,7 +452,8 @@ main .album-content img{
     justify-content: center;    
     max-width: 50vw;
     border-style: double;
-
+    color:black;
+    text-shadow:none;
 }
 
 /* Single Song Section  */
@@ -460,13 +474,6 @@ main .album-content img{
     font-weight: bolder;
 }
 
-/* .song-content .comments-section p{
-    display: flex;
-    text-align: start;  
-    max-width: 50vw;
-    border-style: double;
-
-} */
 .song-content h3{
     display: flex;
     justify-content: center;
