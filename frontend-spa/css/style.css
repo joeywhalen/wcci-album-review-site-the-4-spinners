@@ -64,12 +64,7 @@ input {
     color: #406EDB;
 }
 
-.list-bar {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
+
 
 
 /* listBar Section */
@@ -121,7 +116,9 @@ input {
 
 .list-bar {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
     color: #f3d3b8;
     font-variant: small-caps;
     text-shadow: 1px 1px 2px black;
