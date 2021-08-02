@@ -66,7 +66,7 @@ const displaySingleSong = function (song) {
     backButtonElement.innerText = "back";
 
     backButtonElement.addEventListener("click", (clickEvent) => {
-        fetch("http://api/lists/" + song.listId + "/albums/" + song.albumId, {
+        fetch("http://localhost:8080/api/lists/" + song.listId + "/albums/" + song.albumId, {
             method: "GET",
         })
             .then(response => response.json())
