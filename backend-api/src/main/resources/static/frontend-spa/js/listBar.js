@@ -9,7 +9,6 @@ const createListBar = function (lists) {
     navigation.classList.add("nav");
     const navButtons = document.createElement("ul");
     navButtons.classList.add("nav-btns");
-    // navButtons.innerHTML = `<button>About Us</button>`
 
     const homeButton = document.createElement("button");
     homeButton.innerText = "Home";
@@ -63,7 +62,7 @@ const createListBar = function (lists) {
         listImage.innerHTML = `<img src="./images/RecordLogo.png" alt="List logo"></img>`
         listImage.addEventListener("click", () => {
             clearChildren(header);
-                fetch("http://localhost:8080/api/lists")
+                fetch("http://api/lists")
                     .then(response => response.json())
                     .then(lists => container.prepend(createListBar(lists)))
                     .catch(error => console.log(error));
@@ -93,7 +92,7 @@ const createListBar = function (lists) {
         const listJson = {
             "listName": listNameInput.value
         }
-        fetch("http://localhost:8080/api/lists", {
+        fetch("http://api/lists", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -15,7 +15,6 @@ const displaySingleList = function (list){
       let albumLink = document.createElement("a");
       let albumImageURL = document.createElement("img");
       albumImageURL.src = album.imageURL; 
-      // albumLink.href = album.imageURL;
       albumLink.addEventListener("click", (clickEvent) => {
         displayAlbum(album)
       });
@@ -80,7 +79,7 @@ const displaySingleList = function (list){
       "videoUrl": videoUrlInput.value,
       "comments": [commentsInput.value]
     }
-    fetch("http://localhost:8080/api/lists/" + list.id + "/albums", {
+    fetch("http://api/lists/" + list.id + "/albums", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
