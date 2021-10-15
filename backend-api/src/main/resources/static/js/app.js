@@ -5,7 +5,7 @@ import { displayHome } from "./displayHome.js";
 
 const container = document.querySelector(".container");
 
-await fetch("http://api/lists")
+await fetch("/api/lists")
     .then(response => response.json())
     .then(lists => container.appendChild(createListBar(lists)))
     .catch(error => console.log(error));

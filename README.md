@@ -5,6 +5,10 @@ Our friends at the local soda shop have gotten tired of taken phone calls about 
 
 They have tasked us with creating an application that can easily keep track of their _EXTENSIVE_ record collection and access music by albums or individual tracks.  This collection is in a constant state of flux, so it is essential for the users to be able to update the collection and it's elements.
 
+## Interact with the application here:
+https://infinite-reef-desert-island.herokuapp.com/
+Please allow about 30 seconds for the HEROKU platform to launch the application. 🎶Do-do-do-do🎶
+
 ## API Creation 
 
 First, we are going to need to create an API using Spring that will handle our DB and interactions with it.

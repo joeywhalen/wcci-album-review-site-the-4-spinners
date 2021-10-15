@@ -62,7 +62,7 @@ const createListBar = function (lists) {
         listImage.innerHTML = `<img src="./images/RecordLogo.png" alt="List logo"></img>`
         listImage.addEventListener("click", () => {
             clearChildren(header);
-                fetch("http://api/lists")
+                fetch("/api/lists")
                     .then(response => response.json())
                     .then(lists => container.prepend(createListBar(lists)))
                     .catch(error => console.log(error));
@@ -92,7 +92,7 @@ const createListBar = function (lists) {
         const listJson = {
             "listName": listNameInput.value
         }
-        fetch("http://api/lists", {
+        fetch("/api/lists", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

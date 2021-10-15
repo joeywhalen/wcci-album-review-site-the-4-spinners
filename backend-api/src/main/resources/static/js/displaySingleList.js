@@ -79,7 +79,7 @@ const displaySingleList = function (list){
       "videoUrl": videoUrlInput.value,
       "comments": [commentsInput.value]
     }
-    fetch("http://api/lists/" + list.id + "/albums", {
+    fetch("/api/lists/" + list.id + "/albums", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -46,7 +46,7 @@ const displayAlbum = function (album) {
         clearChildren(albumElement);
         const retitleJson = JSON.stringify(albumRetitleInput.value);
         const unqoutedJson = retitleJson.replace(/\"/g, "");
-        fetch("http://api/lists/" + album.listId + "/albums/" + album.id + "/albumName", {
+        fetch("/api/lists/" + album.listId + "/albums/" + album.id + "/albumName", {
             method: "PATCH",
             body: unqoutedJson
         })
@@ -64,7 +64,7 @@ const displayAlbum = function (album) {
 
     deleteAlbumButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
-        fetch("http://api/lists/" + album.listId + "/albums/" + album.id, {
+        fetch("/api/lists/" + album.listId + "/albums/" + album.id, {
             method: "DELETE",
         })
             .then(response => response.json())
@@ -81,7 +81,7 @@ const displayAlbum = function (album) {
     backButtonElement.innerText = "back";
 
     backButtonElement.addEventListener("click", (clickEvent) => {
-        fetch("http://api/lists/" + album.listId, {
+        fetch("/api/lists/" + album.listId, {
             method: "GET",
         })
             .then(response => response.json())
@@ -148,7 +148,7 @@ const displayAlbum = function (album) {
             "comments": [commentsInput.value]
         }
         console.log(album.list);
-        fetch("http://api/lists/" + album.listId + "/albums/" + album.id + "/songs", {
+        fetch("/api/lists/" + album.listId + "/albums/" + album.id + "/songs", {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'
@@ -199,7 +199,7 @@ const displayAlbum = function (album) {
         if (commentInput.value !== "") {
             const json = JSON.stringify(commentInput.value);
             const unqoutedJson = json.replace(/\"/g, "");
-            fetch("http://api/lists/" + album.listId + "/albums/" + album.id + "/comments", {
+            fetch("/api/lists/" + album.listId + "/albums/" + album.id + "/comments", {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'
@@ -253,7 +253,7 @@ const displayAlbum = function (album) {
         const albumElement = document.querySelector(".album-content");
         clearChildren(albumElement);
         if (userRatingInput.value !== "") {
-            fetch("http://api/lists/" + album.listId + "/albums/" + album.id + "/userRatings", {
+            fetch("/api/lists/" + album.listId + "/albums/" + album.id + "/userRatings", {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'

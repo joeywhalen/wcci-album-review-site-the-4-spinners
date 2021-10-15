@@ -36,7 +36,7 @@ const displaySingleSong = function (song) {
         clearChildren(songElement);
         const retitleSongJson = JSON.stringify(songRetitleInput.value);
         const unquotedSongJson = retitleSongJson.replace(/\"/g, "");
-        fetch("http://api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songTitle", {
+        fetch("/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songTitle", {
             method: "PATCH",
             body: unquotedSongJson
         })
@@ -54,7 +54,7 @@ const displaySingleSong = function (song) {
 
     deleteSongButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
-        fetch("http://api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id, {
+        fetch("/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id, {
             method: "DELETE",
         })
             .then(response => response.json())
@@ -66,7 +66,7 @@ const displaySingleSong = function (song) {
     backButtonElement.innerText = "back";
 
     backButtonElement.addEventListener("click", (clickEvent) => {
-        fetch("http://api/lists/" + song.listId + "/albums/" + song.albumId, {
+        fetch("/api/lists/" + song.listId + "/albums/" + song.albumId, {
             method: "GET",
         })
             .then(response => response.json())
@@ -116,7 +116,7 @@ const displaySingleSong = function (song) {
 
             const json = JSON.stringify(commentInput.value);
             const unqoutedJson = json.replace(/\"/g, "");//this removes qoutes from the stringify
-            fetch("http://api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/comments", {
+            fetch("/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/comments", {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'
@@ -170,7 +170,7 @@ const displaySingleSong = function (song) {
         const songElement = document.querySelector(".song-content");
         clearChildren(songElement);
         if (songUserRatingInput.vaule !== "") {
-            fetch("http://api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songUserRatings", {
+            fetch("/api/lists/" + song.listId + "/albums/" + song.albumId + "/songs/" + song.id + "/songUserRatings", {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'
